@@ -1,11 +1,13 @@
 body {
     color: #FCE09B;
+    margin-top: 0;
+    margin-bottom: 0;
     margin-left: auto;
     margin-right: auto;
     padding: 0;
     font: 400 36px/normal 'Open Sans', 'sans-serif' ;
-    white-space: nowrap;
-    min-width: 400;
+    max-width: 1920px;
+    gap: 0px;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -51,17 +53,19 @@ button {
 .startingpage {
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 0;
     background: var(--main-green, #186F65);
     max-width: 1920px;
 }
 .headerlogoheadline {
     display: flex;
-    height: 244px;
-    padding: 25px 0px;
+    padding-top: 25px;
     flex-direction: column;
     align-items: center;
     gap: 25px;
     flex-shrink: 0;
+    white-space: nowrap;
+
 }
 .headlinelogo {
     display: flex;
@@ -150,6 +154,7 @@ button {
     padding-left: 150px;
 
     max-height: 35px;
+
 }
 
 .input {
@@ -185,10 +190,344 @@ button {
 
 
 
+.main {
+    background: url(images/bg.png);
+    background-color: #186F65;
+    background-size: cover;
+    background-blend-mode: multiply;
+ 
+    height: 898px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main h1 {
+    color: var(--secondary-biege, #FCE09B);
+
+    font-family: sans-serif;
+    font-size: 72px;
+    font-style: italic;  
+    font-weight: 900;
+    line-height: normal;
+
+    
+}
+
+.main h3 {
+    color: var(--secondary-green, #B5CB99);
+
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.maintitle {
+    padding-left: 100px;
+    padding-top: 100px;
+    width: fit-content;
+}
+
+.morebutton {
+    display: flex;
+
+    padding: 10px 55px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 75px;
+
+    color: #FFF;
+
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 56px;
+    line-height: normal;
+
+    border-radius: 40px;
+    background: var(--main-red, #B2533E);
+}
+
+.vectorimgcontainer {
+    position: relative;
+    padding-top: 100px;
+    padding-right: 100px;
+    padding-left: 50px;
+}
+
+.vectorimgcontainer img {
+    flex-shrink: 0;
+}
 
 
 
 
+
+
+
+
+
+.aboutpage {
+
+    background: var(--main-red, #B2533E);
+
+    padding: 97px 100px 96px 100px;
+    align-items: center;
+}
+
+.aboutblock {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 25px;
+    flex-shrink: 0;
+}
+
+.content {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: -30px;
+
+    width: 1010px;
+    height: 483px;
+    border-radius: 30px;
+    background: url(images/about.png);
+    background-repeat: no-repeat;
+
+    box-shadow: -12px -3px 27px 0px rgba(255, 149, 122, 0.10),
+    -48px -12px 49px 0px rgba(255, 149, 122, 0.09),
+    -108px -26px 67px 0px rgba(255, 149, 122, 0.05),
+    -192px -46px 79px 0px rgba(255, 149, 122, 0.01),
+    -299px -72px 86px 0px rgba(255, 149, 122, 0.00);
+
+    
+}
+
+.content h2 {
+    position: relative;
+    bottom: 40px;
+    color: #FFF;
+    font-family: sans-serif;
+
+    font-size: 64px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 16.96px;
+}
+
+.abouttxt {
+    max-width: 550px;
+    flex-shrink: 0;
+    color: var(--secondary-biege, #FCE09B);
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 275;
+    line-height: normal;
+}
+
+
+
+
+
+
+
+
+
+.autorsandprojectspage {
+    background-color: #186F65;
+    background-image: url(images/bg2.png);
+
+    mix-blend-mode: multiply;
+    background-blend-mode: multiply;
+    
+}
+
+.autorsandprojectspage h2 {
+
+    color: #FFF;
+
+    font-size: 64px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 16.96px;
+}
+
+.autorsblock {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: -25px;
+    flex-shrink: 0;
+    
+    padding-left: 100px;
+    padding-top: 100px;
+}
+
+.autorsblock h2 {
+    position: relative;
+    top: 30px;
+
+    color: #FFF;
+
+    font-family: sans-serif;
+    font-size: 64px;
+    font-style: italic;
+}
+
+.personcardsplusbg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex: 1 0 0;
+    align-self: stretch;
+
+    border-radius: 30px 0px 0px 30px;
+    background: linear-gradient(270deg, rgba(181, 203, 153, 0.17) 0%,
+    #B5CB99 100.49%);
+  
+}
+
+.personcards {
+    display: flex;
+    justify-content: space-between;
+    gap: 200px; 
+
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 275;
+    line-height: normal;
+    color: var(--secondary-biege, #FCE09B);
+
+    padding: 68px 114px 114px 114px;
+}
+
+.personcards h3 {
+    color: var(--secondary-biege, #FCE09B);
+
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.personcards p {
+    margin: 0px;
+}
+
+.personcardsl {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 50px;
+    align-self: stretch;
+}
+
+.personcardsr {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 50px;
+    align-self: stretch;
+}
+
+.personcard {
+    display: flex;
+    align-items:flex-start;
+    gap: 30px;
+    max-height: 200px;
+}
+
+
+.personimg {
+    width: 200px;
+    height: 200px;
+
+    border-radius: 200px;
+
+    box-shadow: 4px 3px 12px 0px rgba(21, 81, 74, 0.15), 
+    17px 13px 21px 0px rgba(21, 81, 74, 0.13), 
+    39px 28px 29px 0px rgba(21, 81, 74, 0.08), 
+    70px 50px 34px 0px rgba(21, 81, 74, 0.02), 
+    109px 78px 37px 0px rgba(21, 81, 74, 0.00);
+}
+
+.personinfo {
+    gap: 3px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:1600px){
+    .vectorimgcontainer {
+        display: none;
+    }
+    .maintitle {
+        padding-left: 0;
+
+    }
+    .main {
+        justify-content: center;
+        text-align: center;
+    }
+    .morebutton {
+        margin-left: 30%;
+    }
+
+    
+    .content {
+        background: none;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        width: auto;
+        height: auto;
+        border-radius: 0px;
+
+        box-shadow: none;
+
+        white-space: nowrap;
+    }
+    
+    .aboutblock {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        flex-shrink: 0;
+    }
+    .abouttxt {
+        max-width: 1050px;
+        flex-shrink: 0;
+        color: var(--secondary-biege, #FCE09B);
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 275;
+        line-height: normal;
+    }
+    .personcards {
+    }
+}
 
 
 
@@ -228,21 +567,16 @@ button {
     .navbarli {
         display: block;
     }
-}
-
-@media (max-width: 900px) {
-    .navbar__item {
-        font-size: 16px;
+    .personcards {
+        display: inline;
     }
-    .input {
-        padding: 6px 20px;
-    }
-    .enter__link {
-        font-size: 16px;
+    .personcardsl {
+        padding-bottom: 50px;
     }
 }
 
-@media (max-width: 800px) {
+
+@media (max-width: 880px) {
     .mainmenu {
         height: auto;
         padding-top: 10px;
@@ -283,10 +617,77 @@ button {
     .enter__link {
         font-size: 20px;
     }
+    .morebutton {
+        margin-top: 75px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .content h2 {
+        position: relative;
+        top: 0px;
+
+        font-size: 40px;
+        font-style: italic;
+        font-weight: 400;
+    }
+    .aboutpage {
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+    .abouttxt {
+        font-size: 24px;
+    }
+    
 }
 
-@media (max-width: 550px)  {
+@media (max-width:  550px) {   
+    .hdlinet {
+        color: var(--secondary-green, #B5CB99);
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    .hdlineb {
+        color: var(--secondary-green, #B5CB99);
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+    }
+    .headlinelogo img {
+        height: 75px;
+        width: 75px;
+    }
+    .maintitle h1 {
+        font-size: 36px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .maintitle h3 {
+        font-size: 25px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .morebutton {
+        font-size: 36px;
+    }
+    .searchpersonalarea {
+        gap: 20px;
+    }
+}
+
+@media (max-width:  400px)  {
     .headlinelogo img {
         display: none;
+    }
+    .searchpersonalarea {
+        padding-left: 0;
+    }
+    .content h2 {
+
+
+        font-size: 30px;
+        font-style: italic;
     }
 }
