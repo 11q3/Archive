@@ -7,6 +7,7 @@ body {
     padding: 0;
     font: 400 36px/normal 'Open Sans', 'sans-serif' ;
     max-width: 1920px;
+    min-width: 360px;
     gap: 0px;
 }
 
@@ -65,7 +66,6 @@ button {
     gap: 25px;
     flex-shrink: 0;
     white-space: nowrap;
-
 }
 .headlinelogo {
     display: flex;
@@ -226,7 +226,6 @@ button {
 .maintitle {
     padding-left: 100px;
     padding-top: 100px;
-    width: fit-content;
 }
 
 .morebutton {
@@ -279,7 +278,6 @@ button {
 .aboutblock {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
     gap: 25px;
     flex-shrink: 0;
 }
@@ -442,7 +440,6 @@ button {
     display: flex;
     align-items:flex-start;
     gap: 30px;
-    max-height: 200px;
 }
 
 
@@ -462,6 +459,197 @@ button {
 .personinfo {
     gap: 3px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+.projects h1 {
+    color: var(--secondary-biege, #FCE09B);
+
+    font-family: sans-serif;
+
+    font-size: 72px;
+    font-style: italic;
+    font-weight: 900;
+    line-height: normal;
+
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    text-align: center;
+}
+
+.projectsblock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+
+    padding-bottom: 120px;
+}
+
+.projectcard {
+    display: flex;
+    
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+ 
+.projectcard h3 {
+    color: #FFF;
+
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.projectinfofirst,
+.projectinfosecond,
+.projectinfothird,
+.projectinfofourth {
+    width: 1012px;
+    height: 243px;
+
+
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.projectinfofirst { background: url(images/project1.png ); }
+.projectinfosecond { background: url(images/project2.png ); }
+.projectinfothird { background: url(images/project3.png ); }
+.projectinfofourth { background: url(images/project4.png ); }
+
+.aboutbutton {
+    display: flex;
+    padding: 10px 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    border-radius: 40px;
+    border: 4px solid var(--main-red, #B2533E);
+    
+    color: #FFF;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+
+
+
+
+
+
+
+.footer {
+    background: #FCE09B;
+    display: flex;
+}
+
+.footerlinelogo {
+    display: inline-flex;
+    align-items: center;
+    gap: 25px;
+
+    padding: 100px 150px 100px 100px;
+}
+
+.footerline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ftlinet {
+    color: var(--main-green, #186F65);
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.ftlineb {
+    color: var(--main-green, #186F65);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.footermainmenu {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+
+    list-style-type: none;
+
+    
+}
+
+
+.footersecondarymenu {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+
+    list-style-type: none;
+}
+
+.mainlist,
+.seclist {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+
+    color: var(--main-green, #186F65);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    padding-top: 50px;
+    padding-right: 150px;
+    padding-bottom: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -525,8 +713,7 @@ button {
         font-weight: 275;
         line-height: normal;
     }
-    .personcards {
-    }
+
 }
 
 
@@ -575,6 +762,14 @@ button {
     }
 }
 
+@media (max-width: 1100px) {
+    .projectinfofirst,
+    .projectinfosecond,
+    .projectinfothird,
+    .projectinfofourth {
+        width: 720px;
+    }
+}
 
 @media (max-width: 880px) {
     .mainmenu {
@@ -629,35 +824,61 @@ button {
         font-size: 40px;
         font-style: italic;
         font-weight: 400;
+
+        letter-spacing: 12.96px;
     }
     .aboutpage {
         padding-top: 75px;
         padding-bottom: 75px;
-    }
-    .abouttxt {
-        font-size: 24px;
+        padding-left: 35px;
+        padding-right: 35px;
     }
     
+    
+}
+
+@media (max-width: 800px) {
+    .personcard {
+        display: flex;
+        flex-direction: column;
+    }
+    .projectinfofirst,
+    .projectinfosecond,
+    .projectinfothird,
+    .projectinfofourth {
+        width: 600px;
+    }
+}
+
+@media (max-width:  680px) {
+    .projectinfofirst,
+    .projectinfosecond,
+    .projectinfothird,
+    .projectinfofourth {
+        width: 500px;
+    }
+    .projectcard h3 {
+        text-align: center;
+    }
 }
 
 @media (max-width:  550px) {   
     .hdlinet {
         color: var(--secondary-green, #B5CB99);
-        font-size: 30px;
+        font-size: 36px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
     }
     .hdlineb {
         color: var(--secondary-green, #B5CB99);
-        font-size: 15px;
+        font-size: 16px;
         font-style: normal;
         font-weight: 300;
         line-height: normal;
     }
     .headlinelogo img {
-        height: 75px;
-        width: 75px;
+        display: none;
     }
     .maintitle h1 {
         font-size: 36px;
@@ -675,19 +896,66 @@ button {
     .searchpersonalarea {
         gap: 20px;
     }
+
+    .abouttxt {
+        font-size: 16px;
+    }
+
+    .autorsblock {
+        padding-left: 25px;
+    }
+    .projectinfofirst,
+    .projectinfosecond,
+    .projectinfothird,
+    .projectinfofourth {
+        background: none;
+        width: auto;
+        height: auto;
+    }
+    .projectcard {
+        gap: 25px;
+    }
 }
 
 @media (max-width:  400px)  {
-    .headlinelogo img {
-        display: none;
-    }
+    
     .searchpersonalarea {
         padding-left: 0;
     }
     .content h2 {
-
-
-        font-size: 30px;
+        font-size: 36px;
         font-style: italic;
+    }
+    .autorsblock {
+        padding-left: 20px;
+    }
+    .autorsblock h2 {
+        font-size: 36px;
+    }
+    .personcards h3 {
+        font-size: 32px;
+    }
+    .personcards p {
+        font-size: 20px;
+    }
+    .personimg {
+        width: 150px;
+        height: 150px;
+    }
+
+    .projects h1 {
+        font-size: 36px;
+    }
+
+    .projectcard h3 {
+        font-size: 24px;
+    }
+
+    .aboutbutton {
+        color: #FFF;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
     }
 }
