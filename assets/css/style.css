@@ -559,8 +559,9 @@ button {
 
 
 .footer {
-    background: #FCE09B;
+    background: #e2c98b;
     display: flex;
+    justify-content: space-between;
 }
 
 .footerlinelogo {
@@ -575,6 +576,7 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: justify;
 }
 
 .ftlinet {
@@ -583,6 +585,8 @@ button {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+
+    white-space: nowrap;
 }
 .ftlineb {
     color: var(--main-green, #186F65);
@@ -590,6 +594,8 @@ button {
     font-style: normal;
     font-weight: 300;
     line-height: normal;
+
+    white-space: nowrap;
 }
 
 .footermainmenu {
@@ -600,7 +606,7 @@ button {
 
     list-style-type: none;
 
-    
+    white-space: nowrap;
 }
 
 
@@ -611,6 +617,8 @@ button {
     gap: 15px;
 
     list-style-type: none;
+
+    white-space: nowrap;
 }
 
 .mainlist,
@@ -627,12 +635,51 @@ button {
     line-height: normal;
     text-transform: uppercase;
     padding-top: 50px;
-    padding-right: 150px;
     padding-bottom: 50px;
+
+    padding-right: 50px;
+    
+}
+
+.mainlist {
+    padding-right: 50px;
+}
+
+.copyright {
+    display: inline-flex;
+    align-items: flex-start;
+
+    padding-top: 23px;
+}
+
+.copyright span{
+    color: #000;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.copyright img {
+    width: 20px;
+    height: 20px;
 }
 
 
+.pageup { 
+    position: relative;
+    width: 103px;
+    height: 103px;
+    flex-shrink: 0;
+    left: 90px;
 
+}
+
+.pageupcontainer {
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+    padding-right: 140px;
+}
 
 
 
