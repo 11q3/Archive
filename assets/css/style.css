@@ -562,6 +562,7 @@ button {
     background: #e2c98b;
     display: flex;
     justify-content: space-between;
+    white-space: nowrap;
 }
 
 .footerlinelogo {
@@ -578,6 +579,14 @@ button {
     align-items: center;
     text-align: justify;
 }
+
+.footerfunc {
+    display: inline-flex;
+    justify-content: space-between;
+    gap: 35px;
+    padding-left: 50px;
+}
+
 
 .ftlinet {
     color: var(--main-green, #186F65);
@@ -619,6 +628,7 @@ button {
     list-style-type: none;
 
     white-space: nowrap;
+
 }
 
 .mainlist,
@@ -650,6 +660,8 @@ button {
     align-items: flex-start;
 
     padding-top: 23px;
+
+    opacity: 0.75;
 }
 
 .copyright span{
@@ -665,20 +677,77 @@ button {
 }
 
 
-.pageup { 
-    position: relative;
-    width: 103px;
-    height: 103px;
-    flex-shrink: 0;
-    left: 90px;
-
-}
-
-.pageupcontainer {
+.pageupcontainer { 
     display: flex;
     flex-direction: column;
+    align-items: center;
+    align-self: center;
+    padding-right: 100px;
+}
+
+.footermainmenu {
+    padding-right: 180px;
+}
+.footersecondarymenu {
+    padding-right: 75px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.sponsorspage {
+    background: var(--main-red, #B2533E);
+}
+
+.sponsorblocks {
+    display: flex;
+    justify-content: space-between;
+}
+
+.firstsponsorblock {
+    display: inline-flex;
+    flex-direction: column;
+
+    flex-shrink: 0;
+
+    align-items: flex-start;
+    
+    gap: 25px;
+
+    padding-left: 100px;
     padding-top: 100px;
-    padding-right: 140px;
+    padding-bottom: 100px;
+
+}
+
+.secondsponsorblock {
+    align-items: flex-end;
+    display: inline-flex;
+    flex-direction: column;
+
+    flex-shrink: 0;
+    
+    gap: 25px;
+
+    padding-right: 100px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+
+.sponsorspage img {
+    border-radius: 30px;
+
+    width: 362px;
+    height: 248px;
 }
 
 
@@ -697,21 +766,17 @@ button {
 
 
 
+@media (max-width:1800px) {
+    .footermainmenu {
+        padding-right: 50px;
+    }
+    .footersecondarymenu {
+        padding-right: 25px;
+    }
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-@media (max-width:1600px){
+@media (max-width:1600px) {
     .vectorimgcontainer {
         display: none;
     }
@@ -761,6 +826,20 @@ button {
         line-height: normal;
     }
 
+    .footer {
+        flex-direction: column;
+    }
+    .footerlinelogo {
+        align-self: center;
+        padding-top: 50px;
+        padding-bottom: 10px;
+        padding-right: 100px;
+    }
+    .footerfunc {
+        padding: 0px;
+        justify-content: space-around;
+    }
+
 }
 
 
@@ -807,6 +886,15 @@ button {
     .personcardsl {
         padding-bottom: 50px;
     }
+
+    .footerfunc {
+        padding-left: 120px;
+        padding-right: 0px;
+    }
+    .footersecondarymenu {
+        padding-left: 50px;
+    }
+    
 }
 
 @media (max-width: 1100px) {
@@ -815,6 +903,21 @@ button {
     .projectinfothird,
     .projectinfofourth {
         width: 720px;
+    }
+    
+    .footerfunc {
+        flex-direction: column;
+        padding-left: 10px;
+        align-self: center;
+    }
+    
+    .pageupcontainer {
+        padding: 0px;
+    }
+
+    .footer {
+    padding-bottom: 50px;
+
     }
 }
 
@@ -895,6 +998,34 @@ button {
     .projectinfofourth {
         width: 600px;
     }
+
+    .footermenus {
+        display: flex;
+        flex-direction: column;
+    }
+    .footerfunc {
+        padding-left: 0px;
+    }
+    .footermainmenu,
+    .footersecondarymenu {
+        padding: 0px;
+    }
+
+    .footermainmenu {
+        padding-left: 45px;
+    }
+
+    .mainlist, .seclist {
+        align-items: center;
+        padding-right: 0px;
+        padding-bottom: 0px;
+    }
+
+    .footerlinelogo {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
 }
 
 @media (max-width:  680px) {
@@ -961,6 +1092,10 @@ button {
     }
     .projectcard {
         gap: 25px;
+    }
+
+    .footerlinelogo img {
+        display: none;
     }
 }
 
