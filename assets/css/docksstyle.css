@@ -1,0 +1,468 @@
+body {
+    color: #FCE09B;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    font: 400 36px/normal 'Open Sans', 'sans-serif' ;
+    max-width: 1920px;
+    min-width: 360px;
+    gap: 0px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+}
+
+h1 {
+    font-size:72px;
+}
+
+h2 {
+    font-size:40px;
+}
+
+h3 {    
+    font-size: 20px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+button {
+    display: block;
+    border: none;
+    color: inherit;
+    font: inherit;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.dockspage {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+    background: var(--main-green, #186F65);
+    max-width: 1920px;
+}
+
+.headerlogoheadline {
+    display: flex;
+    padding-top: 25px;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+.headlinelogo {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+.headline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.hdlinet {
+    color: var(--secondary-green, #B5CB99);
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.hdlineb {
+    color: var(--secondary-green, #B5CB99);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.mainmenu {
+    background: var(--main-red, #B2533E);
+
+    height: 61px;
+
+    display: flex;
+    padding: 0px 61px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+
+}
+.navbarli {
+    display: flex;
+    align-items: flex-start;
+    
+}
+.navbarlit {
+    display: flex;
+    align-items: flex-start;
+    gap: 50px;
+}
+.navbarlib {
+    display: flex;
+    align-items: flex-start;
+    gap: 50px;
+
+    padding-left: 50px;
+}
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 0;
+}
+
+.navbar__item {
+    color: var(--secondary-biege, #FCE09B);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+
+    list-style-type: none;
+}
+
+.navbar__link {
+    text-decoration: none;
+}
+
+.searchpersonalarea {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    align-self: stretch;
+
+    padding-left: 150px;
+
+    max-height: 35px;
+
+}
+
+.input {
+    display: flex;
+    padding: 15px 20px;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+
+    border-radius: 20px;
+    background: #FFF;
+}
+
+.enter__link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+
+    color: var(--secondary-biege, #FCE09B);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+
+
+
+
+
+.main {
+    background: url(images/bg.png);
+    background-color: #186F65;
+    background-size: cover;
+    background-blend-mode: multiply;
+ 
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.maintitle {
+    padding-left: 100px;
+    padding-top: 100px;
+}
+
+.maincontent {
+    margin: auto;
+    padding-top: 75px;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-bottom: 50px;
+}
+
+.maincontent h2 {
+    position: relative;
+    text-align: end;
+    margin-right: 70px;
+    top: 25px;
+
+    color: #FFF;
+
+    font-family: sans-serif;
+    font-size: 64px;
+    font-style: italic;
+    font-weight: 400;
+    
+
+    line-height: normal;
+    letter-spacing: 16.96px;
+}
+
+.docs {
+    display: flex;
+    flex-direction: column;
+    max-width: 1530px;
+
+
+    flex-shrink: 0;
+
+    border-radius: 20px;
+    background: var(--secondary-biege, #e2c98b);
+
+}
+
+.docsfiles {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 50px;
+
+    padding-top: 50px;
+    padding-left: 45px;
+    padding-right: 45px;
+}
+
+.docsfilesl,
+.docsfilesr {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 43px;
+}
+
+.doc {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.doc a {
+    color: var(--main-green, #186F65);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-decoration-line: underline;  
+}
+
+.doc svg {
+    min-width: 50px;
+    min-height: 50px;
+}
+
+
+.pagesblock {
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: end;
+    gap: 10px;
+    padding-right: 65px;
+}
+
+.pagearea {
+    position: relative;
+    top: 15px;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.pagearea svg {
+    width: 36px;
+    height: 36px;
+}
+
+.svgcontainer {
+    position: relative;
+    display: inline-block;
+}
+
+.svg-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    color: #FFF;
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+@media (max-width:1400px) {
+    .navbar__item {
+        font-size: 16px;
+    }
+    .input {
+        padding: 6px 20px;
+    }
+    .enter__link {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1250px) {
+    .mainmenu {
+        height: 122px;
+    }
+
+    .searchpersonalarea {
+        padding-left: 50px;
+        align-self: center;
+    }
+
+    .navbar__item {
+        font-size: 20px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .input {
+        padding: 6px 20px;
+    }
+    .enter__link {
+        font-size: 20px;
+    }
+    .navbarli {
+        display: block;
+    }
+}
+
+@media (max-width: 880px) {
+    .mainmenu {
+        height: auto;
+        padding-top: 10px;
+    }
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+    }
+    .navbarlit {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .navbarlib {
+        padding-left: 0px;
+        padding-top: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .searchpersonalarea {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    .navbar__item {
+        font-size: 20px;
+        text-align: center;
+        width: 100%;
+    }
+    .navbar__link {
+        display: block;
+    }
+    .input {
+        padding: 15px 20px;
+    }
+    .enter__link {
+        font-size: 20px;
+        max-width: 100%;
+    }
+
+    .docsfiles {
+        flex-direction: column;
+    }   
+}
+
+@media (max-width: 675px) {
+    .maincontent {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+
+@media (max-width:  550px) {   
+    .hdlinet {
+        color: var(--secondary-green, #B5CB99);
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    .hdlineb {
+        color: var(--secondary-green, #B5CB99);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+    }
+    .headlinelogo img {
+        display: none;
+    }
+
+    .searchpersonalarea {
+        gap: 20px;
+    }
+
+    .abouttxt {
+        font-size: 16px;
+    }
+
+    .autorsblock {
+        padding-left: 25px;
+    }
+
+    .maincontent {
+        padding-left: 15px;
+        padding-right: 15px;
+    }   
+
+    .maincontent h2 {
+        margin-right: 15px;
+    }
+    .docsfiles {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}

@@ -92,12 +92,11 @@ button {
     line-height: normal;
 }
 
-
-
 .mainmenu {
     background: var(--main-red, #B2533E);
 
     height: 61px;
+    
 
     display: flex;
     padding: 0px 61px;
@@ -106,10 +105,13 @@ button {
     gap: 10px;
     align-self: stretch;
 
+    
+
 }
 .navbarli {
     display: flex;
     align-items: flex-start;
+    
 }
 .navbarlit {
     display: flex;
@@ -404,7 +406,7 @@ button {
     line-height: normal;
     color: var(--secondary-biege, #FCE09B);
 
-    padding: 68px 114px 114px 114px;
+    margin: 68px 114px 114px 114px;
 }
 
 .personcards h3 {
@@ -703,66 +705,6 @@ button {
 
 
 
-.sponsorspage {
-    background: var(--main-red, #B2533E);
-}
-
-.sponsorblocks {
-    display: flex;
-    justify-content: space-between;
-}
-
-.firstsponsorblock {
-    display: inline-flex;
-    flex-direction: column;
-
-    flex-shrink: 0;
-
-    align-items: flex-start;
-    
-    gap: 25px;
-
-    padding-left: 100px;
-    padding-top: 100px;
-    padding-bottom: 100px;
-
-}
-
-.secondsponsorblock {
-    align-items: flex-end;
-    display: inline-flex;
-    flex-direction: column;
-
-    flex-shrink: 0;
-    
-    gap: 25px;
-
-    padding-right: 100px;
-    padding-top: 100px;
-    padding-bottom: 100px;
-}
-
-
-.sponsorspage img {
-    border-radius: 30px;
-
-    width: 362px;
-    height: 248px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -950,11 +892,10 @@ button {
     .navbar__item {
         font-size: 20px;
         text-align: center;
-        width: 100vh;
+        width: 100%;
     }
     .navbar__link {
         display: block;
-        width: 100vh;
     }
     .input {
         padding: 15px 20px;
