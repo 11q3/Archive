@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     color: #FCE09B;
     margin-top: 0;
@@ -232,11 +236,13 @@ button {
 
 .morebutton {
     display: flex;
-
-    padding: 10px 55px;
+    padding: 10px 50px;
     justify-content: center;
     align-items: center;
     gap: 10px;
+
+    max-width: 250px;
+    
     margin-top: 75px;
 
     color: #FFF;
@@ -996,8 +1002,9 @@ button {
         font-weight: 300;
         line-height: normal;
     }
-    .headlinelogo img {
-        display: none;
+    .headlinelogo {
+        flex-direction: column;
+        gap: 10px;
     }
     .maintitle h1 {
         font-size: 36px;
