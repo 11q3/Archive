@@ -566,6 +566,104 @@ button {
 
 
 
+.partnerspage {
+    background: var(--main-green, #186F65);
+    display: flex;
+    justify-content: center;
+}
+
+.headline {
+    flex-shrink: 0;
+}
+
+.headlinet {
+    position: relative;
+    right: 125px;
+
+    color: var(--secondary-biege, #FCE09B);
+    font-size: 166px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%; /* 166px */
+
+    z-index: 998;
+}
+
+.headlineb {
+    position: relative;
+    bottom: 55px;
+    left: 125px;
+
+    color: #FFF;
+
+    /* shadow 1 */
+    text-shadow: 4px 3px 12px rgba(21, 81, 74, 0.15), 
+                17px 13px 21px rgba(21, 81, 74, 0.13), 
+                39px 28px 29px rgba(21, 81, 74, 0.08), 
+                70px 50px 34px rgba(21, 81, 74, 0.02), 
+                109px 78px 37px rgba(21, 81, 74, 0.00);
+    font-size: 100px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 100%; /* 150px */
+
+    z-index: 999;
+}
+
+
+.partnerblockl,
+.partnerblockr {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 25px;
+
+}
+
+.trashblock {
+    position: relative;
+    bottom: 75px;
+    max-height: 850px;
+}
+
+.trashblockarrowtop {
+    position: relative;
+    top: 160px;
+}
+
+.trashblockarrowbottom {
+    position: relative;
+    bottom: 100px;
+}
+
+.partnerfirst,
+.partnersecond,
+.partnerthird,
+.partnerfourth,
+.partnerfifth,
+.partnersixth {
+    width: 361px;
+    height: 244px;
+
+    border-radius: 30px;
+    background: #FFF;
+
+    background-repeat: no-repeat;
+    background-position: center
+}
+
+
+.partnerfirst { background-image: url();}
+.partnersecond { background-image: url();}
+.partnerthid { background-image: url();}
+.partnerfourth { background-image: url();}
+.partnerfifth { background-image: url();}
+.partnersixth { background-image: url();}
+
+
+
+
 .footer {
     background: #e2c98b;
     display: flex;
@@ -774,15 +872,46 @@ button {
         line-height: normal;
     }
 
+    .trashblockarrowtop,
+    .trashblockarrowbottom {
+        display: none;
+    }
+
+    .partnerspage {
+        flex-direction: column;
+    }
+
+    .headlinet {
+        right: 0px;
+    }
+    
+    .headlineb {
+        bottom: 0px;
+        left: 0px;
+    }
+
+    .partnerblockl,
+    .partnerblockr {
+        flex-direction: row;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    .trashblock {
+        bottom: 0px;
+    }
+
     .footer {
         flex-direction: column;
     }
+
     .footerlinelogo {
         align-self: center;
         padding-top: 50px;
         padding-bottom: 10px;
         padding-right: 100px;
     }
+
     .footerfunc {
         padding: 0px;
         justify-content: space-around;
@@ -833,6 +962,11 @@ button {
     }
     .personcardsl {
         padding-bottom: 50px;
+    }
+
+    .partnerblockl,.partnerblockr {
+        flex-direction: column;
+        align-self: center;
     }
 
     .footerfunc {
@@ -1040,6 +1174,21 @@ button {
     }
     .projectcard {
         gap: 25px;
+    }
+
+    .headlinet,.headlineb {
+        font-size: 64px;
+        color: #FFF;
+    }
+
+    .partnerfirst,
+    .partnersecond,
+    .partnerthird,
+    .partnerfourth,
+    .partnerfifth,
+    .partnersixth {
+        width: 300px;
+        height: 200px;
     }
 
     .footerlinelogo img {
