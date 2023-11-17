@@ -1,0 +1,129 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: #FCE09B;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    font: 400 36px/normal 'Open Sans', 'sans-serif' ;
+    max-width: 622px;
+    min-width: 360px;
+    gap: 0px;
+}
+
+.registrationwindow {
+    display: flex;
+    padding: 45px 68px;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+
+    border-radius: 15px;
+    background: var(--main-red, #B2533E);
+}
+
+.headline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.headlinetitle {
+    color: var(--secondary-biege, #FCE09B);
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.headlinesubtitle {
+    color: #FFF;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.interactarea {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 27px;
+    flex: 1 0 0;
+    align-self: stretch;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    align-self: stretch;
+}
+
+.nameinput,
+.mailinput,
+.passwordinput,
+.acceptpasswordinput {
+    display: flex;
+    height: 50px;
+    padding: 15px 20px;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    align-self: stretch;
+
+    border-radius: 20px;
+    background: #FFF;
+
+    color: #A8A8A8;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+}
+
+
+
+.checkbox span {
+    color: #FFF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.button {
+    display: flex;
+    padding: 11px 84px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    border-radius: 250px;
+    background: var(--secondary-green, #B5CB99);
+}
+
+.button span {
+    color: #FFF;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
