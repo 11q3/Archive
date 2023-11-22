@@ -4,17 +4,15 @@ html {
 
 body {
     color: #FCE09B;
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     padding: 0;
     font: 400 36px/normal 'Open Sans', 'sans-serif' ;
     max-width: 622px;
-    gap: 0px;
+    min-width: 360px;
+    gap: 0;
 }
 
-.loginwindow {
+.registrationwindow {
     display: flex;
     padding: 45px 68px;
     flex-direction: column;
@@ -51,20 +49,11 @@ body {
 
 .interactarea {
     display: flex;
-flex-direction: column;
-align-items: center;
-gap: 27px;
-align-self: stretch;
-}
-
-.interactarea a {
-    color: var(--secondary-biege, #FCE09B);
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-decoration-line: underline;
-    align-self: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 27px;
+    flex: 1 0 0;
+    align-self: stretch;
 }
 
 .inputs {
@@ -75,11 +64,11 @@ align-self: stretch;
     align-self: stretch;
 }
 
+.nameinput,
 .mailinput,
-.passwordinput
-{
+.passwordinput,
+.acceptpasswordinput {
     display: flex;
-    height: 50px;
     padding: 15px 20px;
     align-items: center;
     gap: 10px;

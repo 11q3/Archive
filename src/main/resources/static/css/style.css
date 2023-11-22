@@ -4,15 +4,12 @@ html {
 
 body {
     color: #FCE09B;
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     padding: 0;
     font: 400 36px/normal 'Open Sans', 'sans-serif' ;
     max-width: 1920px;
     min-width: 360px;
-    gap: 0px;
+    gap: 0;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -103,7 +100,7 @@ button {
     
 
     display: flex;
-    padding: 0px 61px;
+    padding: 0 61px;
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -197,8 +194,7 @@ button {
 
 
 .main {
-    background: url(images/bg.png);
-    background-color: #186F65;
+    background: #186F65 url(/static/images/bg.png);
     background-size: cover;
     background-blend-mode: multiply;
  
@@ -300,16 +296,13 @@ button {
     width: 1010px;
     height: 483px;
     border-radius: 30px;
-    background: url(images/about.png);
-    background-repeat: no-repeat;
+    background: url(/static/images/about.png) no-repeat;
 
     box-shadow: -12px -3px 27px 0px rgba(255, 149, 122, 0.10),
     -48px -12px 49px 0px rgba(255, 149, 122, 0.09),
     -108px -26px 67px 0px rgba(255, 149, 122, 0.05),
     -192px -46px 79px 0px rgba(255, 149, 122, 0.01),
     -299px -72px 86px 0px rgba(255, 149, 122, 0.00);
-
-    
 }
 
 .content h2 {
@@ -322,7 +315,7 @@ button {
     font-style: italic;
     font-weight: 400;
     line-height: normal;
-    letter-spacing: 16.96px;
+    letter-spacing: 17px;
 }
 
 .abouttxt {
@@ -345,7 +338,7 @@ button {
 
 .autorsandprojectspage {
     background-color: #186F65;
-    background-image: url(images/bg2.png);
+    background-image: url(/static/images/bg2.png);
 
     mix-blend-mode: multiply;
     background-blend-mode: multiply;
@@ -360,7 +353,7 @@ button {
     font-style: italic;
     font-weight: 400;
     line-height: normal;
-    letter-spacing: 16.96px;
+    letter-spacing: 17px;
 }
 
 .autorsblock {
@@ -395,7 +388,7 @@ button {
     flex: 1 0 0;
     align-self: stretch;
 
-    border-radius: 30px 0px 0px 30px;
+    border-radius: 30px 0 0 30px;
     background: linear-gradient(270deg, rgba(181, 203, 153, 0.17) 0%,
     #B5CB99 100.49%);
   
@@ -425,7 +418,7 @@ button {
 }
 
 .personcards p {
-    margin: 0px;
+    margin: 0;
 }
 
 .personcardsl {
@@ -457,11 +450,11 @@ button {
 
     border-radius: 200px;
 
-    box-shadow: 4px 3px 12px 0px rgba(21, 81, 74, 0.15), 
-    17px 13px 21px 0px rgba(21, 81, 74, 0.13), 
-    39px 28px 29px 0px rgba(21, 81, 74, 0.08), 
-    70px 50px 34px 0px rgba(21, 81, 74, 0.02), 
-    109px 78px 37px 0px rgba(21, 81, 74, 0.00);
+    box-shadow: 4px 3px 12px 0 rgba(21, 81, 74, 0.15),
+    17px 13px 21px 0 rgba(21, 81, 74, 0.13),
+    39px 28px 29px 0 rgba(21, 81, 74, 0.08),
+    70px 50px 34px 0 rgba(21, 81, 74, 0.02),
+    109px 78px 37px 0 rgba(21, 81, 74, 0.00);
 }
 
 .personinfo {
@@ -536,10 +529,10 @@ button {
     align-items: center;
 }
 
-.projectinfofirst { background: url(images/project1.png ); }
-.projectinfosecond { background: url(images/project2.png ); }
-.projectinfothird { background: url(images/project3.png ); }
-.projectinfofourth { background: url(images/project4.png ); }
+.projectinfofirst { background: url(/static/images/project1.png ); }
+.projectinfosecond { background: url(/static/images/project2.png ); }
+.projectinfothird { background: url(/static/images/project3.png ); }
+.projectinfofourth { background: url(/static/images/project4.png ); }
 
 .aboutbutton {
     display: flex;
@@ -647,19 +640,16 @@ button {
     height: 244px;
 
     border-radius: 30px;
-    background: #FFF;
-
-    background-repeat: no-repeat;
-    background-position: center
+    background: #FFF no-repeat center;
 }
 
 
-.partnerfirst { background-image: url();}
-.partnersecond { background-image: url();}
-.partnerthid { background-image: url();}
-.partnerfourth { background-image: url();}
-.partnerfifth { background-image: url();}
-.partnersixth { background-image: url();}
+.partnerfirst { background-image: url(#);}
+.partnersecond { background-image: url(#);}
+.partnerthid { background-image: url(#);}
+.partnerfourth { background-image: url(#);}
+.partnerfifth { background-image: url(#);}
+.partnersixth { background-image: url(#);}
 
 
 
@@ -848,7 +838,7 @@ button {
 
         width: auto;
         height: auto;
-        border-radius: 0px;
+        border-radius: 0;
 
         box-shadow: none;
 
@@ -882,12 +872,12 @@ button {
     }
 
     .headlinet {
-        right: 0px;
+        right: 0;
     }
     
     .headlineb {
-        bottom: 0px;
-        left: 0px;
+        bottom: 0;
+        left: 0;
     }
 
     .partnerblockl,
@@ -898,7 +888,7 @@ button {
     }
 
     .trashblock {
-        bottom: 0px;
+        bottom: 0;
     }
 
     .footer {
@@ -913,7 +903,7 @@ button {
     }
 
     .footerfunc {
-        padding: 0px;
+        padding: 0;
         justify-content: space-around;
     }
 
@@ -964,14 +954,15 @@ button {
         padding-bottom: 50px;
     }
 
-    .partnerblockl,.partnerblockr {
+    .partnerblockl,
+    .partnerblockr {
         flex-direction: column;
         align-self: center;
     }
 
     .footerfunc {
         padding-left: 120px;
-        padding-right: 0px;
+        padding-right: 0;
     }
     .footersecondarymenu {
         padding-left: 50px;
@@ -994,7 +985,7 @@ button {
     }
     
     .pageupcontainer {
-        padding: 0px;
+        padding: 0;
     }
 
     .footer {
@@ -1018,7 +1009,7 @@ button {
         gap: 10px;
     }
     .navbarlib {
-        padding-left: 0px;
+        padding-left: 0;
         padding-top: 10px;
         display: flex;
         flex-direction: column;
@@ -1050,19 +1041,16 @@ button {
     }
     .content h2 {
         position: relative;
-        top: 0px;
+        top: 0;
 
         font-size: 40px;
         font-style: italic;
         font-weight: 400;
 
-        letter-spacing: 12.96px;
+        letter-spacing: 13px;
     }
     .aboutpage {
-        padding-top: 75px;
-        padding-bottom: 75px;
-        padding-left: 35px;
-        padding-right: 35px;
+        padding: 75px 35px;
     }
     
     
@@ -1085,11 +1073,11 @@ button {
         flex-direction: column;
     }
     .footerfunc {
-        padding-left: 0px;
+        padding-left: 0;
     }
     .footermainmenu,
     .footersecondarymenu {
-        padding: 0px;
+        padding: 0;
     }
 
     .footermainmenu {
@@ -1098,13 +1086,13 @@ button {
 
     .mainlist, .seclist {
         align-items: center;
-        padding-right: 0px;
-        padding-bottom: 0px;
+        padding-right: 0;
+        padding-bottom: 0;
     }
 
     .footerlinelogo {
-        padding-left: 0px;
-        padding-right: 0px;
+        padding-left: 0;
+        padding-right: 0;
     }
 
 }

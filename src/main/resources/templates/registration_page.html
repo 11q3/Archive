@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archive</title>
+    <link rel="stylesheet" href="../static/css/registrationstyle.css">
+</head>
+<body>
+    <form action="/register">
+        <div class="registrationwindow">
+            <div class="headline">
+                <div class="headlinetitle">Регистрация</div>
+                <div class="headlinesubtitle">Введите ваши данные</div>
+            </div>
+            <div class="interactarea">
+                <div class="inputs">
+                    <input class="nameinput" type="text" placeholder="ваше имя" required>
+                    <input class="mailinput" type="email" placeholder="почта" required>
+                    <input class="passwordinput" type="password" placeholder="пароль" required>
+                    <input class="acceptpasswordinput" type="password" placeholder="подтвердите пароль" required>
+                    <a href="/login">У меня уже есть аккаунт</a>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" id="check1">
+                    <span>Запомнить меня</span>
+                </div>
+            </div>
+            <div class="button">
+                <span>Войти</span>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
