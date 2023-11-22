@@ -4,10 +4,7 @@ html {
 
 body {
     color: #FCE09B;
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     padding: 0;
     font: 400 36px/normal 'Open Sans', 'sans-serif' ;
     max-width: 1920px;
@@ -61,7 +58,7 @@ button {
 
 
 
-.dockspage {
+.accountpage {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 0;
@@ -109,7 +106,7 @@ button {
     height: 61px;
 
     display: flex;
-    padding: 0px 61px;
+    padding: 0 61px;
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -197,11 +194,11 @@ button {
 
 
 .main {
-    background: url(images/bg.png);
-    background-color: #186F65;
-    background-size: cover;
     background-blend-mode: multiply;
- 
+    background-size: 100% 100%;
+    background: #186F65 url(/static/images/bg.png) no-repeat;
+
+
     flex-shrink: 0;
     display: flex;
     justify-content: space-between;
@@ -213,125 +210,153 @@ button {
 }
 
 .maincontent {
-    margin: auto;
     padding-top: 75px;
     padding-left: 100px;
     padding-right: 100px;
-    margin-bottom: 50px;
+    margin: auto auto 50px;
 }
 
 .maincontent h2 {
-    position: relative;
-    text-align: end;
-    margin-right: 70px;
-    top: 25px;
-
     color: #FFF;
-
-    font-family: sans-serif;
     font-size: 64px;
     font-style: italic;
     font-weight: 400;
-    
-
     line-height: normal;
-    letter-spacing: 16.96px;
+    letter-spacing: 17px;
+
+    padding-bottom: 75px;
+
+    text-align: center;
 }
 
-.docs {
-    display: flex;
-    flex-direction: column;
-    max-width: 1530px;
 
-
+.accountcard {
     flex-shrink: 0;
-
+    
     border-radius: 20px;
-    background: var(--secondary-biege, #e2c98b);
-
+    background: var(--secondary-green, #B5CB99);
+    width: 1245px;
 }
 
-.docsfiles {
+.profilehead {
+    position: relative;
+    right: 30px;
+    bottom: 38px;
+
     display: inline-flex;
-    align-items: flex-start;
-    gap: 50px;
+    align-items: center;
+    gap: 35px;
 
-    padding-top: 50px;
-    padding-left: 45px;
-    padding-right: 45px;
 }
 
-.docsfilesl,
-.docsfilesr {
+.profileheadimg {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 43px;
+    flex-shrink: 0;
+    border-radius: 251px;
+    background: url(/static/images/about.png) no-repeat;
+    width: 250px;
+    height: 250px;
+}
+.profilehead h1 {
+    color: var(--main-red, #B2533E);
+
+    /* h1 */
+    font-size: 72px;
+    font-style: italic;
+    font-weight: 900;
+    line-height: normal;
 }
 
-.doc {
+.cardingo {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 38px;
+
+    margin-left: 25%;
+    margin-bottom: 55px;
+}
+
+.cardingonames {
+    display: flex;
+    align-items: flex-start;
+    gap: 149px;
+}
+
+.firstname,
+.lastname,
+.mail,
+.phone,
+.employee,
+.commits {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.doc a {
-    color: var(--main-green, #186F65);
-    font-size: 24px;
+
+.name {
+    color: #000;
+
+    /* paragraph */
+    font-size: 30px;
     font-style: normal;
-    font-weight: 300;
+    font-weight: 275;
     line-height: normal;
-    text-decoration-line: underline;  
+
+    margin: 0;
 }
 
-.doc svg {
-    min-width: 50px;
-    min-height: 50px;
+.corname {
+    color: var(--main-red, #B2533E);
+
+    /* paragraph */
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 275;
+    line-height: normal;
+
+    margin: 0;
+
 }
 
-
-.pagesblock {
-    display: inline-flex;
-    align-items: flex-start;
-    justify-content: end;
-    gap: 10px;
-    padding-right: 65px;
-}
-
-.pagearea {
-    position: relative;
-    top: 15px;
-
+.cardingosecondaryinfo {
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 50px;
 }
 
-.pagearea svg {
-    width: 36px;
-    height: 36px;
-}
-
-.svgcontainer {
-    position: relative;
-    display: inline-block;
-}
-
-.svg-text {
+.edit {
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0; 
-    display: flex;
-    justify-content: center;
-    color: #FFF;
-    text-align: center;
-    font-size: 24px;
+    padding-left: 85%;
+}
+
+.edit span {
+    color: var(--main-green, #186F65);
+    font-family: Inter, sans-serif;
+    font-size: 14px;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 400;
     line-height: normal;
 }
+
+.accountcardcontent {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+
+
 
 @media (max-width:1400px) {
     .navbar__item {
@@ -342,6 +367,10 @@ button {
     }
     .enter__link {
         font-size: 16px;
+    }
+
+    .accountcard {
+        width: auto;
     }
 }
 
@@ -369,6 +398,24 @@ button {
     .navbarli {
         display: block;
     }
+
+    .cardingonames {
+        flex-direction: column;
+        gap: 35px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .profilehead {
+        position: static;
+        flex-direction: column;
+    }
+    .profilehead {
+        margin: auto;
+    }
+    .edit {
+        padding-left: 80%;
+    }
 }
 
 @media (max-width: 880px) {
@@ -387,7 +434,7 @@ button {
         gap: 10px;
     }
     .navbarlib {
-        padding-left: 0px;
+        padding-left: 0;
         padding-top: 10px;
         display: flex;
         flex-direction: column;
@@ -417,12 +464,21 @@ button {
     .docsfiles {
         flex-direction: column;
     }   
-}
 
-@media (max-width: 675px) {
-    .maincontent {
-        padding-left: 50px;
-        padding-right: 50px;
+    .edit {
+        padding-left:75%;
+        padding-right: 10px;
+    }
+
+    .profilehead {
+        padding-top: 25px;
+    }
+
+    .profilehead h1 {
+        text-align: center;
+    }
+    .cardingo {
+        margin-left: 50px;
     }
 }
 
@@ -458,16 +514,7 @@ button {
         padding-left: 25px;
     }
 
-    .maincontent {
-        padding-left: 15px;
-        padding-right: 15px;
-    }   
-
     .maincontent h2 {
         margin-right: 15px;
-    }
-    .docsfiles {
-        padding-left: 30px;
-        padding-right: 30px;
     }
 }
