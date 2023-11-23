@@ -24,7 +24,7 @@ h2 {
     font-size:40px;
 }
 
-h3 {    
+h3 {
     font-size: 20px;
 }
 
@@ -116,7 +116,7 @@ button {
 .navbarli {
     display: flex;
     align-items: flex-start;
-    
+
 }
 .navbarlit {
     display: flex;
@@ -232,7 +232,7 @@ button {
 
 .accountcard {
     flex-shrink: 0;
-    
+
     border-radius: 20px;
     background: var(--secondary-green, #B5CB99);
     width: 1245px;
@@ -463,7 +463,7 @@ button {
 
     .docsfiles {
         flex-direction: column;
-    }   
+    }
 
     .edit {
         padding-left:75%;
@@ -482,7 +482,7 @@ button {
     }
 }
 
-@media (max-width:  550px) {   
+@media (max-width:  550px) {
     .hdlinet {
         color: var(--secondary-green, #B5CB99);
         font-size: 36px;

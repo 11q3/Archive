@@ -24,7 +24,7 @@ h2 {
     font-size:40px;
 }
 
-h3 {    
+h3 {
     font-size: 20px;
 }
 
@@ -116,7 +116,7 @@ button {
 .navbarli {
     display: flex;
     align-items: flex-start;
-    
+
 }
 .navbarlit {
     display: flex;
@@ -197,7 +197,7 @@ button {
     background: #186F65 url(/static/images/bg.png);
     background-size: cover;
     background-blend-mode: multiply;
- 
+
     flex-shrink: 0;
     display: flex;
     justify-content: space-between;
@@ -227,7 +227,7 @@ button {
     font-size: 64px;
     font-style: italic;
     font-weight: 400;
-    
+
 
     line-height: normal;
     letter-spacing: 17px;
@@ -276,7 +276,7 @@ button {
     font-style: normal;
     font-weight: 300;
     line-height: normal;
-    text-decoration-line: underline;  
+    text-decoration-line: underline;
 }
 
 .doc svg {
@@ -317,7 +317,7 @@ button {
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0; 
+    bottom: 0;
     display: flex;
     justify-content: center;
     color: #FFF;
@@ -411,7 +411,7 @@ button {
 
     .docsfiles {
         flex-direction: column;
-    }   
+    }
 }
 
 @media (max-width: 675px) {
@@ -421,7 +421,7 @@ button {
     }
 }
 
-@media (max-width:  550px) {   
+@media (max-width:  550px) {
     .hdlinet {
         color: var(--secondary-green, #B5CB99);
         font-size: 36px;
@@ -456,7 +456,7 @@ button {
     .maincontent {
         padding-left: 15px;
         padding-right: 15px;
-    }   
+    }
 
     .maincontent h2 {
         margin-right: 15px;

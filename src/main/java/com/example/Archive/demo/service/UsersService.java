@@ -2,7 +2,6 @@ package com.example.Archive.demo.service;
 
 import com.example.Archive.demo.model.UsersModel;
 import com.example.Archive.demo.repository.UsersRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -27,6 +26,6 @@ public class UsersService {
     }
 
     public UsersModel authenticate(String login, String password) {
-        return usersRepository.findByLoginAndPassword(login, password).orElse(null);
+        return usersRepository.findByEmailAndPassword(login, password).orElse(null);
     }
 }

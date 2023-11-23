@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,27 +10,27 @@
     <link rel="stylesheet" href="../static/css/loginstyle.css">
 </head>
 <body>
-    <form action="/login">
-        <div class="loginwindow">
-            <div class="headline">
-                <div class="headlinetitle">Вход</div>
-                <div class="headlinesubtitle">Введите ваши данные</div>
+<form action="/login" method="post" th:object="${loginReqeust}">
+    <div class="loginwindow">
+        <div class="headline">
+            <div class="headlinetitle">Вход</div>
+            <div class="headlinesubtitle">Введите ваши данные</div>
+        </div>
+        <div class="interactarea">
+            <div class="inputs">
+                <input name = "login" class="login" type="text" placeholder="login">
+                <input name = "password" class="passwordinput" type="password" placeholder="пароль">
+                <a href="/register">У меня нет аккаунта</a>
             </div>
-            <div class="interactarea">
-                <div class="inputs">
-                    <input class="mailinput" type="email" placeholder="почта">
-                    <input class="passwordinput" type="password" placeholder="пароль">
-                    <a href="/register">У меня нет аккаунта</a>
-                </div>
-                <div class="checkbox">
-                    <input type="checkbox" id="check1">
-                    <span>Запомнить меня</span>
-                </div>
-            </div>
-            <div class="button">
-                <span>Войти</span>
+            <div class="checkbox">
+                <input type="checkbox" id="check1">
+                <span>Запомнить меня</span>
             </div>
         </div>
-    </form>
+        <div class="button">
+            <input type="submit" name="log-in" value="Login">
+        </div>
+    </div>
+</form>
 </body>
 </html>
