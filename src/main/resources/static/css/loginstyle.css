@@ -72,7 +72,7 @@ body {
     align-self: stretch;
 }
 
-.login,
+.email,
 .passwordinput {
     display: flex;
     padding: 15px 20px;

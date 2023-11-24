@@ -177,7 +177,7 @@ button {
     gap: 10px;
     align-self: stretch;
 
-    color: var(--secondary-biege, #FCE09B);
+    color: var( --secondary-biege, #FCE09B);
     font-size: 20px;
     font-style: normal;
     font-weight: 300;
@@ -254,7 +254,7 @@ button {
 
 .vectorimgcontainer {
     position: relative;
-    padding-top: 100px;
+    padding-top: 50px;
     padding-right: 100px;
     padding-left: 50px;
 }
@@ -298,11 +298,11 @@ button {
     border-radius: 30px;
     background: url(/static/images/about.png) no-repeat;
 
-    box-shadow: -12px -3px 27px 0px rgba(255, 149, 122, 0.10),
-    -48px -12px 49px 0px rgba(255, 149, 122, 0.09),
-    -108px -26px 67px 0px rgba(255, 149, 122, 0.05),
-    -192px -46px 79px 0px rgba(255, 149, 122, 0.01),
-    -299px -72px 86px 0px rgba(255, 149, 122, 0.00);
+    box-shadow: -12px -3px 27px 0 rgba(255, 149, 122, 0.10),
+                -48px -12px 49px 0 rgba(255, 149, 122, 0.09),
+                -108px -26px 67px 0 rgba(255, 149, 122, 0.05),
+                -192px -46px 79px 0 rgba(255, 149, 122, 0.01),
+                -299px -72px 86px 0 rgba(255, 149, 122, 0.00);
 }
 
 .content h2 {

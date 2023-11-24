@@ -16,6 +16,10 @@ public class UsersService {
         if (login == null || password == null || email == null) {
             return null;
         } else {
+            if(usersRepository.findFirstByEmail(email).isPresent()) {
+                System.out.println("duplicate email error");
+                return null;
+            }
             UsersModel usersModel = new UsersModel();
             usersModel.setLogin(login);
             usersModel.setPassword(password);
@@ -25,7 +29,7 @@ public class UsersService {
         }
     }
 
-    public UsersModel authenticate(String login, String password) {
-        return usersRepository.findByEmailAndPassword(login, password).orElse(null);
+    public UsersModel authenticate(String email, String password) {
+        return usersRepository.findByEmailAndPassword(email, password).orElse(null);
     }
 }

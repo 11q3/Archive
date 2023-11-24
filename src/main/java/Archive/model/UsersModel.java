@@ -59,7 +59,7 @@ public class UsersModel {
                Objects.equals(login, that.login) &&
                Objects.equals(password, that.password) &&
                Objects.equals(email, that.email);
-    }
+        }
 
     @Override
     public int hashCode() {

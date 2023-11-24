@@ -51,10 +51,10 @@ public class UsersController {
     @PostMapping("/login")
     public String login(@ModelAttribute UsersModel usersModel, Model model) {
         System.out.println("login request:" + usersModel);
-        UsersModel authenticated = usersService.authenticate(usersModel.getLogin(),
+        UsersModel authenticated = usersService.authenticate(usersModel.getEmail(),
                                                              usersModel.getPassword());
         if(authenticated != null) {
-            model.addAttribute("userLogin", authenticated.getLogin());
+            model.addAttribute("userEmail", authenticated.getEmail());
             return "account_page";
         }
         else return "error_page";
