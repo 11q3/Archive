@@ -1,7 +1,7 @@
-package com.example.Archive.demo.service;
+package Archive.service;
 
-import com.example.Archive.demo.model.UsersModel;
-import com.example.Archive.demo.repository.UsersRepository;
+import Archive.model.UsersModel;
+import Archive.repository.UsersRepository;
 import org.springframework.stereotype.Service;
 
 @Service

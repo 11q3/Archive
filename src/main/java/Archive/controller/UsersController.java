@@ -1,8 +1,7 @@
-package com.example.Archive.demo.controller;
+package Archive.controller;
 
-import com.example.Archive.demo.model.UsersModel;
-import com.example.Archive.demo.service.UsersService;
-import org.springframework.beans.factory.annotation.Autowired;
+import Archive.model.UsersModel;
+import Archive.service.UsersService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
