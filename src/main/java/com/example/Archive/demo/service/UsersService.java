@@ -13,7 +13,7 @@ public class UsersService {
     }
 
     public UsersModel registerUser(String login, String password, String email) {
-        if (login == null || password == null) {
+        if (login == null || password == null || email == null) {
             return null;
         } else {
             UsersModel usersModel = new UsersModel();

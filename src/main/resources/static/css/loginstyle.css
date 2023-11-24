@@ -73,8 +73,7 @@ body {
 }
 
 .login,
-.passwordinput
-{
+.passwordinput {
     display: flex;
     padding: 15px 20px;
     align-items: center;
@@ -111,22 +110,37 @@ body {
     line-height: normal;
 }
 
-.button {
+.button-wrapper {
     display: flex;
-    padding: 11px 84px;
     justify-content: center;
     align-items: center;
     gap: 10px;
-
-    border-radius: 250px;
-    background: var(--secondary-green, #B5CB99);
+    padding: 11px 84px;
+    cursor: pointer;
 }
 
-.button span {
+.button-wrapper span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+
+    padding-left: 75px;
+    padding-right: 75px;
+}
+
+.button-wrapper button {
+    background: var(--secondary-green, #B5CB99);
+    border-radius: 250px;
     color: #FFF;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
     text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.button-wrapper button:hover {
+    color: #000;
 }
