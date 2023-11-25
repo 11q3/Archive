@@ -4,7 +4,6 @@ import Archive.model.Role;
 import Archive.model.User;
 import Archive.repository.UsersRepository;
 import Archive.web.dto.UserRegistrationDto;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
@@ -24,9 +23,9 @@ public class UserServiceImpl implements UserService{
                              registrationDto.getLastName(),
                              registrationDto.getEmail(),
                              registrationDto.getPhoneNumber(),
-                             registrationDto.getPosition(),
                              registrationDto.getPublications(),
                              Arrays.asList(new Role("ROLE_USER")));
+
         return usersRepository.save(user);
     }
 }

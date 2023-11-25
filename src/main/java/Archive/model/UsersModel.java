@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.util.Objects;
 
+//
 @Entity
 @Table(name="users_table")
 public class UsersModel {

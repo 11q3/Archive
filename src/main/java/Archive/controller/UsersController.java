@@ -37,12 +37,12 @@ public class UsersController {
         return "index";
     }
 
-    @PostMapping("/register")
+    /* @PostMapping("/register")
     public String register(@ModelAttribute UsersModel usersModel) {
         System.out.println("register request:" + usersModel);
         UsersModel registeredUser = usersService.registerUser(usersModel.getLogin(),
-                                                              usersModel.getPassword(),
-                                                              usersModel.getEmail());
+                usersModel.getPassword(),
+                usersModel.getEmail());
 
         return registeredUser == null ? "error_page" : "redirect:/login";
 
@@ -52,12 +52,12 @@ public class UsersController {
     public String login(@ModelAttribute UsersModel usersModel, Model model) {
         System.out.println("login request:" + usersModel);
         UsersModel authenticated = usersService.authenticate(usersModel.getEmail(),
-                                                             usersModel.getPassword());
+                usersModel.getPassword());
         if(authenticated != null) {
             model.addAttribute("userEmail", authenticated.getEmail());
             return "account_page";
         }
         else return "error_page";
 
-    }
+    }*/
 }

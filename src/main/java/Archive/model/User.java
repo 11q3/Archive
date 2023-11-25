@@ -18,7 +18,7 @@ public class User {
     @Column(name="phone_number")
 
     private String phoneNumber;
-    private String position;
+
     private int publications;
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
@@ -28,12 +28,11 @@ public class User {
     )
     private Collection<Role> roles;
 
-    public User(String firstName, String lastName, String email, String phoneNumber, String position, int publications, Collection<Role> roles) {
+    public User(String firstName, String lastName, String email, String phoneNumber, int publications, Collection<Role> roles) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.phoneNumber = phoneNumber;
-        this.position = position;
         this.publications = publications;
         this.roles = roles;
     }
@@ -78,14 +77,6 @@ public class User {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
-    }
-
-    public String getPosition() {
-        return position;
-    }
-
-    public void setPosition(String position) {
-        this.position = position;
     }
 
     public int getPublications() {
