@@ -74,10 +74,7 @@ body {
     align-self: center;
 }
 
-.logininput,
-.emailinput,
-.passwordinput,
-.acceptpasswordinput {
+.controllabel {
     display: flex;
     padding: 15px 20px;
     align-items: center;
