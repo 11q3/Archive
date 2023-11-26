@@ -7,10 +7,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Archive</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="../static/css/registrationstyle.css">
 </head>
 <body>
-<form action="/register" method="post" th:object="${registerReqeust}"> <!-- this register request is the modal attribute we put in the register getMapping method-->
+<div th:if="${param.success}">
+    <div class="alert alert-info">Вы успешно зарегистрировались!</div>
+</div>
+<form th:action="@{/registration}" method="post" th:object = "${user}">
     <div class="registrationwindow">
         <div class="headline">
             <div class="headlinetitle">Регистрация</div>
@@ -18,20 +23,47 @@
         </div>
         <div class="interactarea">
             <div class="inputs">
-                <input name = "login" class="logininput" type="text" placeholder="логин" required>
-                <input name = "email" class="emailinput" type="email" placeholder="почта" required>
-                <input name = "password" class="passwordinput" type="password" placeholder="пароль" required>
-                <input name = "acceptpasswordinput" class = "acceptpasswordinput" type="password" placeholder="подтвердите пароль" required>
-                <a href="/login">У меня уже есть аккаунт</a>
+                <div class="formgroup">
+                    <input
+                            id ="firstName" class="form-control" th:field="*{firstName}"
+                            required autofocus="autofocus"
+                            placeholder="ваше имя"/>
+                </div>
+
+                <div class="formgroup">
+                    <input
+                            id ="lastName" class="form-control" th:field="*{lastName}"
+                            required autofocus="autofocus"
+                            placeholder="ваша фамилия"/>
+                </div>
+                <div class="formgroup">
+                    <input
+                            id ="email" class="form-control" type = "email" th:field="*{email}"
+                            required autofocus="autofocus"
+                            placeholder="почта"/>
+                </div>
+                <div class="formgroup">
+                    <input
+                            id ="password" class="form-control" type = "password" th:field="*{password}"
+                            required autofocus="autofocus"
+                            placeholder="пароль"/>
+                </div>
+
+
             </div>
             <div class="checkbox">
                 <input type="checkbox" id="check1">
                 <span>Запомнить меня</span>
             </div>
+
+            <div class="formgroup">
+                <a href="/" th:href="@{/Login}">У меня уже есть аккаунт</a>
+            </div>
         </div>
         <div class="button-wrapper">
-            <button type="submit" name="log-in"><span>Регистрация</span></button>
+            <button type="submit"><span>Регистрация</span></button>
         </div>
+
     </div>
 </form>
 </body>
