@@ -1,28 +1,26 @@
 package Archive.model;
 
 import jakarta.persistence.*;
+import org.springframework.security.core.GrantedAuthority;
 
 @Entity
-@Table(name="role")
-public class Role {
-    public Role(String name) {
-        this.name = name;
-    }
-
-    public Role() {}
-
-
+@Table(name="roles")
+public class Role implements GrantedAuthority {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name="role_id")
+    private Long roleId;
+
+    private String authority;
+
     private String name;
 
-    public Long getId() {
-        return id;
+    public Long getRoleId() {
+        return roleId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setRoleId(Long id) {
+        this.roleId = id;
     }
 
     public String getName() {
@@ -33,5 +31,23 @@ public class Role {
         this.name = name;
     }
 
+    public Role() {}
 
+    public Role(String name) {
+        this.name = name;
+    }
+
+    public Role(String name, Long roleId) {
+        this.name = name;
+        this.roleId = roleId;
+    }
+
+    @Override
+    public String getAuthority() {
+        return this.authority;
+    }
+
+    public String setAuthority(String authority) {
+        return this.authority = authority;
+    }
 }

@@ -1,105 +1,83 @@
 package Archive.model;
 
 import jakarta.persistence.*;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
+import java.util.HashSet;
+
 
 @Entity
-@Table(name="user", uniqueConstraints = @UniqueConstraint(columnNames = {"email", "phone_number"}))
-public class User {
+@Table(name="users")
+public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    @Column(name="first_name")
-    private String firstName;
-    @Column(name="last_name")
-    private String lastName;
-    @Column(name="email")
-    private String email;
-    @Column(name="phone_number")
+    @Column(name="user_id")
+    private Long userId;
 
-    private String phoneNumber;
+    private String username;
 
-    private int publications;
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private String password;
+    @ManyToMany(fetch=FetchType.EAGER)
     @JoinTable(
-            name="users_roles",
-            joinColumns = @JoinColumn(name="user_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id")
+            name="user_roles",
+            joinColumns = {@JoinColumn(name="user_id")},
+            inverseJoinColumns = {@JoinColumn(name="role_id")}
     )
-    private Collection<Role> roles;
-
-    public User(String firstName, String lastName, String email, String phoneNumber, int publications, Collection<Role> roles) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.phoneNumber = phoneNumber;
-        this.publications = publications;
-        this.roles = roles;
-    }
+    private Collection<Role> authorities;
 
     public User() {
-
+        this.authorities = new HashSet<Role>();
     }
 
-
-    public Long getId() {
-        return id;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setAuthorities(Collection<Role> authorities) {
+        this.authorities = authorities;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public User(Long userId, String username, String password, Collection<Role> authorities) {
+        this.userId = userId;
+        this.username=username;
+        this.password=password;
+        this.authorities=authorities;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return this.authorities;
     }
 
-    public String getLastName() {
-        return lastName;
+    @Override
+    public String getPassword() {
+        return this.password;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    @Override
+    public String getUsername() {
+        return this.username;
     }
 
-    public String getEmail() {
-        return email;
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    @Override
+    public boolean isEnabled() {
+        return true;
     }
-
-    public int getPublications() {
-        return publications;
-    }
-
-    public void setPublications(int publications) {
-        this.publications = publications;
-    }
-
-    public Collection<Role> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(Collection<Role> roles) {
-        this.roles = roles;
-    }
-
-
-
-
 }

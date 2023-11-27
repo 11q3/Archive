@@ -8,7 +8,7 @@ public class UserRegistrationDto {
     private String phoneNumber;
     private int publications;
 
-    public UserRegistrationDto(String firstName, String lastName, String email, String password, String phoneNumber, String position, int publications) {
+    public UserRegistrationDto(String firstName, String lastName, String email, String password, String phoneNumber, int publications) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
