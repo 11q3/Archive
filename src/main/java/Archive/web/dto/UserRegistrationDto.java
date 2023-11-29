@@ -8,6 +8,8 @@ public class UserRegistrationDto {
     private String phoneNumber;
     private int publications;
 
+    public UserRegistrationDto() { }
+
     public UserRegistrationDto(String firstName, String lastName, String email, String password, String phoneNumber, int publications) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -17,7 +19,6 @@ public class UserRegistrationDto {
         this.publications = publications;
     }
 
-    public UserRegistrationDto() { }
     public String getFirstName() {
         return firstName;
     }
