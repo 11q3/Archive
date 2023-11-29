@@ -1,16 +1,11 @@
 package Archive.model;
 
 import jakarta.persistence.*;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
-import java.util.HashSet;
-import java.util.List;
-
 
 @Entity
-@Table(name =  "user", uniqueConstraints = @UniqueConstraint(columnNames = {"email", "phone_number"}))
+@Table(name ="user", uniqueConstraints = @UniqueConstraint(columnNames = {"email", "phone_number"}))
 public class User {
 
     @Id

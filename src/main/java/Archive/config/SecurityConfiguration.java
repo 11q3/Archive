@@ -25,28 +25,28 @@ public class SecurityConfiguration {
     }
 
     @Bean
-    BCryptPasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
-
     public DaoAuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider auth = new DaoAuthenticationProvider();
         auth.setUserDetailsService(userService);
-        auth.setPasswordEncoder(passwordEncoder());
+        auth.setPasswordEncoder(new BCryptPasswordEncoder());
         return auth;
     }
 
-/*    @Bean
-            public void filterChain(AuthenticationManagerBuilder auth) throws Exception {
-        auth.authenticationProvider(authenticationProvider());
-    }*/
-
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        return http
-                .csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests(auth -> auth.anyRequest().permitAll())
-                .build();
+        http.csrf(AbstractHttpConfigurer::disable)
+                .formLogin(form -> form.loginPage("/login").permitAll())
+                .logout(logout -> logout.logoutUrl("/login?logout)").logoutSuccessUrl("/home"))
+                .authorizeHttpRequests(auth -> auth.requestMatchers(
+				    "/registration**",
+	                "/js/**",
+	                "/css/**",
+	                "/img/**").permitAll())
+                .authorizeHttpRequests(auth -> auth.requestMatchers(
+                        "/account_page").authenticated()
+                );
+
+        return http.build();
     }
 }
 

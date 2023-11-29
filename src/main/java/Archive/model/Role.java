@@ -12,12 +12,9 @@ public class Role {
 
     private String name;
 
-    public Role() {
-
-    }
+    public Role() { }
 
     public Role(String name) {
-        super();
         this.name = name;
     }
 

@@ -12,97 +12,97 @@
     <link rel="stylesheet" href="../static/css/accountstyle.css">
 </head>
 <body>
-<div class="accountpage">
-    <div class="headerlogoheadline">
-        <div class="headlinelogo">
-            <img src="../static/images/logo.png" alt="">
-            <div class="headline">
-                <span class = hdlinet>Публичный архив</span>
-                <span class = hdlineb>ГБОУ Гимназия №41 им. Эриха Кестнера</span>
-            </div>
-        </div>
-        <div class="mainmenu">
-            <nav class="navbar">
-                <div class="navbarli">
-                    <div class="navbarlit">
-                        <li class="navbar__item">
-                            <a class="navbar__link" href="/docks">Архив</a>
-                        </li>
-                        <li class="navbar__item">
-                            <a class="navbar__link" href="/starting_page#autorspage">Наши Авторы</a>
-                        </li>
-                        <li class="navbar__item">
-                            <a class="navbar__link" href="/starting_page#partnerspage">Наши Партнеры</a>
-                        </li>
-                    </div>
-                    <div class="navbarlib">
-                        <li class="navbar__item">
-                            <a class="navbar__link" href="/starting_page#projects">Работы и проекты</a>
-                        </li>
-                        <li class="navbar__item">
-                            <a class="navbar__link" href="/starting_page#aboutpage">О проекте</a>
-                        </li>
-                    </div>
-                </div>
-                <div class="searchpersonalarea">
-                    <input class="input" type="text" id="name" name="name"/>
-                    <a class="enter__link" href="/register">Войти</a>
-                </div>
-            </nav>
-        </div>
-    </div>
-    <div class="main">
-        <div class="maincontent">
-            <h2>Личный кабинет</h2>
-            <div class="accountcard">
-                <div class="accountcardcontent">
-                    <div class="profilehead">
-                        <div class="profileheadimg"></div>
-                        <h1><span th:text="${userLogin}"></span></h1>
-
-                    </div>
-
-                    <div class="edit">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
-                            <path d="M19.3419 6.33296L21.8337 8.82358M20.9443 4.13882L14.2066 10.8765C13.8584 11.2242 13.621 11.6671 13.5242 12.1495L12.9019 15.2648L16.0172 14.6413C16.4995 14.5448 16.9419 14.3083 17.2901 13.9601L24.0279 7.22239C24.2303 7.01992 24.3909 6.77955 24.5005 6.51501C24.6101 6.25047 24.6665 5.96694 24.6665 5.68061C24.6665 5.39427 24.6101 5.11074 24.5005 4.8462C24.3909 4.58166 24.2303 4.34129 24.0279 4.13882C23.8254 3.93636 23.585 3.77575 23.3205 3.66617C23.0559 3.5566 22.7724 3.5002 22.4861 3.5002C22.1997 3.5002 21.9162 3.5566 21.6517 3.66617C21.3871 3.77575 21.1468 3.93636 20.9443 4.13882Z" stroke="#186F65" stroke-width="1.37566" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M22.3137 17.6178V21.1472C22.3137 21.7713 22.0658 22.3698 21.6246 22.811C21.1833 23.2523 20.5848 23.5002 19.9608 23.5002H7.01947C6.39542 23.5002 5.79694 23.2523 5.35567 22.811C4.9144 22.3698 4.6665 21.7713 4.6665 21.1472V8.20592C4.6665 7.58187 4.9144 6.98339 5.35567 6.54212C5.79694 6.10085 6.39542 5.85295 7.01947 5.85295H10.5489" stroke="#186F65" stroke-width="1.37566" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        <span>редактировать</span>
-                    </div>
-                </div>
-                <div class="cardingo">
-                    <div class="cardingonames">
-                        <div class="firstname">
-                            <p class="name">Имя:</p>
-                            <p class="corname">Оксана</p>
-                        </div>
-                        <div class="lastname">
-                            <p class="name">Фамилия:</p>
-                            <p class="corname">Новикова</p>
-                        </div>
-                    </div>
-                    <div class="cardingosecondaryinfo">
-                        <div class="mail">
-                            <p class="name">Почта:</p>
-                            <p class="corname">oxxxynov32@yandex.com</p>
-                        </div>
-                        <div class="phone">
-                            <p class="name">Телефон:</p>
-                            <p class="corname">+7 (952) ***-**-**</p>
-                        </div>
-                        <div class="employee">
-                            <p class="name">Должность:</p>
-                            <p class="corname">Библиотекарь</p>
-                        </div>
-                        <div class="commits">
-                            <p class="name">Публикации:</p>
-                            <p class="corname">5</p>
-                        </div>
-                    </div>
+    <div class="accountpage">
+        <div class="headerlogoheadline">
+            <div class="headlinelogo">
+                <img src="../static/images/logo.png" alt="">
+                <div class="headline">
+                    <span class = hdlinet>Публичный архив</span>
+                    <span class = hdlineb>ГБОУ Гимназия №41 им. Эриха Кестнера</span>
                 </div>
             </div>
+            <div class="mainmenu">
+                <nav class="navbar">
+                    <div class="navbarli">
+                        <div class="navbarlit">
+                            <li class="navbar__item">
+                                <a class="navbar__link" href="/docks">Архив</a>
+                            </li>
+                            <li class="navbar__item">
+                                <a class="navbar__link" href="/starting_page#autorspage">Наши Авторы</a>
+                            </li>
+                            <li class="navbar__item">
+                                <a class="navbar__link" href="/starting_page#partnerspage">Наши Партнеры</a>
+                            </li>
+                        </div>
+                        <div class="navbarlib">
+                            <li class="navbar__item">
+                                <a class="navbar__link" href="/starting_page#projects">Работы и проекты</a>
+                            </li>
+                            <li class="navbar__item">
+                                <a class="navbar__link" href="/starting_page#aboutpage">О проекте</a>
+                            </li>
+                        </div>
+                    </div>
+                    <div class="searchpersonalarea">
+                        <input class="input" type="text" id="name" name="name"/>
+                        <a class="enter__link" href="/register">Войти</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="main">
+            <div class="maincontent">
+                <h2>Личный кабинет</h2>
+                <div class="accountcard">
+                    <div class="accountcardcontent">
+                        <div class="profilehead">
+                            <div class="profileheadimg"></div>
+                            <h1><span th:text="${userLogin}"></span></h1>
+
+                        </div>
+
+                        <div class="edit">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                                <path d="M19.3419 6.33296L21.8337 8.82358M20.9443 4.13882L14.2066 10.8765C13.8584 11.2242 13.621 11.6671 13.5242 12.1495L12.9019 15.2648L16.0172 14.6413C16.4995 14.5448 16.9419 14.3083 17.2901 13.9601L24.0279 7.22239C24.2303 7.01992 24.3909 6.77955 24.5005 6.51501C24.6101 6.25047 24.6665 5.96694 24.6665 5.68061C24.6665 5.39427 24.6101 5.11074 24.5005 4.8462C24.3909 4.58166 24.2303 4.34129 24.0279 4.13882C23.8254 3.93636 23.585 3.77575 23.3205 3.66617C23.0559 3.5566 22.7724 3.5002 22.4861 3.5002C22.1997 3.5002 21.9162 3.5566 21.6517 3.66617C21.3871 3.77575 21.1468 3.93636 20.9443 4.13882Z" stroke="#186F65" stroke-width="1.37566" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M22.3137 17.6178V21.1472C22.3137 21.7713 22.0658 22.3698 21.6246 22.811C21.1833 23.2523 20.5848 23.5002 19.9608 23.5002H7.01947C6.39542 23.5002 5.79694 23.2523 5.35567 22.811C4.9144 22.3698 4.6665 21.7713 4.6665 21.1472V8.20592C4.6665 7.58187 4.9144 6.98339 5.35567 6.54212C5.79694 6.10085 6.39542 5.85295 7.01947 5.85295H10.5489" stroke="#186F65" stroke-width="1.37566" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>редактировать</span>
+                        </div>
+                    </div>
+                    <div class="cardingo">
+                        <div class="cardingonames">
+                            <div class="firstname">
+                                <p class="name">Имя:</p>
+                                <p class="corname">Оксана</p>
+                            </div>
+                            <div class="lastname">
+                                <p class="name">Фамилия:</p>
+                                <p class="corname">Новикова</p>
+                            </div>
+                        </div>
+                        <div class="cardingosecondaryinfo">
+                            <div class="mail">
+                                <p class="name">Почта:</p>
+                                <p class="corname">oxxxynov32@yandex.com</p>
+                            </div>
+                            <div class="phone">
+                                <p class="name">Телефон:</p>
+                                <p class="corname">+7 (952) ***-**-**</p>
+                            </div>
+                            <div class="employee">
+                                <p class="name">Должность:</p>
+                                <p class="corname">Библиотекарь</p>
+                            </div>
+                            <div class="commits">
+                                <p class="name">Публикации:</p>
+                                <p class="corname">5</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
 </body>
 </html>

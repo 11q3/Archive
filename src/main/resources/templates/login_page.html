@@ -12,27 +12,34 @@
     <link rel="stylesheet" href="../static/css/loginstyle.css">
 </head>
 <body>
-<form action="/login" method="post" th:object="${loginReqeust}">
-    <div class="loginwindow">
-        <div class="headline">
-            <div class="headlinetitle">Вход</div>
-            <div class="headlinesubtitle">Введите ваши данные</div>
+    <form th:action="@{/login}" method="post" th:object="${loginRequest}">
+        <div th:if="${param.error}">
+            <div class="alert alert-danger">Неправильный логин или пароль.</div>
         </div>
-        <div class="interactarea">
-            <div class="inputs">
-                <input name = "email" class="email" type="email" placeholder="почта" required>
-                <input name = "password" class="passwordinput" type="password" placeholder="пароль" required>
-                <a href="/register">У меня нет аккаунта</a>
+        <div th:if="${param.logout}">
+            <div class="alert alert-info">Вы вышли из учетной записи.</div>
+        </div>
+
+        <div class="loginwindow">
+            <div class="headline">
+                <div class="headlinetitle">Вход</div>
+                <div class="headlinesubtitle">Введите ваши данные</div>
             </div>
-            <div class="checkbox">
-                <input type="checkbox" id="check1">
-                <span>Запомнить меня</span>
+            <div class="interactarea">
+                <div class="inputs">
+                    <input name = "email" class="email" type="email" placeholder="почта" required>
+                    <input name = "password" class="passwordinput" type="password" placeholder="пароль" required>
+                    <a href="/register">У меня нет аккаунта</a>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" id="check1">
+                    <span>Запомнить меня</span>
+                </div>
+            </div>
+            <div class="button-wrapper">
+                <button type="submit" name="log-in"><span>Вход</span></button>
             </div>
         </div>
-        <div class="button-wrapper">
-            <button type="submit" name="log-in"><span>Вход</span></button>
-        </div>
-    </div>
-</form>
+    </form>
 </body>
 </html>
