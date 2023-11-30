@@ -10,4 +10,14 @@ public class MainController {
     public String login() {
         return "login_page";
     }
+
+    @GetMapping("/account")
+    public String account() {
+        return "account_page";
+    }
+
+    @GetMapping("/docks")
+    public String docks() {
+        return "docks_page";
+    }
 }

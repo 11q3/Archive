@@ -4,7 +4,6 @@ import Archive.model.Role;
 import Archive.model.User;
 import Archive.repository.UserRepository;
 import Archive.web.dto.UserRegistrationDto;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -21,8 +20,13 @@ public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
 
-    public UserServiceImpl(UserRepository usersRepository) {
+    //private final BCryptPasswordEncoder passwordEncoder;
+
+    public UserServiceImpl(UserRepository usersRepository
+//            , BCryptPasswordEncoder passwordEncoder
+    ) {
         this.userRepository = usersRepository;
+        //this.passwordEncoder = passwordEncoder;
     }
 
     @Override
@@ -31,7 +35,8 @@ public class UserServiceImpl implements UserService {
                 registrationDto.getFirstName(),
                 registrationDto.getLastName(),
                 registrationDto.getEmail(),
-                (registrationDto.getPassword()),
+                //passwordEncoder.encode
+                        (registrationDto.getPassword()),
                 registrationDto.getPhoneNumber(),
                 List.of(new Role("ROLE_USER")
                 ));
