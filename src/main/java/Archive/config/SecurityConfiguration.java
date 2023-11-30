@@ -39,9 +39,11 @@ public class SecurityConfiguration {
                 .logout(logout -> logout.logoutUrl("/login?logout)").logoutSuccessUrl("/home"))
                 .authorizeHttpRequests(auth -> auth.requestMatchers(
 				    "/registration**",
-	                "/js/**",
-	                "/css/**",
-	                "/img/**").permitAll())
+	                "/static/js/**",
+	                "/static/css/**",
+	                "/static/img/**",
+                    "/index.html/**",
+                    "/docks.html/**").permitAll())
                 .authorizeHttpRequests(auth -> auth.requestMatchers(
                         "/account_page").authenticated()
                 );
