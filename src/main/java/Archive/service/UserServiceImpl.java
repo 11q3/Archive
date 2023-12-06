@@ -20,13 +20,11 @@ public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
 
-    //private final BCryptPasswordEncoder passwordEncoder;
+    private final BCryptPasswordEncoder passwordEncoder;
 
-    public UserServiceImpl(UserRepository usersRepository
-//            , BCryptPasswordEncoder passwordEncoder
-    ) {
+    public UserServiceImpl(UserRepository usersRepository, BCryptPasswordEncoder passwordEncoder) {
         this.userRepository = usersRepository;
-        //this.passwordEncoder = passwordEncoder;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Override
@@ -35,7 +33,7 @@ public class UserServiceImpl implements UserService {
                 registrationDto.getFirstName(),
                 registrationDto.getLastName(),
                 registrationDto.getEmail(),
-                //passwordEncoder.encode
+                passwordEncoder.encode
                         (registrationDto.getPassword()),
                 registrationDto.getPhoneNumber(),
                 List.of(new Role("ROLE_USER")
