@@ -2,6 +2,7 @@ package Archive.service;
 
 import Archive.model.Role;
 import Archive.model.User;
+import Archive.repository.RoleRepository;
 import Archive.repository.UserRepository;
 import Archive.web.dto.UserRegistrationDto;
 import org.springframework.security.core.GrantedAuthority;
@@ -11,6 +12,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -18,45 +20,68 @@ import java.util.stream.Collectors;
 @Service
 public class UserServiceImpl implements UserService {
 
-    private final UserRepository userRepository;
+    private UserRepository userRepository;
+    private RoleRepository roleRepository;
+    private BCryptPasswordEncoder passwordEncoder;
 
-    private final BCryptPasswordEncoder passwordEncoder;
-
-    public UserServiceImpl(UserRepository usersRepository, BCryptPasswordEncoder passwordEncoder) {
+    public UserServiceImpl(UserRepository usersRepository,
+                           RoleRepository roleRepository,
+                           BCryptPasswordEncoder passwordEncoder) {
         this.userRepository = usersRepository;
+        this.roleRepository = roleRepository;
         this.passwordEncoder = passwordEncoder;
     }
 
     @Override
-    public User save(UserRegistrationDto registrationDto) {
-        User user = new User(
-                registrationDto.getFirstName(),
-                registrationDto.getLastName(),
-                registrationDto.getEmail(),
-                passwordEncoder.encode
-                        (registrationDto.getPassword()),
-                registrationDto.getPhoneNumber(),
-                List.of(new Role("ROLE_USER")
-                ));
+    public void saveUser(UserRegistrationDto registrationDto) {
+        User user = new User();
+        user.setFirstName(registrationDto.getFirstName());
+        user.setLastName(registrationDto.getLastName());
+        user.setEmail(registrationDto.getEmail());
+        user.setPassword(passwordEncoder.encode(registrationDto.getPassword()));
+        user.setPhoneNumber(registrationDto.getPhoneNumber());
 
-        return userRepository.save(user);
+
+        Role role = roleRepository.findByName("ROLE_ADMIN");
+        if (role == null) {
+            role = checkRoleExist();
+        }
+        user.setRoles(Arrays.asList(role));
+        userRepository.save(user);
+    }
+
+    @Override
+    public User findUserByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
+
+    @Override
+    public List<UserRegistrationDto> findAllUsers() {
+        List<User> users = userRepository.findAll();
+        return users.stream()
+                .map((user) -> mapToUserDto(user))
+                .collect(Collectors.toList());
+    }
+
+    private UserRegistrationDto mapToUserDto(User user){
+        UserRegistrationDto userRegistrationDto = new UserRegistrationDto();
+        userRegistrationDto.setFirstName(user.getFirstName());
+        userRegistrationDto.setLastName(user.getLastName());
+        userRegistrationDto.setEmail(user.getEmail());
+        userRegistrationDto.setPhoneNumber(user.getPhoneNumber());
+        return userRegistrationDto;
+    }
+
+
+    private Role checkRoleExist(){
+        Role role = new Role();
+
+        role.setName("ROLE_ADMIN");
+        return roleRepository.save(role);
     }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.findByEmail(username);
-        if(user == null) {
-            throw new UsernameNotFoundException("Invalid username or password.");
-        }
-
-        return new org.springframework.security.core.userdetails.User(
-                user.getEmail(),
-                user.getPassword(),
-                mapRolesToAuthorities(user.getRoles())
-        );
-    }
-
-    private Collection<? extends GrantedAuthority> mapRolesToAuthorities(Collection<Role> roles) {
-        return roles.stream().map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
+        return null;
     }
 }

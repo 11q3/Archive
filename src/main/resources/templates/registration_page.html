@@ -15,7 +15,7 @@
     <div th:if="${param.success}">
         <div class="alert alert-info">Вы успешно зарегистрировались!</div>
     </div>
-    <form th:action="@{/registration}" method="post" th:object = "${user}">
+    <form th:action="@{/register/save}" method="post" th:object = "${user}">
         <div class="registrationwindow">
             <div class="headline">
                 <div class="headlinetitle">Регистрация</div>
@@ -26,27 +26,35 @@
                     <div class="formgroup">
                         <input
                                 id ="firstName" class="form-control" th:field="*{firstName}"
+                                type="text"
                                 required autofocus="autofocus"
-                                placeholder="ваше имя"/>
+                                placeholder="ваше имя"
+                        />
                     </div>
 
                     <div class="formgroup">
                         <input
                                 id ="lastName" class="form-control" th:field="*{lastName}"
+                                type="text"
                                 required autofocus="autofocus"
-                                placeholder="ваша фамилия"/>
+                                placeholder="ваша фамилия"
+                        />
                     </div>
                     <div class="formgroup">
                         <input
-                                id ="email" class="form-control" type = "email" th:field="*{email}"
+                                id ="email" class="form-control" th:field="*{email}"
+                                type="email"
                                 required autofocus="autofocus"
-                                placeholder="почта"/>
+                                placeholder="почта"
+                        />
                     </div>
                     <div class="formgroup">
                         <input
-                                id ="password" class="form-control" type = "password" th:field="*{password}"
+                                id ="password" class="form-control" th:field="*{password}"
+                                type = "password"
                                 required autofocus="autofocus"
-                                placeholder="пароль"/>
+                                placeholder="пароль"
+                        />
                     </div>
 
 
