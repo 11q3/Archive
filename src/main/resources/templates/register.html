@@ -15,7 +15,7 @@
     <div th:if="${param.success}">
         <div class="alert alert-info">Вы успешно зарегистрировались!</div>
     </div>
-    <form th:action="@{/register/save}" method="post" th:object = "${user}">
+    <form method="post" role="form" th:action="@{/registrer/save}" th:object = "${user}">
         <div class="registrationwindow">
             <div class="headline">
                 <div class="headlinetitle">Регистрация</div>
@@ -30,6 +30,9 @@
                                 required autofocus="autofocus"
                                 placeholder="ваше имя"
                         />
+                        <p th:errors="*{firstName}" class="text-danger"
+                           th:if="${#fields.hasErrors('firstName')}">
+                        </p>
                     </div>
 
                     <div class="formgroup">
@@ -39,6 +42,9 @@
                                 required autofocus="autofocus"
                                 placeholder="ваша фамилия"
                         />
+                        <p th:errors="*{lastName}" class="text-danger"
+                           th:if="${#fields.hasErrors('lastName')}">
+                        </p>
                     </div>
                     <div class="formgroup">
                         <input
@@ -47,6 +53,9 @@
                                 required autofocus="autofocus"
                                 placeholder="почта"
                         />
+                        <p th:errors="*{email}" class="text-danger"
+                           th:if="${#fields.hasErrors('email')}">
+                        </p>
                     </div>
                     <div class="formgroup">
                         <input
@@ -55,6 +64,9 @@
                                 required autofocus="autofocus"
                                 placeholder="пароль"
                         />
+                        <p th:errors="*{password}" class="text-danger"
+                           th:if="${#fields.hasErrors('password')}">
+                        </p>
                     </div>
 
 
@@ -71,7 +83,6 @@
             <div class="button-wrapper">
                 <button type="submit"><span>Регистрация</span></button>
             </div>
-
         </div>
     </form>
 </body>

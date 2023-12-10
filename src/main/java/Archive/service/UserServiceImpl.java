@@ -5,12 +5,9 @@ import Archive.model.User;
 import Archive.repository.RoleRepository;
 import Archive.repository.UserRepository;
 import Archive.web.dto.UserRegistrationDto;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -32,18 +29,22 @@ public class UserServiceImpl implements UserService {
     @Override
     public void saveUser(UserRegistrationDto registrationDto) {
         User user = new User();
+
         user.setFirstName(registrationDto.getFirstName());
         user.setLastName(registrationDto.getLastName());
+
         user.setEmail(registrationDto.getEmail());
         user.setPassword(passwordEncoder.encode(registrationDto.getPassword()));
         user.setPhoneNumber(registrationDto.getPhoneNumber());
 
 
         Role role = roleRepository.findByName("ROLE_ADMIN");
+
         if (role == null) {
             role = checkRoleExist();
         }
-        user.setRoles(Arrays.asList(role));
+
+        user.setRoles(List.of(role));
         userRepository.save(user);
     }
 
@@ -55,12 +56,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<UserRegistrationDto> findAllUsers() {
         List<User> users = userRepository.findAll();
-        return users.stream()
-                .map((user) -> mapToUserDto(user))
+        return users.stream().map((user) -> convertEntityToDto(user))
                 .collect(Collectors.toList());
     }
 
-    private UserRegistrationDto mapToUserDto(User user){
+    private UserRegistrationDto convertEntityToDto(User user){
         UserRegistrationDto userRegistrationDto = new UserRegistrationDto();
         userRegistrationDto.setFirstName(user.getFirstName());
         userRegistrationDto.setLastName(user.getLastName());
@@ -75,10 +75,5 @@ public class UserServiceImpl implements UserService {
 
         role.setName("ROLE_ADMIN");
         return roleRepository.save(role);
-    }
-
-    @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return null;
     }
 }

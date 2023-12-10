@@ -2,11 +2,10 @@ package Archive.service;
 
 import Archive.model.User;
 import Archive.web.dto.UserRegistrationDto;
-import org.springframework.security.core.userdetails.UserDetailsService;
 
 import java.util.List;
 
-public interface UserService extends UserDetailsService {
+public interface UserService {
     void saveUser(UserRegistrationDto registrationDto);
 
     User findUserByEmail(String email);
