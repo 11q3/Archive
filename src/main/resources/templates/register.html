@@ -15,7 +15,7 @@
     <div th:if="${param.success}">
         <div class="alert alert-info">Вы успешно зарегистрировались!</div>
     </div>
-    <form method="post" role="form" th:action="@{/registrer/save}" th:object = "${user}">
+    <form method="post" role="form" th:action="@{/register/save}" th:object = "${user}">
         <div class="registrationwindow">
             <div class="headline">
                 <div class="headlinetitle">Регистрация</div>

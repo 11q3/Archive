@@ -53,15 +53,6 @@ public class UserServiceImpl implements UserService {
         return userRepository.findByEmail(email);
     }
 
-    private UserRegistrationDto convertEntityToDto(User user){
-        UserRegistrationDto userRegistrationDto = new UserRegistrationDto();
-        userRegistrationDto.setFirstName(user.getFirstName());
-        userRegistrationDto.setLastName(user.getLastName());
-        userRegistrationDto.setEmail(user.getEmail());
-        userRegistrationDto.setPhoneNumber(user.getPhoneNumber());
-        return userRegistrationDto;
-    }
-
 
     private Role checkRoleExist(){
         Role role = new Role();

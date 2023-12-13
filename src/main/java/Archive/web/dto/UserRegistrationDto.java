@@ -18,7 +18,7 @@ public class UserRegistrationDto {
     private String firstName;
     @NotEmpty
     private String lastName;
-    @NotEmpty
+    @NotEmpty 
     @Email
     private String email;
     @NotEmpty

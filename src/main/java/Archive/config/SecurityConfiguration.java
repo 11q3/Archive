@@ -35,12 +35,13 @@ public class SecurityConfiguration {
                                                 "/",
                                                 "/docks",
                                                 "/register",
-                                                "/login"
+                                                "/register/**",
+                                                "/login",
+                                                "/static/css/**",
+                                                "/static/images/**"
                                                 )
                                             .permitAll()
-                                        .requestMatchers("/account").authenticated()
-                                        .requestMatchers("/static/css/**",
-                                                         "/static/images/**").permitAll())
+                                        .requestMatchers("/account").authenticated())
                 .formLogin(form -> form.loginPage("/login"))
                 .logout(l -> l.logoutSuccessUrl("/login?logout").permitAll());
 
