@@ -60,4 +60,7 @@ public class AuthController {
     public String showDocksPage() {
         return "docks";
     }
+
+    @GetMapping("/account")
+    public String showAccountPage() { return "account";}
 }

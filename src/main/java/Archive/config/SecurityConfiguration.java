@@ -35,7 +35,9 @@ public class SecurityConfiguration {
                                 .requestMatchers(
                                         "/",
                                         "/index",
-                                        "/register/**"
+                                        "/register/**",
+                                        "/static/css/**",
+                                        "/static/images/**"
                                 )
                                 .permitAll()
                                 .requestMatchers("/account").authenticated())

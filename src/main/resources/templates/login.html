@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/static/css/loginstyle.css">
 </head>
 <body>
-    <form method="post" th:action="@{/login}" >
+    <form method="post" th:action="@{/login}" role="form">
         <div th:if="${param.error}">
             <div class="alert alert-danger">Неправильный логин или пароль.</div>
         </div>
@@ -27,8 +27,22 @@
             </div>
             <div class="interactarea">
                 <div class="inputs">
-                    <input name = "email" class="email" type="email" placeholder="почта" required>
-                    <input name = "password" class="passwordinput" type="password" placeholder="пароль" required>
+                    <label for="username"></label>
+                    <input type="text"
+                           id="username"
+                           name = "username"
+                           class="email"
+                           placeholder="почта"
+                           >
+
+                    <label for="password"></label>
+                    <input type="password"
+                           id="password"
+                           name = "password"
+                           class="passwordinput"
+                           placeholder="пароль"
+                           >
+
                     <a th:href="@{/register}">У меня нет аккаунта</a>
                 </div>
                 <div class="checkbox">
