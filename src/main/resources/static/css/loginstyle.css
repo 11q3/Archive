@@ -72,26 +72,6 @@ body {
     align-self: stretch;
 }
 
-.email,
-.passwordinput {
-    display: flex;
-    padding: 15px 20px;
-    align-items: center;
-    gap: 10px;
-    flex-shrink: 0;
-    align-self: stretch;
-
-    border-radius: 20px;
-    background: #FFF;
-
-    color: #A8A8A8;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-
 
 .checkbox {
     display: flex;
@@ -143,4 +123,22 @@ body {
 
 .button-wrapper button:hover {
     color: #000;
+}
+
+.formgroup {
+    display: flex;
+    padding: 15px 20px;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    align-self: stretch;
+
+    border-radius: 20px;
+    background: #FFF;
+
+    color: #A8A8A8;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }

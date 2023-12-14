@@ -23,9 +23,8 @@
             </div>
             <div class="interactarea">
                 <div class="inputs">
-                    <div class="formgroup">
-                        <input
-                                id ="firstName" class="form-control" th:field="*{firstName}"
+                        <input class="formgroup"
+                                id ="firstName" th:field="*{firstName}"
                                 type="text"
                                 required autofocus="autofocus"
                                 placeholder="ваше имя"
@@ -33,11 +32,8 @@
                         <p th:errors="*{firstName}" class="text-danger"
                            th:if="${#fields.hasErrors('firstName')}">
                         </p>
-                    </div>
-
-                    <div class="formgroup">
-                        <input
-                                id ="lastName" class="form-control" th:field="*{lastName}"
+                        <input class="formgroup"
+                                id ="lastName" th:field="*{lastName}"
                                 type="text"
                                 required autofocus="autofocus"
                                 placeholder="ваша фамилия"
@@ -45,10 +41,8 @@
                         <p th:errors="*{lastName}" class="text-danger"
                            th:if="${#fields.hasErrors('lastName')}">
                         </p>
-                    </div>
-                    <div class="formgroup">
-                        <input
-                                id ="email" class="form-control" th:field="*{email}"
+                        <input class="formgroup"
+                                id ="email" th:field="*{email}"
                                 type="email"
                                 required autofocus="autofocus"
                                 placeholder="почта"
@@ -56,10 +50,8 @@
                         <p th:errors="*{email}" class="text-danger"
                            th:if="${#fields.hasErrors('email')}">
                         </p>
-                    </div>
-                    <div class="formgroup">
-                        <input
-                                id ="password" class="form-control" th:field="*{password}"
+                        <input class="formgroup"
+                                id ="password" th:field="*{password}"
                                 type = "password"
                                 required autofocus="autofocus"
                                 placeholder="пароль"
@@ -67,16 +59,13 @@
                         <p th:errors="*{password}" class="text-danger"
                            th:if="${#fields.hasErrors('password')}">
                         </p>
-                    </div>
-
-
                 </div>
                 <div class="checkbox">
                     <input type="checkbox" id="check1">
                     <span>Запомнить меня</span>
                 </div>
 
-                <div class="formgroup">
+                <div class="loginhref">
                     <a href="/" th:href="@{/login}">У меня уже есть аккаунт</a>
                 </div>
             </div>
