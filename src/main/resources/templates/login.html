@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/static/css/loginstyle.css">
 </head>
 <body>
-    <form th:action="@{/login}" method="post" th:object="${loginRequest}">
+    <form method="post" th:action="@{/login}" >
         <div th:if="${param.error}">
             <div class="alert alert-danger">Неправильный логин или пароль.</div>
         </div>

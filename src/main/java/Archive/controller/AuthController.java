@@ -20,7 +20,7 @@ public class AuthController {
         this.userService = userService;
     }
 
-    @GetMapping("index")
+    @GetMapping("/")
     public String home() {
         return "index";
     }
@@ -35,11 +35,6 @@ public class AuthController {
         UserRegistrationDto user = new UserRegistrationDto();
         model.addAttribute("user", user);
         return "register";
-    }
-
-    @GetMapping("/docks")
-    public String showDocksPage() {
-        return "docks";
     }
 
     @PostMapping("/register/save")
@@ -59,5 +54,10 @@ public class AuthController {
 
         userService.saveUser(userRegistrationDto);
         return "redirect:/register?success";
+    }
+
+    @GetMapping("/docks")
+    public String showDocksPage() {
+        return "docks";
     }
 }

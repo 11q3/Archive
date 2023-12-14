@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableWebSecurity
@@ -30,20 +31,23 @@ public class SecurityConfiguration {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(auth ->
-                                auth
-                                        .requestMatchers(
-                                                "/",
-                                                "/docks",
-                                                "/register",
-                                                "/register/**",
-                                                "/login",
-                                                "/static/css/**",
-                                                "/static/images/**"
-                                                )
-                                            .permitAll()
-                                        .requestMatchers("/account").authenticated())
-                .formLogin(form -> form.loginPage("/login"))
-                .logout(l -> l.logoutSuccessUrl("/login?logout").permitAll());
+                        auth
+                                .requestMatchers(
+                                        "/",
+                                        "/index",
+                                        "/register/**"
+                                )
+                                .permitAll()
+                                .requestMatchers("/account").authenticated())
+                .formLogin(form -> form
+                        .loginPage("/login")
+                        .loginProcessingUrl("/login")
+                        .defaultSuccessUrl("/account")
+                        .permitAll())
+
+                .logout(l -> l
+                        .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+                        .logoutSuccessUrl("/login?logout").permitAll());
 
         return http.build();
     }
