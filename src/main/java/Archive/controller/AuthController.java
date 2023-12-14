@@ -21,7 +21,7 @@ public class AuthController {
     }
 
     @GetMapping("/")
-    public String home() {
+    public String index() {
         return "index";
     }
 
