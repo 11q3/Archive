@@ -13,6 +13,7 @@ body {
 
 .loginwindow {
     display: flex;
+    margin-top: 50%;
     padding: 45px 68px;
     flex-direction: column;
     align-items: center;

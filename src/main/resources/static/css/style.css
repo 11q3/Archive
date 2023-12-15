@@ -98,7 +98,6 @@ button {
 
     height: 61px;
 
-
     display: flex;
     padding: 0 61px;
     justify-content: center;
@@ -109,7 +108,6 @@ button {
     display: flex;
     justify-content:  center;
     gap: 15px;
-
 }
 .navbarli {
     display: flex;
@@ -145,14 +143,11 @@ button {
 
 .searchpersonalarea {
     display: flex;
-    align-items: center;
     gap: 50px;
-    align-self: stretch;
 
     padding-left: 150px;
 
     max-height: 35px;
-
 }
 
 .input {

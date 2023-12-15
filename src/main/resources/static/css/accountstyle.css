@@ -65,7 +65,6 @@ button {
     background: var(--main-green, #186F65);
     max-width: 1920px;
 }
-
 .headerlogoheadline {
     display: flex;
     padding-top: 25px;
@@ -108,15 +107,16 @@ button {
     display: flex;
     padding: 0 61px;
     justify-content: center;
-    align-items: center;
-    gap: 10px;
     align-self: stretch;
+}
 
+.navbar {
+    display: flex;
+    justify-content:  center;
+    gap: 15px;
 }
 .navbarli {
     display: flex;
-    align-items: flex-start;
-
 }
 .navbarlit {
     display: flex;
@@ -130,12 +130,7 @@ button {
 
     padding-left: 50px;
 }
-.navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1 0 0;
-}
+
 
 .navbar__item {
     color: var(--secondary-biege, #FCE09B);
@@ -154,14 +149,11 @@ button {
 
 .searchpersonalarea {
     display: flex;
-    align-items: center;
     gap: 50px;
-    align-self: stretch;
 
     padding-left: 150px;
 
     max-height: 35px;
-
 }
 
 .input {
@@ -171,6 +163,7 @@ button {
     gap: 10px;
     align-self: stretch;
 
+    font-size: 20px;
     border-radius: 20px;
     background: #FFF;
 }
@@ -194,9 +187,9 @@ button {
 
 
 .main {
+    background: #186F65 url(/static/images/bg.png);
+    background-size: cover;
     background-blend-mode: multiply;
-    background-size: 100% 100%;
-    background: #186F65 url(/static/images/bg.png) no-repeat;
 
 
     flex-shrink: 0;
@@ -210,9 +203,7 @@ button {
 }
 
 .maincontent {
-    padding-top: 75px;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-top: 25px;
     margin: auto auto 50px;
 }
 
@@ -231,8 +222,6 @@ button {
 
 
 .accountcard {
-    flex-shrink: 0;
-
     border-radius: 20px;
     background: var(--secondary-green, #B5CB99);
     width: 1245px;
@@ -268,19 +257,17 @@ button {
 }
 
 .cardingo {
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
     gap: 38px;
-
-    margin-left: 25%;
-    margin-bottom: 55px;
+    padding-bottom: 55px;
 }
 
 .cardingonames {
     display: flex;
-    align-items: flex-start;
     gap: 149px;
+
+    margin-left: 230px;
 }
 
 .firstname,
@@ -290,7 +277,6 @@ button {
 .employee,
 .commits {
     display: flex;
-    align-items: center;
     gap: 10px;
 }
 
@@ -323,8 +309,9 @@ button {
 .cardingosecondaryinfo {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     gap: 50px;
+
+    margin-left: 230px;
 }
 
 .edit {
@@ -345,140 +332,168 @@ button {
 }
 
 .accountcardcontent {
-    position: relative;
     display: flex;
-    justify-content: space-between;
+    position: relative;
 }
 
 
 
 
 
-
-
-
-
-@media (max-width:1400px) {
-    .navbar__item {
-        font-size: 16px;
-    }
-    .input {
-        padding: 6px 20px;
-    }
-    .enter__link {
-        font-size: 16px;
+@media (max-width: 1600px) {
+    .morebutton {
+        margin: 0 auto;
     }
 
-    .accountcard {
-        width: auto;
+    .navbar {
+        flex-direction: column;
     }
-}
 
-@media (max-width: 1250px) {
+    .searchpersonalarea {
+        margin: 0 auto;
+        padding: 0;
+    }
+
     .mainmenu {
         height: 122px;
     }
 
-    .searchpersonalarea {
-        padding-left: 50px;
-        align-self: center;
+    .cardingonames {
+        margin-left: 175px;
     }
 
-    .navbar__item {
-        font-size: 20px;
-        padding-top: 5px;
-        padding-bottom: 5px;
+    .cardingosecondaryinfo {
+        margin-left: 175px;
     }
+}
+
+
+
+@media (max-width:1400px) {
     .input {
         padding: 6px 20px;
-    }
-    .enter__link {
-        font-size: 20px;
-    }
-    .navbarli {
-        display: block;
     }
 
     .cardingonames {
         flex-direction: column;
-        gap: 35px;
+        gap: 50px
     }
-}
 
-@media (max-width: 1000px) {
-    .profilehead {
-        position: static;
-        flex-direction: column;
-    }
-    .profilehead {
-        margin: auto;
-    }
     .edit {
         padding-left: 80%;
     }
+
+    .accountcard {
+        width: 800px;
+    }
 }
 
-@media (max-width: 880px) {
-    .mainmenu {
-        height: auto;
-        padding-top: 10px;
-    }
+@media (max-width: 1100px) {
     .navbar {
-        display: flex;
-        flex-direction: column;
-        align-self: center;
+        gap: 10px;
     }
+
+    .navbarli {
+        flex-direction: column;
+    }
+
     .navbarlit {
-        display: flex;
         flex-direction: column;
         gap: 10px;
     }
     .navbarlib {
+        flex-direction: column;
         padding-left: 0;
         padding-top: 10px;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+        gap: 10px
     }
-    .searchpersonalarea {
-        padding-top: 25px;
-        padding-bottom: 25px;
+    .mainmenu {
+        height: auto;
     }
-
     .navbar__item {
         font-size: 20px;
         text-align: center;
         width: 100%;
     }
-    .navbar__link {
-        display: block;
+
+    .name,
+    .corname {
+        font-size: 24px;
     }
-    .input {
-        padding: 15px 20px;
-    }
-    .enter__link {
-        font-size: 20px;
-        max-width: 100%;
+}
+
+@media (max-width: 880px) {
+    .accountcard {
+        width: 600px;
+        margin: auto;
     }
 
-    .docsfiles {
+    .cardingonames {
+        margin-left: 75px;
+    }
+
+    .cardingosecondaryinfo {
+        margin-left: 75px;
+    }
+    .edit {
+        padding-left: 75%;
+    }
+}
+
+@media (max-width: 700px) {
+    .accountcard {
+        width: 475px;
+    }
+
+    .firstname,
+    .lastname,
+    .mail,
+    .phone,
+    .employee,
+    .commits {
         flex-direction: column;
     }
 
     .edit {
-        padding-left:75%;
-        padding-right: 10px;
+        padding-left: 70%;
+    }
+}
+
+@media (max-width: 600px) {
+    .maincontent h2 {
+        font-size: 36px;
+        margin-right: 0;
+    }
+
+    .accountcard {
+        width: 300px;
+    }
+
+    .accountcardcontent {
+        flex-direction: column;
+    }
+
+    .edit {
+        position: static;
+        margin: auto;
+        padding-bottom: 25px;
+        padding-left: 0
+    }
+
+    .cardingonames,
+    .cardingosecondaryinfo {
+        margin-left: 15px;
     }
 
     .profilehead {
-        padding-top: 25px;
+        right: 0;
+        justify-content: center;
+        margin-left: 35px;
     }
 
-    .profilehead h1 {
-        text-align: center;
-    }
-    .cardingo {
-        margin-left: 50px;
+    .edit {
+        margin: auto;
+        padding-left: 0
     }
 }
 
@@ -514,7 +529,4 @@ button {
         padding-left: 25px;
     }
 
-    .maincontent h2 {
-        margin-right: 15px;
-    }
 }
