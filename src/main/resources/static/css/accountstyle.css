@@ -370,10 +370,6 @@ button {
 
 
 @media (max-width:1400px) {
-    .input {
-        padding: 6px 20px;
-    }
-
     .cardingonames {
         flex-direction: column;
         gap: 50px
@@ -385,6 +381,16 @@ button {
 
     .accountcard {
         width: 800px;
+    }
+}
+
+@media (max-width: 1250px) {
+    .input {
+        padding: 6px 20px;
+    }
+
+    .enter__link {
+        font-size: 20px;
     }
 }
 
@@ -422,6 +428,8 @@ button {
     }
 }
 
+
+
 @media (max-width: 880px) {
     .accountcard {
         width: 600px;
@@ -430,6 +438,10 @@ button {
 
     .cardingonames {
         margin-left: 75px;
+    }
+
+    .input {
+        padding: 15px 20px;
     }
 
     .cardingosecondaryinfo {
@@ -519,6 +531,7 @@ button {
 
     .searchpersonalarea {
         gap: 20px;
+        padding-left: 0;
     }
 
     .abouttxt {
@@ -529,4 +542,7 @@ button {
         padding-left: 25px;
     }
 
+    .input {
+        max-width: 200px;
+    }
 }

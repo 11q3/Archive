@@ -5,7 +5,6 @@ html {
 body {
     color: #FCE09B;
     margin: auto;
-    padding: 0;
     font: 400 36px/normal 'Open Sans', 'sans-serif' ;
     max-width: 622px;
     min-width: 360px;
@@ -13,11 +12,10 @@ body {
 }
 
 .registrationwindow {
-    display: flex;
-    margin-top: 50%;
+    position: fixed;
+    top: calc(50% - 313px);
+
     padding: 45px 68px;
-    flex-direction: column;
-    align-items: center;
     gap: 25px;
 
     border-radius: 15px;

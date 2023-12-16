@@ -113,9 +113,14 @@ button {
     align-self: stretch;
 
 }
+.navbar {
+    display: flex;
+    justify-content:  center;
+    gap: 15px;
+}
+
 .navbarli {
     display: flex;
-    align-items: flex-start;
 
 }
 .navbarlit {
@@ -130,12 +135,7 @@ button {
 
     padding-left: 50px;
 }
-.navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1 0 0;
-}
+
 
 .navbar__item {
     color: var(--secondary-biege, #FCE09B);
@@ -154,9 +154,7 @@ button {
 
 .searchpersonalarea {
     display: flex;
-    align-items: center;
     gap: 50px;
-    align-self: stretch;
 
     padding-left: 150px;
 
@@ -170,6 +168,7 @@ button {
     gap: 10px;
     align-self: stretch;
 
+    font-size: 20px;
     border-radius: 20px;
     background: #FFF;
 }
@@ -327,76 +326,69 @@ button {
     line-height: normal;
 }
 
-@media (max-width:1400px) {
-    .navbar__item {
-        font-size: 16px;
-    }
-    .input {
-        padding: 6px 20px;
-    }
-    .enter__link {
-        font-size: 16px;
-    }
-}
 
-@media (max-width: 1250px) {
+
+
+
+
+@media (max-width:1600px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .searchpersonalarea {
+        margin: 0 auto;
+        padding: 0;
+    }
+
     .mainmenu {
         height: 122px;
     }
 
-    .searchpersonalarea {
-        padding-left: 50px;
-        align-self: center;
-    }
 
-    .navbar__item {
-        font-size: 20px;
-        padding-top: 5px;
-        padding-bottom: 5px;
-    }
+
+}
+
+@media (max-width:1250px) {
     .input {
         padding: 6px 20px;
     }
+
     .enter__link {
         font-size: 20px;
     }
-    .navbarli {
-        display: block;
-    }
 }
 
-@media (max-width: 880px) {
-    .mainmenu {
-        height: auto;
-        padding-top: 10px;
-    }
+@media (max-width: 1100px) {
     .navbar {
-        display: flex;
-        flex-direction: column;
-        align-self: center;
+        gap: 10px;
     }
+
+    .navbarli {
+        flex-direction: column;
+    }
+
     .navbarlit {
-        display: flex;
         flex-direction: column;
         gap: 10px;
     }
     .navbarlib {
+        flex-direction: column;
         padding-left: 0;
         padding-top: 10px;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+        gap: 10px
     }
-    .searchpersonalarea {
-        padding-top: 25px;
-        padding-bottom: 25px;
+    .mainmenu {
+        height: auto;
     }
-
     .navbar__item {
         font-size: 20px;
         text-align: center;
         width: 100%;
     }
+}
+
+@media (max-width: 880px) {
     .navbar__link {
         display: block;
     }
@@ -405,7 +397,6 @@ button {
     }
     .enter__link {
         font-size: 20px;
-        max-width: 100%;
     }
 
     .docsfiles {
@@ -413,7 +404,7 @@ button {
     }
 }
 
-@media (max-width: 675px) {
+@media (max-width: 680px) {
     .maincontent {
         padding-left: 50px;
         padding-right: 50px;
@@ -435,33 +426,97 @@ button {
         font-weight: 300;
         line-height: normal;
     }
-    .headlinelogo{
+    .headlinelogo {
         flex-direction: column;
         gap: 10px;
     }
-
+    .maintitle h1 {
+        font-size: 36px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .maintitle h3 {
+        font-size: 25px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .morebutton {
+        font-size: 36px;
+    }
     .searchpersonalarea {
         gap: 20px;
+        padding-left: 0;
     }
 
     .abouttxt {
-        font-size: 16px;
+        font-size: 26px;
     }
 
     .autorsblock {
         padding-left: 25px;
     }
-
-    .maincontent {
-        padding-left: 15px;
-        padding-right: 15px;
+    .projectinfofirst,
+    .projectinfosecond,
+    .projectinfothird,
+    .projectinfofourth {
+        background: none;
+        width: auto;
+        height: auto;
+    }
+    .projectcard {
+        gap: 25px;
     }
 
-    .maincontent h2 {
-        margin-right: 15px;
+    .headlinet,.headlineb {
+        font-size: 64px;
+        color: #FFF;
     }
-    .docsfiles {
-        padding-left: 30px;
-        padding-right: 30px;
+
+    .footerlinelogo img {
+        display: none;
+    }
+
+    .input {
+        max-width: 200px;
+    }
+
+}
+
+@media (max-width:  400px)  {
+    .content h2 {
+        font-size: 36px;
+        font-style: italic;
+    }
+    .autorsblock {
+        padding-left: 20px;
+    }
+    .autorsblock h2 {
+        font-size: 36px;
+    }
+    .personcards h3 {
+        font-size: 32px;
+    }
+    .personcards p {
+        font-size: 20px;
+    }
+    .personimg {
+        width: 150px;
+        height: 150px;
+    }
+
+    .projects h1 {
+        font-size: 36px;
+    }
+
+    .projectcard h3 {
+        font-size: 24px;
+    }
+
+    .aboutbutton {
+        color: #FFF;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
     }
 }
