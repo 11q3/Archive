@@ -1,12 +1,10 @@
 package Archive.service;
 
 import Archive.model.User;
-import Archive.web.dto.UserRegistrationDto;
-
-import java.util.List;
+import Archive.web.dto.UserDto;
 
 public interface UserService {
-    void saveUser(UserRegistrationDto registrationDto);
+    void saveUser(UserDto registrationDto);
 
     User findUserByEmail(String email);
 }

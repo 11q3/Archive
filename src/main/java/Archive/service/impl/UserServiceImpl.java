@@ -4,12 +4,11 @@ import Archive.model.Role;
 import Archive.model.User;
 import Archive.repository.RoleRepository;
 import Archive.repository.UserRepository;
-import Archive.web.dto.UserRegistrationDto;
+import Archive.web.dto.UserDto;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -27,15 +26,15 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void saveUser(UserRegistrationDto registrationDto) {
+    public void saveUser(UserDto userDto) {
         User user = new User();
 
-        user.setFirstName(registrationDto.getFirstName());
-        user.setLastName(registrationDto.getLastName());
+        user.setFirstName(userDto.getFirstName());
+        user.setLastName(userDto.getLastName());
 
-        user.setEmail(registrationDto.getEmail());
-        user.setPassword(passwordEncoder.encode(registrationDto.getPassword()));
-        user.setPhoneNumber(registrationDto.getPhoneNumber());
+        user.setEmail(userDto.getEmail());
+        user.setPassword(passwordEncoder.encode(userDto.getPassword()));
+        user.setPhoneNumber(userDto.getPhoneNumber());
 
 
         Role role = roleRepository.findByName("ROLE_ADMIN");
