@@ -32,7 +32,7 @@ public class AuthController {
     }
 
     @GetMapping("/login")
-    public String login(){
+    public String login() {
         return "login";
     }
 
@@ -44,14 +44,11 @@ public class AuthController {
     }
 
     @PostMapping("/register/save")
-    public String registration(@Valid @ModelAttribute("user") UserDto userDto,
-                               BindingResult result,
-                               Model model) {
+    public String registration(@Valid @ModelAttribute("user") UserDto userDto, BindingResult result, Model model) {
         User existingUser = userService.findUserByEmail(userDto.getEmail());
 
         if (existingUser != null && existingUser.getEmail() != null && !existingUser.getEmail().isEmpty()) {
-            result.rejectValue("email", null,
-                    "Пользователь с таким адресом уже существует!");
+            result.rejectValue("email", null, "Пользователь с таким адресом уже существует!");
         }
         if (result.hasErrors()) {
             model.addAttribute("user", userDto);
@@ -68,12 +65,14 @@ public class AuthController {
 
     @GetMapping("/account")
     public String showAccountPage(Model model, Principal principal) {
+        if (principal == null) { return "redirect:/login"; }
+
         User user = userRepository.findByEmail(principal.getName());
 
-        if (user != null) {
-            model.addAttribute("username", user.getFirstName() + " " + user.getLastName());
-            model.addAttribute("email", user.getEmail());
-        }
+        model.addAttribute("first_name", user.getFirstName());
+        model.addAttribute("last_name", user.getLastName());
+        model.addAttribute("email", user.getEmail());
+        model.addAttribute("phone_number", user.getPhoneNumber());
 
         return "account";
     }

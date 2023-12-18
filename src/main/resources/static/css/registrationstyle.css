@@ -5,7 +5,7 @@ html {
 body {
     color: #FCE09B;
     margin: auto;
-    font: 400 36px/normal 'Open Sans', 'sans-serif' ;
+    font: 400 36px/normal 'Open Sans', 'sans-serif';
     max-width: 622px;
     min-width: 360px;
     gap: 0;
@@ -93,14 +93,12 @@ body {
 }
 
 
-
 .checkbox {
     display: flex;
     align-items: center;
     gap: 8px;
     align-self: stretch;
 }
-
 
 
 .checkbox span {

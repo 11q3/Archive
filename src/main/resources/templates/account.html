@@ -59,7 +59,8 @@
                         <div class="profilehead">
                             <div class="profileheadimg"></div>
                             <h1>
-                                <span th:text="${username}"></span>
+                                <span th:text="${first_name}"></span>
+                                <span th:text="${last_name}"></span>
                             </h1>
 
                         </div>
@@ -76,21 +77,21 @@
                         <div class="cardingonames">
                             <div class="firstname">
                                 <p class="name">Имя:</p>
-                                <p class="corname">Оксана</p>
+                                <p class="corname"><span th:text="${first_name}"></span></p>
                             </div>
                             <div class="lastname">
                                 <p class="name">Фамилия:</p>
-                                <p class="corname">Новикова</p>
+                                <p class="corname"><span th:text="${last_name}"></span></p>
                             </div>
                         </div>
                         <div class="cardingosecondaryinfo">
-                            <div class="mail">
+                            <div th:if="${email}!=null" class="mail">
                                 <p class="name">Почта:</p>
-                                <p class="corname">oxxxynov32@yandex.com</p>
+                                <p class="corname"><span th:text="${email}"></span></p>
                             </div>
-                            <div class="phone">
+                            <div th:if="${phone_number}!=null" class="phone">
                                 <p class="name">Телефон:</p>
-                                <p class="corname">+7 (952) ***-**-**</p>
+                                <p class="corname"><span th:text="${phone_number}"></span></p>
                             </div>
                             <div class="employee">
                                 <p class="name">Должность:</p>
@@ -98,7 +99,7 @@
                             </div>
                             <div class="commits">
                                 <p class="name">Публикации:</p>
-                                <p class="corname">5</p>
+                                <p class="corname">999</p>
                             </div>
                         </div>
                     </div>
