@@ -33,9 +33,6 @@ public class User {
     @Column(nullable=false)
     private String password;
 
-    @Column(name="phone_number")
-    private String phoneNumber;
-
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
             name = "users_roles",

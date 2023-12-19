@@ -23,6 +23,5 @@ public class UserDto {
     private String email;
     @NotEmpty
     private String password;
-    private String phoneNumber;
 
 }

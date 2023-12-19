@@ -72,7 +72,6 @@ public class AuthController {
         model.addAttribute("first_name", user.getFirstName());
         model.addAttribute("last_name", user.getLastName());
         model.addAttribute("email", user.getEmail());
-        model.addAttribute("phone_number", user.getPhoneNumber());
 
         return "account";
     }

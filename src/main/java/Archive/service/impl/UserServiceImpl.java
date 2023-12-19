@@ -1,9 +1,10 @@
-package Archive.service;
+package Archive.service.impl;
 
 import Archive.model.Role;
 import Archive.model.User;
 import Archive.repository.RoleRepository;
 import Archive.repository.UserRepository;
+import Archive.service.UserService;
 import Archive.web.dto.UserDto;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -34,7 +35,6 @@ public class UserServiceImpl implements UserService {
 
         user.setEmail(userDto.getEmail());
         user.setPassword(passwordEncoder.encode(userDto.getPassword()));
-        user.setPhoneNumber(userDto.getPhoneNumber());
 
 
         Role role = roleRepository.findByName("ROLE_ADMIN");
