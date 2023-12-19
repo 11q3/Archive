@@ -13,6 +13,9 @@
 </head>
 <body>
     <form method="post" th:action="@{/login}" role="form">
+        <div th:if="${param.success}">
+            <div class="alert alert-info">Вы успешно зарегистрировались!</div>
+        </div>
         <div th:if="${param.error}">
             <div class="alert alert-danger">Неправильный логин или пароль.</div>
         </div>

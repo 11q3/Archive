@@ -256,6 +256,8 @@ button {
 
 
 .main {
+    min-height: 950px;
+
     background: #186F65 url(/static/images/bg.png);
     background-size: cover;
     background-blend-mode: multiply;
@@ -272,8 +274,7 @@ button {
 }
 
 .maincontent {
-    padding-top: 25px;
-    margin: auto auto 50px;
+    margin: 50px auto 50px auto;
 }
 
 .maincontent h2 {

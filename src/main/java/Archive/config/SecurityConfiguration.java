@@ -35,7 +35,7 @@ public class SecurityConfiguration {
                                         "/",
                                         "/index",
                                         "/register/**",
-                                        "docks",
+                                        "/docks",
                                         "/static/css/**",
                                         "/static/images/**"
                                 )

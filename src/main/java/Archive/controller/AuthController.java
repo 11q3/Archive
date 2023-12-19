@@ -89,7 +89,9 @@ public class AuthController {
 
     @GetMapping("/account")
     public String showAccountPage(Model model, Principal principal) {
-        if (principal == null) { return "redirect:/login"; }
+        if (principal == null) {
+            return "redirect:/login";
+        }
 
         User user = userRepository.findByEmail(principal.getName());
 

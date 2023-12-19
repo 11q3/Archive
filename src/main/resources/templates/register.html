@@ -12,9 +12,6 @@
     <link rel="stylesheet" href="../static/css/registrationstyle.css">
 </head>
 <body>
-    <div th:if="${param.success}">
-        <div class="alert alert-info">Вы успешно зарегистрировались!</div>
-    </div>
     <form method="post" role="form" th:action="@{/register/save}" th:object = "${user}">
         <div class="registrationwindow">
             <div class="headline">

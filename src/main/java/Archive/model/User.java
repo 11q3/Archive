@@ -1,6 +1,7 @@
 package Archive.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,9 +22,11 @@ public class User {
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     private Long id;
 
+    @Size(min = 3, max = 10, message = "Неверное имя пользователя. (3-10 символов)")
     @Column(name = "first_name")
     private String firstName;
 
+    @Size(min = 3, max = 10, message = "Неверное имя пользователя. (3-10 символов)")
     @Column(name = "last_name")
     private String lastName;
 
