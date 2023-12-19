@@ -147,11 +147,52 @@ button {
 
 .searchpersonalarea {
     display: flex;
-    gap: 50px;
+    gap: 15px;
 
     padding-left: 150px;
 
     max-height: 35px;
+}
+
+.container {
+    max-height: 35px;
+    padding: 0;
+}
+
+.search-box {
+    input[type="text"] {
+        height: 35px;
+        transition: all .25s ease-in .25s, width .25s ease-in, background-color .25s ease-in;
+        font-size: .75rem;
+        line-height:25px;
+        border: none;
+        background-position-y: 5px;
+        background-image: url(../images/search.svg);
+        background-color: #B2533E;
+
+        background-repeat: no-repeat;
+        z-index: 1;
+        width: 35px;
+
+        &:hover {
+            cursor: pointer;
+            &:focus {
+                cursor: text;
+            }
+            + span {
+                background: rgba(255,255,255,0.2);
+            }
+        }
+        &:focus {
+            transition: all .25s ease-in .25s;
+            width: 200px;
+            padding: 0 10px;
+            outline: none;
+            background:white;
+            color: black;
+
+        }
+    }
 }
 
 .account-desc {

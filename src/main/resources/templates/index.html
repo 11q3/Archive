@@ -48,7 +48,11 @@
                             </div>
                         </div>
                         <div class="searchpersonalarea">
-                            <input class="input" type="text" id="name" name="name"/>
+                            <div class="container">
+                                <div class="search-box">
+                                    <input class="input" type="text" />
+                                </div>
+                            </div>
                             <a class="enter__link" sec:authorize="isAnonymous()" th:href="@{/login}">Войти</a>
                             <a class="account-desc" sec:authorize="isAuthenticated()" th:href="@{/account}">
                                 <div class="account-pic">
