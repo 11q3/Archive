@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,7 +48,17 @@
                         </div>
                         <div class="searchpersonalarea">
                             <input class="input" type="text" id="name" name="name"/>
-                            <a class="enter__link" th:href="@{/login}">Войти</a>
+                            <a class="enter__link" sec:authorize="isAnonymous()" th:href="@{/login}">Войти</a>
+                            <a class="account-desc" sec:authorize="isAuthenticated()" th:href="@{/account}">
+                                <div class="account-pic">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 17 45" fill="none">
+                                        <path d="M17.5 5.83334C19.0471 5.83334 20.5308 6.44792 21.6248 7.54188C22.7187 8.63584 23.3333 10.1196 23.3333 11.6667C23.3333 13.2138 22.7187 14.6975 21.6248 15.7915C20.5308 16.8854 19.0471 17.5 17.5 17.5C15.9529 17.5 14.4692 16.8854 13.3752 15.7915C12.2812 14.6975 11.6666 13.2138 11.6666 11.6667C11.6666 10.1196 12.2812 8.63584 13.3752 7.54188C14.4692 6.44792 15.9529 5.83334 17.5 5.83334ZM17.5 20.4167C23.9458 20.4167 29.1666 23.0271 29.1666 26.25V29.1667H5.83331V26.25C5.83331 23.0271 11.0541 20.4167 17.5 20.4167Z" fill="#FCE09B"/>
+                                    </svg>
+                                </div>
+                                <div class ="account-name">
+                                    <span th:text="${first_name}"></span>
+                                </div>
+                            </a>
                         </div>
                     </nav>
                 </div>

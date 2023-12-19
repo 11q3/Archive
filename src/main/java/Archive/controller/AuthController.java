@@ -5,6 +5,8 @@ import Archive.repository.UserRepository;
 import Archive.service.UserService;
 import Archive.web.dto.UserDto;
 import jakarta.validation.Valid;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -27,7 +29,18 @@ public class AuthController {
     }
 
     @GetMapping("/")
-    public String index() {
+    public String index(Model model, Principal principal) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        boolean isAuthenticated = authentication.isAuthenticated();
+        model.addAttribute("isAuthenticated", isAuthenticated);
+
+
+        if(principal != null) {
+            User user = userRepository.findByEmail(principal.getName());
+            model.addAttribute("first_name", user.getFirstName());
+        }
+
+
         return "index";
     }
 
@@ -59,7 +72,18 @@ public class AuthController {
         return "redirect:/register?success";
     }
     @GetMapping("/docks")
-    public String showDocksPage() {
+    public String showDocksPage(Model model, Principal principal) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        boolean isAuthenticated = authentication.isAuthenticated();
+        model.addAttribute("isAuthenticated", isAuthenticated);
+
+
+        if(principal !=null) {
+            User user = userRepository.findByEmail(principal.getName());
+            model.addAttribute("first_name", user.getFirstName());
+        }
+
+
         return "docks";
     }
 

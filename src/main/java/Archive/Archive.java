@@ -9,5 +9,4 @@ public class Archive {
 	public static void main(String[] args) {
 		SpringApplication.run(Archive.class, args);
 	}
-
 }
