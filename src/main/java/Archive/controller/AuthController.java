@@ -40,7 +40,6 @@ public class AuthController {
             model.addAttribute("first_name", user.getFirstName());
         }
 
-
         return "index";
     }
 
