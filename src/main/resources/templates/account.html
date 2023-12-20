@@ -91,25 +91,27 @@
                             <span>редактировать</span>
                         </div>
                     </div>
-                    <div class="cardingo">
-                        <div class="cardingonames">
-                            <div class="firstname">
-                                <p class="name">Имя:</p>
-                                <p class="corname"><span th:text="${first_name}"></span></p>
+                    <div class="cardingocontainer">
+                        <div class="cardingo">
+                            <div class="cardingonames">
+                                <div class="firstname">
+                                    <p class="name">Имя:</p>
+                                    <p class="corname"><span th:text="${first_name}"></span></p>
+                                </div>
+                                <div class="lastname">
+                                    <p class="name">Фамилия:</p>
+                                    <p class="corname"><span th:text="${last_name}"></span></p>
+                                </div>
                             </div>
-                            <div class="lastname">
-                                <p class="name">Фамилия:</p>
-                                <p class="corname"><span th:text="${last_name}"></span></p>
-                            </div>
-                        </div>
-                        <div class="cardingosecondaryinfo">
-                            <div th:if="${email}!=null" class="mail">
-                                <p class="name">Почта:</p>
-                                <p class="corname"><span th:text="${email}"></span></p>
-                            </div>
-                            <div class="commits">
-                                <p class="name">Публикации:</p>
-                                <p class="corname">999</p>
+                            <div class="cardingosecondaryinfo">
+                                <div th:if="${email}!=null" class="mail">
+                                    <p class="name">Почта:</p>
+                                    <p class="corname"><span th:text="${email}"></span></p>
+                                </div>
+                                <div class="commits">
+                                    <p class="name">Публикации:</p>
+                                    <p class="corname">999</p>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -295,6 +295,8 @@ button {
     border-radius: 20px;
     background: var(--secondary-green, #B5CB99);
     width: 1245px;
+    flex-shrink: 0;
+    box-shadow: -3px 0px 6px 0px rgba(19, 63, 58, 0.20), -11px 0px 11px 0px rgba(19, 63, 58, 0.17), -26px 0px 15px 0px rgba(19, 63, 58, 0.10), -45px 0px 18px 0px rgba(19, 63, 58, 0.03), -71px 0px 20px 0px rgba(19, 63, 58, 0.00);
 }
 
 .profilehead {
@@ -324,20 +326,32 @@ button {
     font-style: italic;
     font-weight: 900;
     line-height: normal;
+
+    padding-top: 35px;
+}
+
+.cardingocontainer   {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .cardingo {
+    padding-left: 75px;
+    padding-right: 75px;
+    padding-bottom: 75px;
+    justify-content: space-between;
     display: flex;
-    flex-direction: column;
-    gap: 38px;
-    padding-bottom: 55px;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 50px;
 }
 
 .cardingonames {
     display: flex;
-    gap: 149px;
-
-    margin-left: 230px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 50px;
 }
 
 .firstname,
@@ -347,6 +361,7 @@ button {
 .employee,
 .commits {
     display: flex;
+    align-items: center;
     gap: 10px;
 }
 
@@ -359,6 +374,8 @@ button {
     font-style: normal;
     font-weight: 275;
     line-height: normal;
+
+    align-self: baseline;
 
     margin: 0;
 }
@@ -379,20 +396,18 @@ button {
 .cardingosecondaryinfo {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 50px;
-
-    margin-left: 230px;
 }
 
 .edit {
-    display: flex;
-    align-items: center;
-    margin-top: 25px;
-    position: absolute;
-    padding-left: 85%;
+    display: inline-flex;
+    padding-top: 25px;
+    padding-right: 50px;
 }
 
 .edit span {
+    padding-top: 5px;
     color: var(--main-green, #186F65);
     font-family: Inter, sans-serif;
     font-size: 14px;
@@ -404,6 +419,7 @@ button {
 .accountcardcontent {
     display: flex;
     position: relative;
+    justify-content: space-between;
 }
 
 
@@ -427,28 +443,11 @@ button {
     .mainmenu {
         height: 122px;
     }
-
-    .cardingonames {
-        margin-left: 175px;
-    }
-
-    .cardingosecondaryinfo {
-        margin-left: 175px;
-    }
 }
 
 
 
 @media (max-width:1400px) {
-    .cardingonames {
-        flex-direction: column;
-        gap: 50px
-    }
-
-    .edit {
-        padding-left: 80%;
-    }
-
     .accountcard {
         width: 800px;
     }
@@ -502,29 +501,50 @@ button {
 
 @media (max-width: 880px) {
     .accountcard {
-        width: 600px;
+        width: 650px;
         margin: auto;
-    }
-
-    .cardingonames {
-        margin-left: 75px;
     }
 
     .input {
         padding: 15px 20px;
     }
 
-    .cardingosecondaryinfo {
-        margin-left: 75px;
+    .profilehead h1 {
+
+        /* h1 */
+        font-size: 64px;
+        font-style: italic;
+        font-weight: 400;
+        line-height: normal;
     }
-    .edit {
-        padding-left: 75%;
+
+    .profileheadimg {
+        width: 200px;
+        height: 200px;
     }
+
+    .cardingo {
+        padding-left: 25px;
+        padding-right: 25px;
+        padding-bottom: 25px;
+    }
+
 }
 
 @media (max-width: 700px) {
     .accountcard {
         width: 475px;
+    }
+
+    .accountcardcontent {
+        flex-direction: column;
+    }
+
+    .edit   {
+        padding-top: 0;
+        padding-right: 0;
+        padding-bottom: 25px;
+        padding-left: 25px;
     }
 
     .firstname,
@@ -534,10 +554,6 @@ button {
     .employee,
     .commits {
         flex-direction: column;
-    }
-
-    .edit {
-        padding-left: 70%;
     }
 }
 
@@ -555,28 +571,41 @@ button {
         flex-direction: column;
     }
 
-    .edit {
-        position: static;
-        margin: auto;
-        padding-bottom: 25px;
-        padding-left: 0
-    }
-
-    .cardingonames,
-    .cardingosecondaryinfo {
-        margin-left: 15px;
-    }
-
     .profilehead {
+        flex-direction: column;
+        gap: 0;
         right: 0;
         justify-content: center;
-        margin-left: 35px;
+    }
+
+    .profilehead h1 {
+        padding-top: 0;
+        text-align: center;
     }
 
     .edit {
-        margin: auto;
-        padding-left: 0
+        padding: 0;
+        text-align: center;
+        justify-content: center;
     }
+
+    .cardingo {
+        flex-direction: column;
+        padding-top: 50px;
+    }
+    .corname {
+        justify-content: initial;
+    }
+    .firstname,
+    .lastname,
+    .mail,
+    .phone,
+    .employee,
+    .commits {
+        flex-direction: initial;
+    }
+
+
 }
 
 @media (max-width:  550px) {
