@@ -1,35 +1,38 @@
 package Archive.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
+import java.sql.Blob;
+import java.util.Date;
 
 @Entity
-@Table(name = "imageData")
+@Table(name = "image_table")
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Image {
+    @Setter
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
-    private String name;
-
-    private String type;
-
+    @Setter
     @Lob
-    @Column(name = "image_data", length = 1000)
-    private byte[] imageData;
+    private Blob image;
 
-    public static byte[] compressImage(byte[] bytes) {
-        return null;
+    private Date date = new Date();
+
+    public long getId() {
+        return id;
     }
 
-    public static byte[] decompressImage(byte[] imageData) {
-        return null;
+    public Blob getImage() {
+        return image;
+    }
+
+    public Date getDate() {
+        return date;
     }
 }
