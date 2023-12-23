@@ -314,7 +314,6 @@ button {
     display: flex;
     flex-shrink: 0;
     border-radius: 251px;
-    background: url(/static/images/about.png) no-repeat;
     width: 250px;
     height: 250px;
 }

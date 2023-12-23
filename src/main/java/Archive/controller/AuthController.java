@@ -1,14 +1,11 @@
 package Archive.controller;
 
-import Archive.model.Image;
 import Archive.model.User;
 import Archive.repository.UserRepository;
-import Archive.service.ImageService;
 import Archive.service.UserService;
 import Archive.web.dto.UserDto;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
