@@ -28,14 +28,11 @@ import java.sql.SQLException;
 public class AuthController {
     private final UserService userService;
 
-    private final ImageService imageService;
-
     private final UserRepository userRepository;
 
-    public AuthController(UserService userService, UserRepository userRepository, ImageService imageService) {
+    public AuthController(UserService userService, UserRepository userRepository) {
         this.userService = userService;
         this.userRepository = userRepository;
-        this.imageService = imageService;
     }
 
     @GetMapping("/")
@@ -94,7 +91,7 @@ public class AuthController {
         return "docks";
     }
 
-    @GetMapping("/account")
+    /*@GetMapping("/account")
     public String showAccountPage(Model model, Principal principal) {
         if (principal == null) {
             return "redirect:/login";
@@ -107,22 +104,5 @@ public class AuthController {
         model.addAttribute("email", user.getEmail());
 
         return "account";
-    }
-
-    @GetMapping("/account/addImage")
-    public ModelAndView addImage() {
-        return new ModelAndView("addimage");
-    }
-
-    @PostMapping("/account/addImage")
-    public String addImagePost(HttpServletRequest request, @RequestParam("image") MultipartFile file) throws IOException, SerialException, SQLException
-    {
-        byte[] bytes = file.getBytes();
-        Blob blob = new javax.sql.rowset.serial.SerialBlob(bytes);
-
-        Image image = new Image();
-        image.setImage(blob);
-        imageService.create(image);
-        return "redirect:/";
-    }
+    }*/
 }

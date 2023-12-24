@@ -81,6 +81,16 @@
                                 <span th:text="${last_name}"></span>
                             </h1>
 
+                            <form th:action="@{/account}" th:object="${profilePicture}" method="post" enctype="multipart/form-data">
+                                <div>
+                                    <label for="file">Choose a file</label>
+                                    <input type="file" id="file" name="file" th:field="*{file}"/>
+                                </div>
+                                <div>
+                                    <input type="submit" value="Upload"/>
+                                </div>
+                            </form>
+
                         </div>
 
                         <div class="edit">
