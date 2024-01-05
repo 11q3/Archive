@@ -74,7 +74,7 @@ public class AuthController {
         }
 
         userService.saveUser(userDto);
-        return "redirect:/register?success";
+        return "redirect:/login?success";
     }
     @GetMapping("/docks")
     public String showDocksPage(Model model, Principal principal) {
@@ -90,19 +90,4 @@ public class AuthController {
 
         return "docks";
     }
-
-    /*@GetMapping("/account")
-    public String showAccountPage(Model model, Principal principal) {
-        if (principal == null) {
-            return "redirect:/login";
-        }
-
-        User user = userRepository.findByEmail(principal.getName());
-
-        model.addAttribute("first_name", user.getFirstName());
-        model.addAttribute("last_name", user.getLastName());
-        model.addAttribute("email", user.getEmail());
-
-        return "account";
-    }*/
 }
