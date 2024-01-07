@@ -6,11 +6,11 @@ import Archive.repository.UserRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.security.Principal;
@@ -30,8 +30,8 @@ public class ImageController {
             model.addAttribute("first_name", user.getFirstName());
             model.addAttribute("last_name", user.getLastName());
             model.addAttribute("email", user.getEmail());
-            model.addAttribute("profilePicture", new ProfilePicture());
-            //model.addAttribute("profilePicture", user.getProfilePicture());
+            //model.addAttribute("profilePicture", new ProfilePicture());
+            model.addAttribute("profilePicture", user.getProfilePicture());
 
         }
 
@@ -39,14 +39,21 @@ public class ImageController {
     }
 
     @PostMapping("/account")
-    public String uploadFile(@ModelAttribute("profilePicture") ProfilePicture profilePicture) throws IOException {
+    public String uploadFile(@ModelAttribute("profilePicture") ProfilePicture profilePicture, Principal principal) throws IOException {
+        User user = userRepository.findByEmail(principal.getName());
 
+        String fileName = profilePicture.getFile().getOriginalFilename();
         String Path_Directory="/home/elevenqtwo/Desktop/Archive/src/main/resources/static/images/profilepictures";
 
         Files.copy(profilePicture.getFile().getInputStream(), Paths.get(Path_Directory + File.separator + profilePicture.getFile().getOriginalFilename()), StandardCopyOption.REPLACE_EXISTING);
 
-        System.out.println("success");
+        user.setProfilePicture("static/images/profilepictures" + '/' + fileName);
+        userRepository.save(user);
 
-        return "account";
+
+
+        return "redirect:/account";
     }
+
+
 }

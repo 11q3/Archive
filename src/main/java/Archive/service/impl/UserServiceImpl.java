@@ -13,7 +13,6 @@ import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
-
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
     private final BCryptPasswordEncoder passwordEncoder;
@@ -36,6 +35,8 @@ public class UserServiceImpl implements UserService {
         user.setEmail(userDto.getEmail());
         user.setPassword(passwordEncoder.encode(userDto.getPassword()));
 
+        user.setProfilePicture(userDto.getProfilePicture());
+
 
         Role role = roleRepository.findByName("ROLE_USER");
 
@@ -51,7 +52,6 @@ public class UserServiceImpl implements UserService {
     public User findUserByEmail(String email) {
         return userRepository.findByEmail(email);
     }
-
 
     private Role checkRoleExist(){
         Role role = new Role();

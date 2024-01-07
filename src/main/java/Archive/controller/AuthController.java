@@ -4,7 +4,6 @@ import Archive.model.User;
 import Archive.repository.UserRepository;
 import Archive.service.UserService;
 import Archive.web.dto.UserDto;
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -14,15 +13,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.ModelAndView;
 
-import javax.sql.rowset.serial.SerialException;
-import java.io.IOException;
 import java.security.Principal;
-import java.sql.Blob;
-import java.sql.SQLException;
 
 @Controller
 public class AuthController {
@@ -66,7 +58,7 @@ public class AuthController {
         User existingUser = userService.findUserByEmail(userDto.getEmail());
 
         if (existingUser != null && existingUser.getEmail() != null && !existingUser.getEmail().isEmpty()) {
-            result.rejectValue("email", null, "Пользователь с таким адресом уже существует!");
+            result.rejectValue("email", "409", "Пользователь с таким адресом уже существует!");
         }
         if (result.hasErrors()) {
             model.addAttribute("user", userDto);

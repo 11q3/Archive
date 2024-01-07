@@ -13,115 +13,111 @@
     <link rel="stylesheet" href="../static/css/accountstyle.css">
 </head>
 <body>
-    <div class="accountpage">
-        <div class="headerlogoheadline">
-            <a class="headlinelogo" th:href="@{/}">
-                <img src="../static/images/logo.png" alt="">
-                <div class="headline">
-                    <span class = hdlinet>Публичный архив</span>
-                    <span class = hdlineb>ГБОУ Гимназия №41 им. Эриха Кестнера</span>
-                </div>
-            </a>
-            <div class="mainmenu">
-                <nav class="navbar">
-                    <div class="navbarli">
-                        <div class="navbarlit">
-                            <li class="navbar__item">
-                                <a class="navbar__link" th:href="@{/docks}">Архив</a>
-                            </li>
-                            <li class="navbar__item">
-                                <a class="navbar__link" th:href="@{/#autorspage}">Наши Авторы</a>
-                            </li>
-                            <li class="navbar__item">
-                                <a class="navbar__link" th:href="@{/#partnerspage}">Наши Партнеры</a>
-                            </li>
-                        </div>
-                        <div class="navbarlib">
-                            <li class="navbar__item">
-                                <a class="navbar__link" th:href="@{/#projects}">Работы и проекты</a>
-                            </li>
-                            <li class="navbar__item">
-                                <a class="navbar__link" th:href="@{/#aboutpage}">О проекте</a>
-                            </li>
-                        </div>
-                    </div>
-                    <div class="searchpersonalarea">
-                        <div class="container">
-                            <div class="search-box">
-                                <input class="input" type="text" />
-                            </div>
-                        </div>
-
-
-
-                        <a class="enter__link" sec:authorize="isAnonymous()" th:href="@{/login}">Войти</a>
-                        <a class="account-desc" sec:authorize="isAuthenticated()" th:href="@{/account}">
-                            <div class="account-pic">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 17 45" fill="none">
-                                    <path d="M17.5 5.83334C19.0471 5.83334 20.5308 6.44792 21.6248 7.54188C22.7187 8.63584 23.3333 10.1196 23.3333 11.6667C23.3333 13.2138 22.7187 14.6975 21.6248 15.7915C20.5308 16.8854 19.0471 17.5 17.5 17.5C15.9529 17.5 14.4692 16.8854 13.3752 15.7915C12.2812 14.6975 11.6666 13.2138 11.6666 11.6667C11.6666 10.1196 12.2812 8.63584 13.3752 7.54188C14.4692 6.44792 15.9529 5.83334 17.5 5.83334ZM17.5 20.4167C23.9458 20.4167 29.1666 23.0271 29.1666 26.25V29.1667H5.83331V26.25C5.83331 23.0271 11.0541 20.4167 17.5 20.4167Z" fill="#FCE09B"/>
-                                </svg>
-                            </div>
-                            <div class ="account-name">
-                                <span th:text="${first_name}"></span>
-                            </div>
-                        </a>
-                    </div>
-                </nav>
+<div class="accountpage">
+    <div class="headerlogoheadline">
+        <a class="headlinelogo" th:href="@{/}">
+            <img src="../static/images/logo.png" alt="">
+            <div class="headline">
+                <span class = hdlinet>Публичный архив</span>
+                <span class = hdlineb>ГБОУ Гимназия №41 им. Эриха Кестнера</span>
             </div>
+        </a>
+        <div class="mainmenu">
+            <nav class="navbar">
+                <div class="navbarli">
+                    <div class="navbarlit">
+                        <li class="navbar__item">
+                            <a class="navbar__link" th:href="@{/docks}">Архив</a>
+                        </li>
+                        <li class="navbar__item">
+                            <a class="navbar__link" th:href="@{/#autorspage}">Наши Авторы</a>
+                        </li>
+                        <li class="navbar__item">
+                            <a class="navbar__link" th:href="@{/#partnerspage}">Наши Партнеры</a>
+                        </li>
+                    </div>
+                    <div class="navbarlib">
+                        <li class="navbar__item">
+                            <a class="navbar__link" th:href="@{/#projects}">Работы и проекты</a>
+                        </li>
+                        <li class="navbar__item">
+                            <a class="navbar__link" th:href="@{/#aboutpage}">О проекте</a>
+                        </li>
+                    </div>
+                </div>
+                <div class="searchpersonalarea">
+                    <div class="container">
+                        <div class="search-box">
+                            <input class="input" type="text" />
+                        </div>
+                    </div>
+
+
+
+                    <a class="enter__link" sec:authorize="isAnonymous()" th:href="@{/login}">Войти</a>
+                    <a class="account-desc" sec:authorize="isAuthenticated()" th:href="@{/account}">
+                        <div class="account-pic">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 17 45" fill="none">
+                                <path d="M17.5 5.83334C19.0471 5.83334 20.5308 6.44792 21.6248 7.54188C22.7187 8.63584 23.3333 10.1196 23.3333 11.6667C23.3333 13.2138 22.7187 14.6975 21.6248 15.7915C20.5308 16.8854 19.0471 17.5 17.5 17.5C15.9529 17.5 14.4692 16.8854 13.3752 15.7915C12.2812 14.6975 11.6666 13.2138 11.6666 11.6667C11.6666 10.1196 12.2812 8.63584 13.3752 7.54188C14.4692 6.44792 15.9529 5.83334 17.5 5.83334ZM17.5 20.4167C23.9458 20.4167 29.1666 23.0271 29.1666 26.25V29.1667H5.83331V26.25C5.83331 23.0271 11.0541 20.4167 17.5 20.4167Z" fill="#FCE09B"/>
+                            </svg>
+                        </div>
+                        <div class ="account-name">
+                            <span th:text="${first_name}"></span>
+                        </div>
+                    </a>
+                </div>
+            </nav>
         </div>
-        <div class="main">
-            <div class="maincontent">
-                <h2>Личный кабинет</h2>
-                <div class="accountcard">
-                    <div class="accountcardcontent">
+    </div>
+    <div class="main">
+        <div class="maincontent">
+            <h2>Личный кабинет</h2>
+            <div class="accountcard">
+                <div class="accountcardcontent">
+                    <form th:action="@{/account}" th:object="${profilePicture}" method="post" enctype="multipart/form-data">
+
                         <div class="profilehead">
-                            <div class="profileheadimg"></div>
+                            <div class="profileheadimg">
+                                <img class = "th" th:src="${profilePicture}" alt="">
+                            </div>
                             <h1>
                                 <span th:text="${first_name}"></span>
                                 <span th:text="${last_name}"></span>
                             </h1>
 
-                            <form th:action="@{/account}" th:object="${profilePicture}" method="post" enctype="multipart/form-data">
-                                <div>
-                                    <label for="file">Choose a file</label>
-                                    <input type="file" id="file" name="file" th:field="*{file}"/>
-                                </div>
-                                <div>
-                                    <input type="submit" value="Upload"/>
-                                </div>
-                            </form>
-
+                            <input type="file" id="file" name="file" required>
+                            <input type="submit" value="Upload">
                         </div>
+                    </form>
 
-                        <div class="edit">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
-                                <path d="M19.3419 6.33296L21.8337 8.82358M20.9443 4.13882L14.2066 10.8765C13.8584 11.2242 13.621 11.6671 13.5242 12.1495L12.9019 15.2648L16.0172 14.6413C16.4995 14.5448 16.9419 14.3083 17.2901 13.9601L24.0279 7.22239C24.2303 7.01992 24.3909 6.77955 24.5005 6.51501C24.6101 6.25047 24.6665 5.96694 24.6665 5.68061C24.6665 5.39427 24.6101 5.11074 24.5005 4.8462C24.3909 4.58166 24.2303 4.34129 24.0279 4.13882C23.8254 3.93636 23.585 3.77575 23.3205 3.66617C23.0559 3.5566 22.7724 3.5002 22.4861 3.5002C22.1997 3.5002 21.9162 3.5566 21.6517 3.66617C21.3871 3.77575 21.1468 3.93636 20.9443 4.13882Z" stroke="#186F65" stroke-width="1.37566" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M22.3137 17.6178V21.1472C22.3137 21.7713 22.0658 22.3698 21.6246 22.811C21.1833 23.2523 20.5848 23.5002 19.9608 23.5002H7.01947C6.39542 23.5002 5.79694 23.2523 5.35567 22.811C4.9144 22.3698 4.6665 21.7713 4.6665 21.1472V8.20592C4.6665 7.58187 4.9144 6.98339 5.35567 6.54212C5.79694 6.10085 6.39542 5.85295 7.01947 5.85295H10.5489" stroke="#186F65" stroke-width="1.37566" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <span>редактировать</span>
-                        </div>
+                    <div class="edit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                            <path d="M19.3419 6.33296L21.8337 8.82358M20.9443 4.13882L14.2066 10.8765C13.8584 11.2242 13.621 11.6671 13.5242 12.1495L12.9019 15.2648L16.0172 14.6413C16.4995 14.5448 16.9419 14.3083 17.2901 13.9601L24.0279 7.22239C24.2303 7.01992 24.3909 6.77955 24.5005 6.51501C24.6101 6.25047 24.6665 5.96694 24.6665 5.68061C24.6665 5.39427 24.6101 5.11074 24.5005 4.8462C24.3909 4.58166 24.2303 4.34129 24.0279 4.13882C23.8254 3.93636 23.585 3.77575 23.3205 3.66617C23.0559 3.5566 22.7724 3.5002 22.4861 3.5002C22.1997 3.5002 21.9162 3.5566 21.6517 3.66617C21.3871 3.77575 21.1468 3.93636 20.9443 4.13882Z" stroke="#186F65" stroke-width="1.37566" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M22.3137 17.6178V21.1472C22.3137 21.7713 22.0658 22.3698 21.6246 22.811C21.1833 23.2523 20.5848 23.5002 19.9608 23.5002H7.01947C6.39542 23.5002 5.79694 23.2523 5.35567 22.811C4.9144 22.3698 4.6665 21.7713 4.6665 21.1472V8.20592C4.6665 7.58187 4.9144 6.98339 5.35567 6.54212C5.79694 6.10085 6.39542 5.85295 7.01947 5.85295H10.5489" stroke="#186F65" stroke-width="1.37566" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>редактировать</span>
                     </div>
-                    <div class="cardingocontainer">
-                        <div class="cardingo">
-                            <div class="cardingonames">
-                                <div class="firstname">
-                                    <p class="name">Имя:</p>
-                                    <p class="corname"><span th:text="${first_name}"></span></p>
-                                </div>
-                                <div class="lastname">
-                                    <p class="name">Фамилия:</p>
-                                    <p class="corname"><span th:text="${last_name}"></span></p>
-                                </div>
+                </div>
+                <div class="cardingocontainer">
+                    <div class="cardingo">
+                        <div class="cardingonames">
+                            <div class="firstname">
+                                <p class="name">Имя:</p>
+                                <p class="corname"><span th:text="${first_name}"></span></p>
                             </div>
-                            <div class="cardingosecondaryinfo">
-                                <div th:if="${email}!=null" class="mail">
-                                    <p class="name">Почта:</p>
-                                    <p class="corname"><span th:text="${email}"></span></p>
-                                </div>
-                                <div class="commits">
-                                    <p class="name">Публикации:</p>
-                                    <p class="corname">999</p>
-                                </div>
+                            <div class="lastname">
+                                <p class="name">Фамилия:</p>
+                                <p class="corname"><span th:text="${last_name}"></span></p>
+                            </div>
+                        </div>
+                        <div class="cardingosecondaryinfo">
+                            <div th:if="${email}!=null" class="mail">
+                                <p class="name">Почта:</p>
+                                <p class="corname"><span th:text="${email}"></span></p>
+                            </div>
+                            <div class="commits">
+                                <p class="name">Публикации:</p>
+                                <p class="corname">999</p>
                             </div>
                         </div>
                     </div>
@@ -129,5 +125,6 @@
             </div>
         </div>
     </div>
+</div>
 </body>
 </html>

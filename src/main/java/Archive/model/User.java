@@ -20,6 +20,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
+    @Column(name="user_id")
     private Long id;
 
     @Size(min = 3, max = 10, message = "Неверное имя пользователя. (3-10 символов)")
@@ -40,10 +41,12 @@ public class User {
     @JoinTable(
             name = "users_roles",
             joinColumns = @JoinColumn(
-                    name = "USER_ID", referencedColumnName = "ID"),
+                    name = "USER_ID", referencedColumnName = "user_id"),
             inverseJoinColumns = @JoinColumn(
-                    name = "ROLE_ID", referencedColumnName = "ID"))
+                    name = "ROLE_ID", referencedColumnName = "role_id"))
 
     private List<Role> roles = new ArrayList<>();
+
+    private String profilePicture;
 
 }
