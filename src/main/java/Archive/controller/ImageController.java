@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.security.Principal;
@@ -30,11 +29,9 @@ public class ImageController {
             model.addAttribute("first_name", user.getFirstName());
             model.addAttribute("last_name", user.getLastName());
             model.addAttribute("email", user.getEmail());
-            //model.addAttribute("profilePicture", new ProfilePicture());
+
             model.addAttribute("profilePicture", user.getProfilePicture());
-
         }
-
         return "account";
     }
 
@@ -45,7 +42,13 @@ public class ImageController {
         String fileName = profilePicture.getFile().getOriginalFilename();
         String Path_Directory="/home/elevenqtwo/Desktop/Archive/src/main/resources/static/images/profilepictures";
 
-        Files.copy(profilePicture.getFile().getInputStream(), Paths.get(Path_Directory + File.separator + profilePicture.getFile().getOriginalFilename()), StandardCopyOption.REPLACE_EXISTING);
+        Files.copy(
+                profilePicture.getFile().getInputStream(),
+                Paths.get(
+                        Path_Directory +
+                        File.separator +
+                        profilePicture.getFile().getOriginalFilename()),
+                        StandardCopyOption.REPLACE_EXISTING);
 
         user.setProfilePicture("static/images/profilepictures" + '/' + fileName);
         userRepository.save(user);

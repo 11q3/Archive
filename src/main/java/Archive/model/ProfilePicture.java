@@ -1,14 +1,14 @@
-package Archive.model;
+    package Archive.model;
 
-import lombok.Getter;
-import lombok.Setter;
-import org.springframework.web.multipart.MultipartFile;
+    import lombok.Getter;
+    import lombok.Setter;
+    import org.springframework.web.multipart.MultipartFile;
 
-@Setter
-@Getter
-public class ProfilePicture {
+    @Setter
+    @Getter
+    public class ProfilePicture {
 
 
-    private MultipartFile file;
+        private MultipartFile file;
 
-}
+    }
