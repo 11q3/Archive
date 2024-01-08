@@ -57,6 +57,4 @@ public class ImageController {
         
         return "redirect:/account";
     }
-
-
 }
