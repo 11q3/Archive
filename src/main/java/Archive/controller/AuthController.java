@@ -74,7 +74,7 @@ public class AuthController {
         boolean isAuthenticated = authentication.isAuthenticated();
         model.addAttribute("isAuthenticated", isAuthenticated);
 
-        if(principal !=null) {
+        if(principal != null) {
             User user = userRepository.findByEmail(principal.getName());
             model.addAttribute("first_name", user.getFirstName());
         }

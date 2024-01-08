@@ -7,8 +7,5 @@
     @Setter
     @Getter
     public class ProfilePicture {
-
-
         private MultipartFile file;
-
     }

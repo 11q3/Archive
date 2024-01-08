@@ -13,6 +13,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.security.Principal;
+import java.util.Objects;
 
 @Controller
 public class ImageController {
@@ -24,7 +25,7 @@ public class ImageController {
 
     @GetMapping("/account")
     public String uploadFile(Model model, Principal principal) {
-        if(principal !=null) {
+        if(principal != null) {
             User user = userRepository.findByEmail(principal.getName());
             model.addAttribute("first_name", user.getFirstName());
             model.addAttribute("last_name", user.getLastName());
@@ -39,22 +40,21 @@ public class ImageController {
     public String uploadFile(@ModelAttribute("profilePicture") ProfilePicture profilePicture, Principal principal) throws IOException {
         User user = userRepository.findByEmail(principal.getName());
 
-        String fileName = profilePicture.getFile().getOriginalFilename();
+        String userId = user.getId().toString();
+        String fileName = userId + "." + Objects.requireNonNull(profilePicture.getFile().getContentType()).split("/")[1];
         String Path_Directory="/home/elevenqtwo/Desktop/Archive/src/main/resources/static/images/profilepictures";
 
         Files.copy(
                 profilePicture.getFile().getInputStream(),
                 Paths.get(
                         Path_Directory +
-                        File.separator +
-                        profilePicture.getFile().getOriginalFilename()),
-                        StandardCopyOption.REPLACE_EXISTING);
+                                File.separator +
+                                fileName),
+                StandardCopyOption.REPLACE_EXISTING);
 
         user.setProfilePicture("static/images/profilepictures" + '/' + fileName);
         userRepository.save(user);
-
-
-
+        
         return "redirect:/account";
     }
 
