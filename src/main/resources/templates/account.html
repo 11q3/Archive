@@ -93,16 +93,9 @@
                                 </svg>
                                     <span>редактировать</span>
                             </label>
-                            <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file" name="file" required style="display: none">
-                            <script>
-                                let profilePic = document.getElementById("profile-pic");
-                                let inputFile = document.getElementById("input-file");
 
-                                inputFile.onchange = function() {
-                                    profilePic.src = URL.createObjectURL(inputFile.files[0]);
-                                }
-                            </script>
-                            <input type="submit" value="qw">
+                            <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file" name="file" required style="display: none" onchange="this.form.submit()">
+
                         </div>
                     </form>
                 </div>

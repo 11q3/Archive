@@ -7,6 +7,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -38,23 +42,32 @@ public class ImageController {
 
     @PostMapping("/account")
     public String uploadFile(@ModelAttribute("profilePicture") ProfilePicture profilePicture, Principal principal) throws IOException {
+
+
         User user = userRepository.findByEmail(principal.getName());
 
         String userId = user.getId().toString();
         String fileName = userId + "." + Objects.requireNonNull(profilePicture.getFile().getContentType()).split("/")[1];
         String Path_Directory="/home/elevenqtwo/Desktop/Archive/src/main/resources/static/images/profilepictures";
 
-        Files.copy(
-                profilePicture.getFile().getInputStream(),
-                Paths.get(
-                        Path_Directory +
-                                File.separator +
-                                fileName),
-                StandardCopyOption.REPLACE_EXISTING);
+        BufferedImage image = ImageIO.read(profilePicture.getFile().getInputStream());
+
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        ImageIO.write(image, "png", byteArrayOutputStream);
+
+        try (ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(byteArrayOutputStream.toByteArray())) {
+            Files.copy(
+                    byteArrayInputStream,
+                    Paths.get(
+                            Path_Directory +
+                                    File.separator +
+                                    fileName),
+                    StandardCopyOption.REPLACE_EXISTING);
+        }
 
         user.setProfilePicture("static/images/profilepictures" + '/' + fileName);
         userRepository.save(user);
-        
+
         return "redirect:/account";
     }
 }
