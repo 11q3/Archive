@@ -73,17 +73,18 @@
         <div class="maincontent">
             <h2>Личный кабинет</h2>
             <div class="accountcard">
-                <div class="accountcardcontent">
-                    <form th:action="@{/account}" th:object="${profilePicture}" method="post" enctype="multipart/form-data">
+                    <form class = "accountcardcontent" th:action="@{/account}" th:object="${profilePicture}" method="post" enctype="multipart/form-data">
 
                         <div class="profilehead">
-                            <div class="profileheadimg">
-                                <img th:src="${profilePicture}" alt=" Загрузка..." id = "profile-pic">
-                            </div>
+                            <div class="profiledesc">
+                                <div class="profileheadimg">
+                                    <img class ="profileheadimg" th:src="${profilePicture}" alt=" Загрузка..." id = "profile-pic">
+                                </div>
                             <h1>
                                 <span th:text="${first_name}"></span>
                                 <span th:text="${last_name}"></span>
                             </h1>
+                            </div>
 
 
                             <label for="input-file" class = edit>
@@ -98,7 +99,6 @@
 
                         </div>
                     </form>
-                </div>
                 <div class="cardingocontainer">
                     <div class="cardingo">
                         <div class="cardingonames">

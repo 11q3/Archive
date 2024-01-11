@@ -103,6 +103,8 @@ button {
     line-height: normal;
 }
 
+
+
 .mainmenu {
     background: var(--main-red, #B2533E);
 
@@ -304,11 +306,23 @@ button {
     right: 30px;
     bottom: 38px;
 
+
+    width: 100vh;
     display: inline-flex;
+    justify-content: space-between;
     align-items: center;
     gap: 35px;
-
 }
+
+.profiledesc {
+    gap: 35px;
+    display: inline-flex;
+}
+.profiledesc h1 {
+    margin: auto;
+    padding-top: 0;
+}
+
 
 .profileheadimg {
     display: flex;
@@ -326,7 +340,6 @@ button {
     font-weight: 900;
     line-height: normal;
 
-    padding-top: 35px;
 }
 
 .cardingocontainer   {
@@ -400,9 +413,9 @@ button {
 }
 
 .edit {
+    padding-top: 75px;
+    align-self: flex-start;
     display: inline-flex;
-    padding-top: 25px;
-    padding-right: 50px;
 }
 
 .edit span {
@@ -515,6 +528,7 @@ button {
         font-style: italic;
         font-weight: 400;
         line-height: normal;
+        padding-top: 50px;
     }
 
     .profileheadimg {
@@ -531,20 +545,6 @@ button {
 }
 
 @media (max-width: 700px) {
-    .accountcard {
-        width: 475px;
-    }
-
-    .accountcardcontent {
-        flex-direction: column;
-    }
-
-    .edit   {
-        padding-top: 0;
-        padding-right: 0;
-        padding-bottom: 25px;
-        padding-left: 25px;
-    }
 
     .firstname,
     .lastname,
@@ -553,6 +553,10 @@ button {
     .employee,
     .commits {
         flex-direction: column;
+    }
+
+    .profilehead {
+        width: 300px;
     }
 }
 
@@ -572,9 +576,18 @@ button {
 
     .profilehead {
         flex-direction: column;
-        gap: 0;
+        gap: 5px;
         right: 0;
         justify-content: center;
+    }
+
+    .profileheadimg {
+        margin: auto;
+    }
+
+    .profiledesc {
+        flex-direction: column;
+        gap: 0;
     }
 
     .profilehead h1 {
@@ -586,11 +599,13 @@ button {
         padding: 0;
         text-align: center;
         justify-content: center;
+        margin: auto;
     }
 
     .cardingo {
+        max-width: 300px;
         flex-direction: column;
-        padding-top: 50px;
+        padding-top: 0px;
     }
     .corname {
         justify-content: initial;
@@ -602,6 +617,7 @@ button {
     .employee,
     .commits {
         flex-direction: initial;
+        max-width: 300px;
     }
 
 
