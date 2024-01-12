@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 @Getter
@@ -21,6 +22,7 @@ public class Document {
 
     private String filePath;
 
-    public void setPath(String string) {
+    public void setPath(String path) {
+        this.filePath = path;
     }
 }

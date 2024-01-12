@@ -27,7 +27,7 @@ public class DocumentServiceImpl implements DocumentService {
     @Override
     public String saveDocument(MultipartFile file) throws IOException {
         String fileName = StringUtils.cleanPath(Objects.requireNonNull(file.getOriginalFilename()));
-        Path targetLocation = Paths.get(Archive.util.Paths.PROFILE_PICTURE.getPath());
+        Path targetLocation = Paths.get(Archive.util.Paths.DOCUMENTS.getPath() + fileName);
 
 
         // Save file to the filesystem
@@ -35,15 +35,10 @@ public class DocumentServiceImpl implements DocumentService {
 
         // Save file path to the database
         Document document = new Document();
-        document.setPath(targetLocation.toString());
+        document.setPath(targetLocation + fileName);
         document.setName(fileName);
         documentRepository.save(document);
 
         return "redirect:/docks";
-    }
-
-    @Override
-    public void deleteDocument(Long id) {
-
     }
 }

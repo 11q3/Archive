@@ -8,6 +8,4 @@ import java.io.IOException;
 @Service
 public interface DocumentService {
     String saveDocument(MultipartFile file) throws IOException;
-
-    void deleteDocument(Long id);
 }
