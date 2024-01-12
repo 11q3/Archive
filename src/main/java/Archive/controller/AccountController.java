@@ -20,15 +20,15 @@ import java.security.Principal;
 import java.util.Objects;
 
 @Controller
-public class ImageController {
+public class AccountController {
     private final UserRepository userRepository;
 
-    public ImageController(UserRepository userRepository) {
+    public AccountController(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
     @GetMapping("/account")
-    public String uploadFile(Model model, Principal principal) {
+    public String showAccount(Model model, Principal principal) {
         if(principal != null) {
             User user = userRepository.findByEmail(principal.getName());
             model.addAttribute("first_name", user.getFirstName());
@@ -42,13 +42,12 @@ public class ImageController {
 
     @PostMapping("/account")
     public String uploadFile(@ModelAttribute("profilePicture") ProfilePicture profilePicture, Principal principal) throws IOException {
-
-
         User user = userRepository.findByEmail(principal.getName());
 
         String userId = user.getId().toString();
+
         String fileName = userId + "." + Objects.requireNonNull(profilePicture.getFile().getContentType()).split("/")[1];
-        String Path_Directory="/home/elevenqtwo/Desktop/Archive/src/main/resources/static/images/profilepictures";
+        String Path_Directory= Archive.util.Paths.PROFILE_PICTURE.getPath();
 
         BufferedImage image = ImageIO.read(profilePicture.getFile().getInputStream());
 

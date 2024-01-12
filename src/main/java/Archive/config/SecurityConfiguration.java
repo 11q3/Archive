@@ -36,10 +36,11 @@ public class SecurityConfiguration {
                                         "/register/**",
                                         "/static/css/**",
                                         "/static/images/**",
-                                        "/**"
+                                        "/**",
+                                        "/docksTEST"
                                 )
                                 .permitAll()
-                                .requestMatchers("/docks","/account","/account/image/","/account/image/info/").authenticated())
+                                .requestMatchers("/docks","/account","/account/image/").authenticated())
                 .formLogin(form -> form
                         .loginPage("/login")
                         .loginProcessingUrl("/login")

@@ -68,6 +68,10 @@
                 </div>
             </div>
             <div class="main">
+                <form method="POST" th:action="@{/docks}" th:object= "${documents}" enctype="multipart/form-data">
+                    <input type="file" name="file">
+                    <button type="submit">Upload</button>
+                </form>
                 <div class="maincontent">
                     <h2>Архив</h2>
                     <div class="docs">

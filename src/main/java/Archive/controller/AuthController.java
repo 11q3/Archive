@@ -68,18 +68,5 @@ public class AuthController {
         userService.saveUser(userDto);
         return "redirect:/login?success";
     }
-    @GetMapping("/docks")
-    public String showDocksPage(Model model, Principal principal) {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        boolean isAuthenticated = authentication.isAuthenticated();
-        model.addAttribute("isAuthenticated", isAuthenticated);
 
-        if(principal != null) {
-            User user = userRepository.findByEmail(principal.getName());
-            model.addAttribute("first_name", user.getFirstName());
-        }
-
-
-        return "docks";
-    }
 }
