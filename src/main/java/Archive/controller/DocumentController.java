@@ -8,6 +8,9 @@ import Archive.service.DocumentService;
 import Archive.util.Paths;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.core.io.InputStreamResource;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -44,18 +47,20 @@ public class DocumentController {
 
 
     @GetMapping("/docks")
-    public String showDocksPage(Model model, Principal principal) {
+    public String showDocksPage(Model model, Principal principal, @RequestParam(value = "page", defaultValue = "0") int page) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         boolean isAuthenticated = authentication.isAuthenticated();
         model.addAttribute("isAuthenticated", isAuthenticated);
+
+        Pageable pageable = PageRequest.of(page, 16); // 8 documents per page
+        Page<Document> documentsPage = documentRepository.findAll(pageable);
+        model.addAttribute("documents", documentsPage);
 
         if(principal != null) {
             User user = userRepository.findByEmail(principal.getName());
             model.addAttribute("first_name", user.getFirstName());
         }
 
-        List<Document> documents = documentRepository.findAll();
-        model.addAttribute("documents", documents);
         return "docks";
     }
 

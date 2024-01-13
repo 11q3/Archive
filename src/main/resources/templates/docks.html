@@ -81,51 +81,91 @@
                         <div class="docsfiles">
                             <div class="docsfilesl">
                                 <ul >
-                                    <li class="doc" th:each="fileName, state : ${documents}" th:if="${!state.even}">
+                                    <li class="doc" th:each="document, iter : ${documents.content}" th:if="${iter.index % 2 == 0}">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 50 50" fill="none">
                                             <path d="M18.75 27.0833H31.25M18.75 35.4167H25M8.33337 8.33334V41.6667C8.33337 42.7717 8.77236 43.8315 9.55376 44.6129C10.3352 45.3943 11.395 45.8333 12.5 45.8333H37.5C38.6051 45.8333 39.6649 45.3943 40.4463 44.6129C41.2277 43.8315 41.6667 42.7717 41.6667 41.6667V17.3792C41.6666 16.8241 41.5557 16.2746 41.3403 15.763C41.1249 15.2514 40.8095 14.788 40.4125 14.4L31.1625 5.35417C30.3841 4.59304 29.3387 4.16681 28.25 4.16667H12.5C11.395 4.16667 10.3352 4.60566 9.55376 5.38706C8.77236 6.16846 8.33337 7.22827 8.33337 8.33334Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             <path d="M29.1667 4.16667V12.5C29.1667 13.6051 29.6057 14.6649 30.3871 15.4463C31.1685 16.2277 32.2283 16.6667 33.3334 16.6667H41.6667" stroke="black" stroke-width="2" stroke-linejoin="round"/>
                                         </svg>
-                                        <a th:href="@{/downloadDocument(fileName=${fileName.getName()})}" th:text="${fileName.getName()}"></a>
+                                        <a th:href="@{/downloadDocument(fileName=${document.getName()})}" th:text="${document.getName()}"></a>
                                     </li>
                                 </ul>
                             </div>
+
+
                             <div class="docsfilesr">
                                 <ul>
-                                    <li class="doc" th:each="fileName, state : ${documents}" th:if="${state.even}">
+                                    <li class="doc" th:each="document, iter : ${documents.content}" th:unless="${iter.index % 2 == 0}">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 50 50" fill="none">
                                             <path d="M18.75 27.0833H31.25M18.75 35.4167H25M8.33337 8.33334V41.6667C8.33337 42.7717 8.77236 43.8315 9.55376 44.6129C10.3352 45.3943 11.395 45.8333 12.5 45.8333H37.5C38.6051 45.8333 39.6649 45.3943 40.4463 44.6129C41.2277 43.8315 41.6667 42.7717 41.6667 41.6667V17.3792C41.6666 16.8241 41.5557 16.2746 41.3403 15.763C41.1249 15.2514 40.8095 14.788 40.4125 14.4L31.1625 5.35417C30.3841 4.59304 29.3387 4.16681 28.25 4.16667H12.5C11.395 4.16667 10.3352 4.60566 9.55376 5.38706C8.77236 6.16846 8.33337 7.22827 8.33337 8.33334Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             <path d="M29.1667 4.16667V12.5C29.1667 13.6051 29.6057 14.6649 30.3871 15.4463C31.1685 16.2277 32.2283 16.6667 33.3334 16.6667H41.6667" stroke="black" stroke-width="2" stroke-linejoin="round"/>
                                         </svg>
-                                        <a th:href="@{/downloadDocument(fileName=${fileName.getName()})}" th:text="${fileName.getName()}"></a>
+                                        <a th:href="@{/downloadDocument(fileName=${document.getName()})}" th:text="${document.getName()}"></a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                         <div class="pagesblock">
-                            <div class="pagearea">
-                                <svg class = "svg-container" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                            <div class="pagearea" th:if="${!(documents.getNumber() == 0)}">
+                                <a th:href="@{/docks(page=0)}">
+                                    <svg class = "svg-container" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
                                     <circle cx="18" cy="18" r="18" fill="#BF7160"/>
                                 </svg>
-                                <div class="svg-text">1</div>
+                                    <div class="svg-text">
+                                        <span th:text="1"></span>
+                                    </div>
+                                </a>
                             </div>
-                            <div class="pagearea">
-                                <svg class = "svg-container" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
-                                    <circle cx="18" cy="18" r="18" fill="#652E22"/>
-                                </svg>
-                                <div class="svg-text">2</div>
-                            </div>
-                            <div class="pagearea">
+                            <div class="pagearea" th:if="${!(documents.getNumber() <= 2)}">
                                 <svg class = "svg-container" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
                                     <circle cx="18" cy="18" r="18" fill="#BF7160"/>
                                 </svg>
                                 <div class="svg-text">...</div>
                             </div>
                             <div class="pagearea">
+                                <a th:href="@{/docks(page=${documents.getNumber()-1})}" th:if="${!(documents.getNumber()+1 <= 2)}">
+                                    <svg class = "svg-container" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                                        <circle cx="18" cy="18" r="18" fill="#BF7160"/>
+                                    </svg>
+                                    <div class="svg-text">
+                                        <span th:text="${documents.getNumber()}"></span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="pagearea">
+                                <a th:href="@{/docks(page=${documents.getNumber()})}">
+                                    <svg class = "svg-container" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                                    <circle cx="18" cy="18" r="18" fill="#652E22"/>
+                                </svg>
+                                    <div class="svg-text">
+                                        <span th:text="${documents.getNumber()+1}"></span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="pagearea">
+                                <a th:href="@{/docks(page=${documents.getNumber()+1})}" th:if="${!(documents.getNumber()+2 >= documents.getTotalPages())}">
+                                    <svg class = "svg-container" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                                        <circle cx="18" cy="18" r="18" fill="#BF7160"/>
+                                    </svg>
+                                    <div class="svg-text">
+                                        <span th:text="${documents.getNumber()+2}"></span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="pagearea" th:if="${!(documents.getNumber()+4 >= documents.getTotalPages()+1)}">
                                 <svg class = "svg-container" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
                                     <circle cx="18" cy="18" r="18" fill="#BF7160"/>
                                 </svg>
-                                <div class="svg-text">61</div>
+                                <div class="svg-text">...</div>
+                            </div>
+                            <div class="pagearea">
+                                <a th:href="@{/docks(page=${documents.getTotalPages()-1})}" th:if="${!(documents.getNumber()+1 >= documents.getTotalPages())}">
+                                    <svg class = "svg-container" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                                    <circle cx="18" cy="18" r="18" fill="#BF7160"/>
+                                </svg>
+                                    <div class="svg-text">
+                                        <span th:text="${documents.getTotalPages()}"></span>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>

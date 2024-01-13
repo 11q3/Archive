@@ -28,9 +28,9 @@ public class DocumentServiceImpl implements DocumentService {
     public String saveDocument(MultipartFile file) throws IOException {
         String fileName = file.getOriginalFilename();
 
-        if (documentRepository.findByName(fileName).isPresent()) {
-            return "redirect:/docks?fileAlreadyExists";
-        }
+//        if (documentRepository.findByName(fileName).isPresent()) {
+//            return "redirect:/docks?fileAlreadyExists";
+//        }
 
         Path targetLocation = Paths.get(Archive.util.Paths.DOCUMENTS.getPath() + fileName);
 
