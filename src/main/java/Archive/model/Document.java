@@ -21,8 +21,4 @@ public class Document {
     private String name;
 
     private String filePath;
-
-    public void setPath(String path) {
-        this.filePath = path;
-    }
 }

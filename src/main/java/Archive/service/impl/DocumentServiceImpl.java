@@ -26,19 +26,26 @@ public class DocumentServiceImpl implements DocumentService {
 
     @Override
     public String saveDocument(MultipartFile file) throws IOException {
-        String fileName = StringUtils.cleanPath(Objects.requireNonNull(file.getOriginalFilename()));
+        String fileName = file.getOriginalFilename();
+
+        if (documentRepository.findByName(fileName).isPresent()) {
+            return "redirect:/docks?fileAlreadyExists";
+        }
+
         Path targetLocation = Paths.get(Archive.util.Paths.DOCUMENTS.getPath() + fileName);
 
-
-        // Save file to the filesystem
         Files.copy(file.getInputStream(), targetLocation, StandardCopyOption.REPLACE_EXISTING);
 
-        // Save file path to the database
         Document document = new Document();
-        document.setPath(targetLocation + fileName);
+        document.setFilePath(targetLocation + fileName);
         document.setName(fileName);
         documentRepository.save(document);
 
         return "redirect:/docks";
+    }
+
+    @Override
+    public boolean documentExists(String fileName) {
+        return documentRepository.findByName(fileName).isPresent();
     }
 }
