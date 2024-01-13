@@ -15,6 +15,7 @@ import java.nio.file.Paths;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 import java.util.Objects;
+import java.util.Optional;
 
 @Service
 public class DocumentServiceImpl implements DocumentService {
@@ -28,9 +29,9 @@ public class DocumentServiceImpl implements DocumentService {
     public String saveDocument(MultipartFile file) throws IOException {
         String fileName = file.getOriginalFilename();
 
-//        if (documentRepository.findByName(fileName).isPresent()) {
-//            return "redirect:/docks?fileAlreadyExists";
-//        }
+        if (documentRepository.findByName(fileName).isPresent()) {
+            return "redirect:/docks?fileAlreadyExists";
+        }
 
         Path targetLocation = Paths.get(Archive.util.Paths.DOCUMENTS.getPath() + fileName);
 
@@ -47,5 +48,23 @@ public class DocumentServiceImpl implements DocumentService {
     @Override
     public boolean documentExists(String fileName) {
         return documentRepository.findByName(fileName).isPresent();
+    }
+
+    @Override
+    public void deleteDocument(String fileName) {
+        Optional<Document> documentOptional = documentRepository.findByName(fileName);
+
+        if (!documentOptional.isPresent()) {
+            System.out.println("Document with name " + fileName + " not found");
+            return;
+        }
+
+        Document document = documentOptional.get();
+        try {
+            Files.deleteIfExists(Paths.get(document.getFilePath()));
+        } catch (IOException e) {
+            System.out.println("Failed to delete document " + fileName + ": " + e.getMessage());
+        }
+        documentRepository.delete(document);
     }
 }

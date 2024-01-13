@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -91,5 +92,12 @@ public class DocumentController {
                 .contentLength(file.length())
                 .contentType(MediaType.APPLICATION_OCTET_STREAM)
                 .body(resource);
+    }
+
+    @PostMapping("/deleteDocument")
+    public String deleteDocument(@RequestParam String fileName, RedirectAttributes redirectAttributes) {
+        documentService.deleteDocument(fileName);
+        redirectAttributes.addFlashAttribute("message", "Document deleted successfully!");
+        return "redirect:/docks";
     }
 }
