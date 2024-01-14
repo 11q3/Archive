@@ -8,8 +8,5 @@ import java.io.IOException;
 @Service
 public interface DocumentService {
     String saveDocument(MultipartFile file) throws IOException;
-
-    boolean documentExists(String fileName);
-
     void deleteDocument(String fileName);
 }

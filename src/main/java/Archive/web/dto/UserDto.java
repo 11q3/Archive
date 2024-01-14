@@ -1,6 +1,7 @@
 package Archive.web.dto;
 
 
+import Archive.util.Paths;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
@@ -24,5 +25,5 @@ public class UserDto {
     @NotEmpty
     private String password;
 
-    private String profilePicture = "static/images/profilepictures/default.png";
+    private String profilePicture = Paths.PROFILE_PICTURE.getPath() + "default.png";
 }

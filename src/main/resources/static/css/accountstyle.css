@@ -325,6 +325,7 @@ button {
 
 
 .profileheadimg {
+    text-align: center;
     display: flex;
     flex-shrink: 0;
     border-radius: 251px;

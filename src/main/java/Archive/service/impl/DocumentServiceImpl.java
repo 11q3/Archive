@@ -8,13 +8,11 @@ import java.io.IOException;
 import java.nio.file.*;
 
 import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.nio.file.Paths;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
-import java.util.Objects;
 import java.util.Optional;
 
 @Service
@@ -46,15 +44,10 @@ public class DocumentServiceImpl implements DocumentService {
     }
 
     @Override
-    public boolean documentExists(String fileName) {
-        return documentRepository.findByName(fileName).isPresent();
-    }
-
-    @Override
     public void deleteDocument(String fileName) {
         Optional<Document> documentOptional = documentRepository.findByName(fileName);
 
-        if (!documentOptional.isPresent()) {
+        if (documentOptional.isEmpty()) {
             System.out.println("Document with name " + fileName + " not found");
             return;
         }

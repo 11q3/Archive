@@ -6,7 +6,6 @@ import Archive.repository.UserRepository;
 import Archive.repository.DocumentRepository;
 import Archive.service.DocumentService;
 import Archive.util.Paths;
-import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -30,7 +29,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.security.Principal;
-import java.util.List;
 
 @Controller
 public class DocumentController {
