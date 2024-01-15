@@ -40,7 +40,7 @@ public class DocumentServiceImpl implements DocumentService {
         document.setName(fileName);
         documentRepository.save(document);
 
-        return "redirect:/docks";
+        return "redirect:/docks?" + (long) documentRepository.findAll().size();
     }
 
     @Override

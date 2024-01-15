@@ -30,6 +30,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.security.Principal;
 
+import static Archive.util.Params.DOCUMENTS_PER_PAGE;
+
 @Controller
 public class DocumentController {
     private final UserRepository userRepository;
@@ -51,7 +53,7 @@ public class DocumentController {
         boolean isAuthenticated = authentication.isAuthenticated();
         model.addAttribute("isAuthenticated", isAuthenticated);
 
-        Pageable pageable = PageRequest.of(page, 16); // 8 documents per page
+        Pageable pageable = PageRequest.of(page, Integer.parseInt(DOCUMENTS_PER_PAGE.getParam()));
         Page<Document> documentsPage = documentRepository.findAll(pageable);
         model.addAttribute("documents", documentsPage);
 
@@ -63,7 +65,7 @@ public class DocumentController {
         return "docks";
     }
 
-    @PostMapping("/docks")
+    @PostMapping("/uploadDocument")
     public String uploadDocument(@ModelAttribute("file") MultipartFile file) throws IOException {
         return documentService.saveDocument(file);
     }

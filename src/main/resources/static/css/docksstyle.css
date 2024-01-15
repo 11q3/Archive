@@ -318,7 +318,7 @@ button {
     align-items: flex-start;
     gap: 50px;
 
-    padding-top: 50px;
+    padding-top: 30px;
     padding-left: 45px;
     padding-right: 45px;
 }
@@ -327,7 +327,6 @@ button {
 .docsfilesr {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
     gap: 43px;
 }
 
@@ -335,6 +334,9 @@ button {
     display: flex;
     align-items: center;
     gap: 10px;
+
+    margin-top: 15px;
+
 }
 
 .doc a {
@@ -347,8 +349,8 @@ button {
 }
 
 .doc svg {
-    min-width: 50px;
-    min-height: 50px;
+    min-width: 35px;
+    min-height: 35px;
 }
 
 
@@ -360,9 +362,14 @@ button {
     padding-right: 65px;
 }
 
+.footerdocs {
+    display: flex;
+    justify-content: space-between;
+}
+
 .pagearea {
     position: relative;
-    top: 15px;
+    top: 40px;
 
     display: flex;
     align-items: flex-start;
@@ -381,7 +388,7 @@ button {
 
 .svg-text {
     position: absolute;
-    top: 0;
+    top: 3px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -392,6 +399,31 @@ button {
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
+    line-height: normal;
+}
+
+
+.pagearea {
+    justify-content: end;
+}
+
+.upload-file-button {
+    display: inline-flex;
+    padding: 5px 25px;
+    margin-left: 80px;
+    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    border-radius: 40px;
+    border: 4px solid var(--main-red, #B2533E);
+}
+.upload-file-button span {
+    color: white;
+    font-size: 20px;
+    font-style: oblique;
+    font-weight: 400;
     line-height: normal;
 }
 
@@ -468,7 +500,12 @@ button {
         font-size: 20px;
     }
 
+    .docsfilesl ul {
+        margin-bottom: 0;
+    }
+
     .docsfiles {
+        gap: 0;
         flex-direction: column;
     }
 }
