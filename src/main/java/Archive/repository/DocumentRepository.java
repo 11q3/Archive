@@ -7,4 +7,5 @@ import java.util.Optional;
 
 public interface DocumentRepository extends JpaRepository<Document, Long> {
     Optional<Document> findByName(String name);
+
 }
