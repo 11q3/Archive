@@ -6,6 +6,7 @@ import Archive.repository.UserRepository;
 import Archive.repository.DocumentRepository;
 import Archive.service.DocumentService;
 import Archive.util.Paths;
+import jakarta.persistence.Basic;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

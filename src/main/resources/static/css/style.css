@@ -77,6 +77,10 @@ button {
     align-items: center;
     gap: 25px;
 }
+.headlinelogo img {
+    max-width: 107px;
+    max-height: 107px;
+}
 .headline {
     display: flex;
     flex-direction: column;

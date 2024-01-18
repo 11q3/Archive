@@ -31,7 +31,7 @@ public class DocumentServiceImpl implements DocumentService {
             return "redirect:/docks?fileAlreadyExists";
         }
 
-        Path targetLocation = Paths.get(Archive.util.Paths.DOCUMENTS.getPath() + fileName);
+        Path targetLocation = Paths.get(Archive.util.Paths.DOCUMENTS.getPath());
 
         Files.copy(file.getInputStream(), targetLocation, StandardCopyOption.REPLACE_EXISTING);
 
