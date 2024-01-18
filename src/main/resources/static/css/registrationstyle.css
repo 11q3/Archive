@@ -11,12 +11,19 @@ body {
     gap: 0;
 }
 
+.alert-info,
+.alert-danger {
+    max-width: 100vw;
+    font-size: 24px;
+    margin: auto 10px;
+}
+
 .registrationwindow {
-    position: fixed;
     top: calc(50% - 313px);
 
     padding: 45px 68px;
     gap: 25px;
+    margin: 10px;
 
     border-radius: 15px;
     background: var(--main-red, #B2533E);
@@ -165,4 +172,18 @@ body {
 .loginhref {
     display: flex;
     align-self: center;
+}
+
+
+
+@media (max-width: 540px) {
+    .registrationwindow {
+        padding: 34px 51px;
+    }
+}
+
+@media (max-width: 430px) {
+    .registrationwindow {
+        padding: 34px 45px;
+    }
 }

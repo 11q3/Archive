@@ -13,6 +13,19 @@
 </head>
 <body>
     <form method="post" role="form" th:action="@{/register/save}" th:object = "${user}">
+        <p th:errors="*{firstName}" class="alert alert-danger"
+           th:if="${#fields.hasErrors('firstName')}">
+        </p>
+        <p th:errors="*{lastName}" class="alert alert-danger"
+           th:if="${#fields.hasErrors('lastName')}">
+        </p>
+        <p th:errors="*{email}" class="alert alert-danger"
+           th:if="${#fields.hasErrors('email')}">
+        </p>
+        <p th:errors="*{password}" class="alert alert-danger"
+           th:if="${#fields.hasErrors('password')}">
+        </p>
+
         <div class="registrationwindow">
             <div class="headline">
                 <div class="headlinetitle">Регистрация</div>
@@ -26,36 +39,29 @@
                                 required autofocus="autofocus"
                                 placeholder="ваше имя"
                         />
-                        <p th:errors="*{firstName}" class="text-danger"
-                           th:if="${#fields.hasErrors('firstName')}">
-                        </p>
+
                         <input class="formgroup"
                                 id ="lastName" th:field="*{lastName}"
                                 type="text"
                                 required autofocus="autofocus"
                                 placeholder="ваша фамилия"
                         />
-                        <p th:errors="*{lastName}" class="text-danger"
-                           th:if="${#fields.hasErrors('lastName')}">
-                        </p>
+
+
                         <input class="formgroup"
                                 id ="email" th:field="*{email}"
                                 type="email"
                                 required autofocus="autofocus"
                                 placeholder="почта"
                         />
-                        <p th:errors="*{email}" class="text-danger"
-                           th:if="${#fields.hasErrors('email')}">
-                        </p>
+
                         <input class="formgroup"
                                 id ="password" th:field="*{password}"
                                 type = "password"
                                 required autofocus="autofocus"
                                 placeholder="пароль"
                         />
-                        <p th:errors="*{password}" class="text-danger"
-                           th:if="${#fields.hasErrors('password')}">
-                        </p>
+
                 </div>
                 <div class="checkbox">
                     <input type="checkbox" id="check1">

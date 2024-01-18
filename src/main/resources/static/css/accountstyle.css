@@ -415,7 +415,7 @@ button {
 
 .edit {
     padding-top: 75px;
-    align-self: flex-start;
+    align-self: center;
     display: inline-flex;
 }
 
@@ -514,7 +514,7 @@ button {
 
 @media (max-width: 880px) {
     .accountcard {
-        width: 650px;
+        max-width: 550px;
         margin: auto;
     }
 
@@ -541,8 +541,18 @@ button {
         padding-left: 25px;
         padding-right: 25px;
         padding-bottom: 25px;
+        gap: 25px;
     }
 
+    .profilehead {
+        flex-direction: column;
+
+    }
+    .edit {
+        padding-top: 0px;
+        padding-left: 40px;
+    }
+    
 }
 
 @media (max-width: 700px) {
@@ -557,7 +567,7 @@ button {
     }
 
     .profilehead {
-        width: 300px;
+        max-width: 300px;
     }
 }
 
@@ -576,7 +586,6 @@ button {
     }
 
     .profilehead {
-        flex-direction: column;
         gap: 5px;
         right: 0;
         justify-content: center;

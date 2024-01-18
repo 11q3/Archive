@@ -22,11 +22,11 @@ public class User {
     @Column(name="user_id")
     private Long id;
 
-    @Size(min = 3, max = 10, message = "Неверное имя пользователя. (3-10 символов)")
+    @Size(min = 2, max = 16, message = "Неверное имя пользователя. (2-16 символов)")
     @Column(name = "first_name")
     private String firstName;
 
-    @Size(min = 3, max = 10, message = "Неверное имя пользователя. (3-10 символов)")
+    @Size(min = 2, max = 16, message = "Неверное имя пользователя. (2-16 символов)")
     @Column(name = "last_name")
     private String lastName;
 

@@ -7,14 +7,22 @@ body {
     font: 400 36px/normal 'Open Sans', 'sans-serif' ;
     margin: auto;
     max-width: 622px;
+    min-width: 360px;
     gap: 0;
 }
 
+.alert-info,
+.alert-danger  {
+    max-width: 100vw;
+    font-size: 24px;
+    margin: auto 10px;
+}
+
 .loginwindow {
-    position: fixed;
     top: calc(50% - 258px);
 
     padding: 45px 68px;
+    margin: 10px;
     gap: 25px;
 
     border-radius: 15px;
@@ -141,4 +149,17 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+
+
+@media (max-width: 540px) {
+    .loginwindow {
+        padding: 34px 51px;
+    }
+}
+
+@media (max-width: 430px) {
+    .loginwindow {
+        padding: 34px 45px;
+    }
 }
