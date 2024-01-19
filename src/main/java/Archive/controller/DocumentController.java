@@ -37,16 +37,13 @@ import static Archive.util.Params.DOCUMENTS_PER_PAGE;
 public class DocumentController {
     private final UserRepository userRepository;
     private final DocumentRepository documentRepository;
-
     private final DocumentService documentService;
-
 
     public DocumentController(UserRepository userRepository, DocumentService documentService, DocumentRepository documentRepository) {
         this.userRepository = userRepository;
         this.documentService = documentService;
         this.documentRepository = documentRepository;
     }
-
 
     @GetMapping("/docks")
     public String showDocksPage(Model model, Principal principal, @RequestParam(value = "page", defaultValue = "0") int page) {
@@ -73,32 +70,11 @@ public class DocumentController {
 
     @GetMapping("/downloadDocument")
     public ResponseEntity<InputStreamResource> downloadDocument(@RequestParam String fileName) throws FileNotFoundException {
-        String uploadedFilesDir = Paths.DOCUMENTS.getPath();
-
-        File file = new File(uploadedFilesDir, fileName);
-
-        if (!file.exists())  return ResponseEntity.notFound().build();
-
-
-        HttpHeaders headers = new HttpHeaders();
-        headers.add("Cache-Control", "no-cache, no-store, must-revalidate");
-        headers.add("Content-Disposition", "attachment; filename=" + fileName);
-        headers.add("Pragma", "no-cache");
-        headers.add("Expires", "0");
-
-        InputStreamResource resource = new InputStreamResource(new FileInputStream(file));
-
-        return ResponseEntity.ok()
-                .headers(headers)
-                .contentLength(file.length())
-                .contentType(MediaType.APPLICATION_OCTET_STREAM)
-                .body(resource);
+        return documentService.downloadDocument(fileName);
     }
 
     @PostMapping("/deleteDocument")
-    public String deleteDocument(@RequestParam String fileName, RedirectAttributes redirectAttributes) {
-        documentService.deleteDocument(fileName);
-        redirectAttributes.addFlashAttribute("message", "Document deleted successfully!");
-        return "redirect:/docks";
+    public String deleteDocument(@RequestParam String fileName) {
+        return documentService.deleteDocument(fileName);
     }
 }
