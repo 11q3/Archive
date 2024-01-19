@@ -61,12 +61,12 @@ public class AuthController {
             result.rejectValue("email", "409", "Пользователь с таким адресом уже существует!");
             return "register";
         }
-        if (userDto.getFirstName().length() <2 || userDto.getFirstName().length() > 16) {
-            result.rejectValue("firstName", "400", "Неверное имя пользователя (2-16 символов)");
+        if (userDto.getFirstName().length() <2 || userDto.getFirstName().length() > 10) {
+            result.rejectValue("firstName", "400", "Неверное имя пользователя (2-10 символов)");
             return "register";
         }
-        if (userDto.getLastName().length() <2 || userDto.getLastName().length() > 16) {
-            result.rejectValue("lastName", "400", "Неверное имя пользователя (2-16 символов)");
+        if (userDto.getLastName().length() <2 || userDto.getLastName().length() > 10) {
+            result.rejectValue("lastName", "400", "Неверное имя пользователя (2-10 символов)");
             return "register";
         }
 

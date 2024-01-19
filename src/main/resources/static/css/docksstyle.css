@@ -505,15 +505,18 @@ button {
     }
 
     .docsfiles {
+        padding-left: 5px;
+        padding-right: 5px;
         gap: 0;
         flex-direction: column;
     }
+
 }
 
 @media (max-width: 680px) {
     .maincontent {
         padding-left: 15px;
-        padding-right: 15px;
+        padding-right: 10px;
     }
 }
 
@@ -586,6 +589,10 @@ button {
         max-width: 200px;
     }
 
+    .docs{
+        max-width: 330px;
+    }
+
 }
 
 @media (max-width:  400px)  {
@@ -624,5 +631,8 @@ button {
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+    }
+    .pagesblock {
+        padding-right: 0;
     }
 }

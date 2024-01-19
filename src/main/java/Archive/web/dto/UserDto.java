@@ -25,5 +25,5 @@ public class UserDto {
     @NotEmpty
     private String password;
 
-    private String profilePicture = Paths.PROFILE_PICTURE.getPath() + "default.png";
+    private String profilePicture = "static/images/profilepictures/default.png";
 }
