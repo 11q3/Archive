@@ -68,7 +68,7 @@ public class DocumentServiceImpl implements DocumentService {
         Files.copy(file.getInputStream(), targetLocation, StandardCopyOption.REPLACE_EXISTING);
 
         Document document = new Document();
-        document.setFilePath(targetLocation + fileName);
+        document.setFilePath(String.valueOf(targetLocation));
         document.setName(fileName);
         documentRepository.save(document);
 
@@ -86,7 +86,7 @@ public class DocumentServiceImpl implements DocumentService {
 
         Document document = documentOptional.get();
         try {
-            Files.deleteIfExists(Paths.get(document.getFilePath()));
+            Files.delete(Paths.get(document.getFilePath()));
         } catch (IOException e) {
             System.out.println("Failed to delete document " + fileName + ": " + e.getMessage());
         }

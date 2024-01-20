@@ -39,7 +39,9 @@ public class SecurityConfiguration {
                                         "/login"
                                 )
                                 .permitAll()
-                                .requestMatchers("/docks","/account","/deleteDocument", "/uploadDocument", "/downloadDocument").authenticated())
+                                .requestMatchers("/docks","/account", "/downloadDocument").authenticated()
+                                .requestMatchers("/deleteDocument", "/uploadDocument")
+                                    .hasRole("ADMIN"))
                 .formLogin(form -> form
                         .loginPage("/login")
                         .loginProcessingUrl("/login")
