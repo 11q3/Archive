@@ -62,6 +62,10 @@ public class DocumentServiceImpl implements DocumentService {
         if (documentRepository.findByName(fileName).isPresent()) {
             return "redirect:/docks?fileAlreadyExists";
         }
+        if (file.getSize() > 128 * 1024 * 1024) {
+            return "redirect:/docks?fileTooLarge";
+        }
+
 
         Path targetLocation = Paths.get(Archive.util.Paths.DOCUMENTS.getPath() + fileName);
 

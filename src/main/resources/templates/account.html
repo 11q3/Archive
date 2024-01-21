@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="../static/css/accountstyle.css">
 </head>
 <body>
+<div th:if="${param.fileTooLarge}">
+    <div class="alert alert-danger">Размер загружаемого файла слишком большой!</div>
+</div>
 <div class="accountpage">
     <div class="headerlogoheadline">
         <a class="headlinelogo" th:href="@{/}">

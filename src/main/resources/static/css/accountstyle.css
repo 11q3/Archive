@@ -307,7 +307,7 @@ button {
     bottom: 38px;
 
 
-    width: 100vh;
+    width: 1245px;
     display: inline-flex;
     justify-content: space-between;
     align-items: center;
@@ -415,7 +415,7 @@ button {
 
 .edit {
     padding-top: 75px;
-    align-self: center;
+    align-self: baseline;
     display: inline-flex;
 }
 
@@ -430,6 +430,7 @@ button {
 }
 
 .accountcardcontent {
+
     display: flex;
     position: relative;
     justify-content: space-between;
@@ -565,10 +566,6 @@ button {
     .commits {
         flex-direction: column;
     }
-
-    .profilehead {
-        max-width: 300px;
-    }
 }
 
 @media (max-width: 600px) {
@@ -589,6 +586,8 @@ button {
         gap: 5px;
         right: 0;
         justify-content: center;
+        max-width: 300px;
+
     }
 
     .profileheadimg {
@@ -617,6 +616,10 @@ button {
         flex-direction: column;
         padding-top: 0px;
     }
+    .cardingonames {
+        gap: 25px;
+    }
+
     .corname {
         justify-content: initial;
     }

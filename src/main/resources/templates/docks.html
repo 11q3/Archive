@@ -16,7 +16,9 @@
 <div th:if="${param.fileAlreadyExists}">
     <div class="alert alert-danger">Документ уже существует!</div>
 </div>
-
+<div th:if="${param.fileTooLarge}">
+    <div class="alert alert-danger">Размер загружаемого файла слишком большой!</div>
+</div>
 <div class="dockspage">
     <div class="headerlogoheadline">
         <a class="headlinelogo" th:href="@{/}">

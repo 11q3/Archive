@@ -67,11 +67,15 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String uploadProfilePicture(ProfilePicture profilePicture, Principal principal)  throws IOException {
+        if (profilePicture.getFile().getSize() > 128 * 1024 * 1024) {
+            return "redirect:/account?fileTooLarge";
+        }
+
         User user = userRepository.findByEmail(principal.getName());
 
         String userId = user.getId().toString();
 
-        String fileName = userId + "." + Objects.requireNonNull(profilePicture.getFile().getContentType()).split("/")[1];
+        String fileName = userId + "." + "png";
         String targetLocation= Archive.util.Paths.PROFILE_PICTURE.getPath();
 
         BufferedImage image = ImageIO.read(profilePicture.getFile().getInputStream());
