@@ -44,7 +44,6 @@ public class SecurityConfiguration {
                                     .hasRole("ADMIN"))
                 .formLogin(form -> form
                         .loginPage("/login")
-                        .loginProcessingUrl("/login")
                         .defaultSuccessUrl("/")
                         .permitAll())
 
