@@ -74,6 +74,14 @@
 	</dependencies>
 
 	<build>
+		<resources>
+			<resource>
+				<directory>classes/templates</directory>
+			</resource>
+			<resource>
+				<directory>BOOT-INF/classes/templates</directory>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
