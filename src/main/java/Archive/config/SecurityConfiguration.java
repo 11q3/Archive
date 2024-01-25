@@ -41,18 +41,15 @@ public class SecurityConfiguration {
                                 .permitAll()
                                 .requestMatchers("/docks","/account", "/downloadDocument").authenticated()
                                 .requestMatchers("/deleteDocument", "/uploadDocument")
-                                    .hasRole("ADMIN"))
-                .formLogin(formLogin -> formLogin
+                                .hasRole("ADMIN"))
+                .formLogin(form -> form
                         .loginPage("/login")
                         .defaultSuccessUrl("/")
-                        .failureUrl("/login?error")
-                        .usernameParameter("username")
-                        .passwordParameter("password"))
+                        .permitAll())
 
-                .logout(logout -> logout
-                        .logoutUrl("/logout")
-                        .logoutSuccessUrl("/")
-                        .invalidateHttpSession(true));
+                .logout(l -> l
+                        .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+                        .logoutSuccessUrl("/login?logout").permitAll());
 
         return http.build();
     }
