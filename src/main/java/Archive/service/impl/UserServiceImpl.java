@@ -73,9 +73,7 @@ public class UserServiceImpl implements UserService {
 
         User user = userRepository.findByEmail(principal.getName());
 
-        String userId = user.getId().toString();
-
-        String fileName = userId + "." + "png";
+        String fileName = profilePicture.getFile().getOriginalFilename();
         String targetLocation= Archive.util.Paths.PROFILE_PICTURE.getPath();
 
         BufferedImage image = ImageIO.read(profilePicture.getFile().getInputStream());
@@ -91,9 +89,12 @@ public class UserServiceImpl implements UserService {
                                     File.separator +
                                     fileName),
                     StandardCopyOption.REPLACE_EXISTING);
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println(1);
         }
 
-        user.setProfilePicture("static/images/profilepictures" + '/' + fileName);
+        user.setProfilePicture("target/classes/static/images/profilepictures" + '/' + fileName);
         userRepository.save(user);
 
         return "redirect:/account";

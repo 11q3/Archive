@@ -4,8 +4,9 @@ import lombok.Getter;
 
 @Getter
 public enum Paths {
-    PROFILE_PICTURE("target/classes/static/documents/"),
-    DOCUMENTS("target/classes/static/images/profilepictures/");
+    PROFILE_PICTURE("target/classes/static/images/profilepictures"),
+
+    DOCUMENTS("target/classes/static/documents/");
 
     private final String path;
 
