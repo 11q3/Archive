@@ -11,7 +11,7 @@ import java.io.IOException;
 
 @Service
 public interface DocumentService {
-    ResponseEntity<InputStreamResource> downloadDocument(@RequestParam String fileName) throws FileNotFoundException;
-    String saveDocument(MultipartFile file) throws IOException;
+    ResponseEntity<InputStreamResource> downloadDocument(@RequestParam String fileName);
+    String saveDocument(MultipartFile file);
     String deleteDocument(String fileName);
 }

@@ -45,7 +45,4 @@ public class User {
                     name = "ROLE_ID", referencedColumnName = "role_id"))
 
     private List<Role> roles = new ArrayList<>();
-
-    private String profilePicture;
-
 }

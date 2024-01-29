@@ -32,7 +32,7 @@ public class DocumentServiceImpl implements DocumentService {
     }
 
     @Override
-    public ResponseEntity<InputStreamResource> downloadDocument(@RequestParam String fileName) throws FileNotFoundException {
+    public ResponseEntity<InputStreamResource> downloadDocument(@RequestParam String fileName) {
         String uploadedFilesDir = Archive.util.Paths.DOCUMENTS.getPath();
 
         File file = new File(uploadedFilesDir, fileName);
@@ -46,7 +46,12 @@ public class DocumentServiceImpl implements DocumentService {
         headers.add("Pragma", "no-cache");
         headers.add("Expires", "0");
 
-        InputStreamResource resource = new InputStreamResource(new FileInputStream(file));
+        InputStreamResource resource = null;
+        try {
+            resource = new InputStreamResource(new FileInputStream(file));
+        } catch (FileNotFoundException e) {
+            System.out.println("Failed to download document " + fileName + ": " + e.getMessage());
+        }
 
         return ResponseEntity.ok()
                 .headers(headers)
@@ -56,7 +61,7 @@ public class DocumentServiceImpl implements DocumentService {
     }
 
     @Override
-    public String saveDocument(MultipartFile file) throws IOException {
+    public String saveDocument(MultipartFile file) {
         String fileName = file.getOriginalFilename();
 
         if (documentRepository.findByName(fileName).isPresent()) {
@@ -66,17 +71,20 @@ public class DocumentServiceImpl implements DocumentService {
             return "redirect:/docks?fileTooLarge";
         }
 
-
         Path targetLocation = Paths.get(Archive.util.Paths.DOCUMENTS.getPath() + fileName);
 
-        Files.copy(file.getInputStream(), targetLocation, StandardCopyOption.REPLACE_EXISTING);
+        try {
+            Files.copy(file.getInputStream(), targetLocation, StandardCopyOption.REPLACE_EXISTING);
+        } catch (IOException e) {
+            System.out.println("Failed to save document " + fileName + ": " + e.getMessage());
+        }
 
         Document document = new Document();
         document.setFilePath(String.valueOf(targetLocation));
         document.setName(fileName);
         documentRepository.save(document);
 
-        return "redirect:/docks?" + (long) documentRepository.findAll().size();
+        return "redirect:/docks?" + documentRepository.findAll().size();
     }
 
     @Override

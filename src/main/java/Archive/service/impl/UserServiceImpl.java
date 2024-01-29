@@ -1,6 +1,5 @@
 package Archive.service.impl;
 
-import Archive.model.ProfilePicture;
 import Archive.model.Role;
 import Archive.model.User;
 import Archive.repository.RoleRepository;
@@ -10,18 +9,7 @@ import Archive.web.dto.UserDto;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
-import java.security.Principal;
 import java.util.List;
-import java.util.Objects;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -47,9 +35,6 @@ public class UserServiceImpl implements UserService {
         user.setEmail(userDto.getEmail());
         user.setPassword(passwordEncoder.encode(userDto.getPassword()));
 
-        user.setProfilePicture(userDto.getProfilePicture());
-
-
         Role role = roleRepository.findByName("ROLE_USER");
 
         if (role == null) {
@@ -63,41 +48,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public User findUserByEmail(String email) {
         return userRepository.findByEmail(email);
-    }
-
-    @Override
-    public String uploadProfilePicture(ProfilePicture profilePicture, Principal principal)  throws IOException {
-        if (profilePicture.getFile().getSize() > 128 * 1024 * 1024) {
-            return "redirect:/account?fileTooLarge";
-        }
-
-        User user = userRepository.findByEmail(principal.getName());
-
-        String fileName = profilePicture.getFile().getOriginalFilename();
-        String targetLocation= Archive.util.Paths.PROFILE_PICTURE.getPath();
-
-        BufferedImage image = ImageIO.read(profilePicture.getFile().getInputStream());
-
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        ImageIO.write(image, "png", byteArrayOutputStream);
-
-        try (ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(byteArrayOutputStream.toByteArray())) {
-            Files.copy(
-                    byteArrayInputStream,
-                    Paths.get(
-                            targetLocation +
-                                    File.separator +
-                                    fileName),
-                    StandardCopyOption.REPLACE_EXISTING);
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.out.println(1);
-        }
-
-        user.setProfilePicture("target/classes/static/images/profilepictures" + '/' + fileName);
-        userRepository.save(user);
-
-        return "redirect:/account";
     }
 
     private Role checkRoleExist(){

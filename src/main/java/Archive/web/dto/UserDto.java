@@ -24,6 +24,4 @@ public class UserDto {
     private String email;
     @NotEmpty
     private String password;
-
-    private String profilePicture = "static/images/profilepictures/default.png";
 }
