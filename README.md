@@ -1,5 +1,6 @@
 ## Archive 
 This repository contains the assets used to build the Archive website for gymnasium41 located in St. Petersburg.  
+
 The website is built using the Java Spring Framework and Thymeleaf template engine.
 
 # Prerequisites 
@@ -29,5 +30,7 @@ Run mvn spring-boot:run to start the application.
 # Folder Structure
 
 src/main/java: contains the Java source code. 
+
 src/main/resources: contains the configuration files and static resources. 
+
 src/test/java: contains the unit tests.
