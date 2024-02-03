@@ -5,19 +5,25 @@ The website is built using the Java Spring Framework and Thymeleaf template engi
 # Prerequisites 
 
 Java Development Kit (JDK) version 21 or higher 
-Maven build tool version 3.9.5 or higher 
+
+Maven build tool version 3.9.5 or higher
+
 MySQL database server
 
 # Building the Project
 
 Clone the repository to your local machine. 
-Navigate to the project directory. 
+
+Navigate to the project directory.
+
 Run mvn clean install to build the project.
 
 # Running the Application
 
 Start the MySQL database server and create a database named gymn41_Archive.
+
 Open the application.properties file and update the database credentials.
+
 Run mvn spring-boot:run to start the application.
 
 # Folder Structure
