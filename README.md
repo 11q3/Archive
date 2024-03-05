@@ -5,7 +5,7 @@ The website is built using the Java Spring Framework and Thymeleaf template engi
 
 # Prerequisites 
 
-Java Development Kit (JDK) version 21 or higher 
+Java Development Kit (JDK) version 17 
 
 Maven build tool version 3.9.5 or higher
 
